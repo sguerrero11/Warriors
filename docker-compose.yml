@@ -1,0 +1,46 @@
+# This file will create a selenium hub container + 3 browsers containers
+version: "3"
+services:
+  selenium-hub-warriors:
+    image: selenium/hub:latest
+    container_name: selenium-hub-warriors
+    ports:
+      - "4442:4442"
+      - "4443:4443"
+      - "4444:4444"
+  chrome:
+    image: selenium/node-chrome:beta
+    shm_size: 2gb
+    ports:
+      - "5900:5900"
+    depends_on:
+      - selenium-hub-warriors
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub-warriors
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+
+  edge:
+    image: selenium/node-edge:beta
+    shm_size: 2gb
+    ports:
+      - "4900:4900"
+    depends_on:
+      - selenium-hub-warriors
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub-warriors
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+
+  firefox:
+    image: selenium/node-firefox:beta
+    shm_size: 2gb
+    ports:
+      - "5000:5000"
+    depends_on:
+      - selenium-hub-warriors
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub-warriors
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+
