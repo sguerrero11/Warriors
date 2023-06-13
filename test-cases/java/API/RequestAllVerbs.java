@@ -27,7 +27,7 @@ public class RequestAllVerbs {
         RestAssured.baseURI = "https://simple-tool-rental-api.glitch.me";
     }
 
-    @Test(enabled=true, description = "Get all the tools available", priority=100)
+    @Test(enabled=true, description = "Get all the tools available for category ladders", priority=100)
     public void getRequestAllTools() {
 
         given()

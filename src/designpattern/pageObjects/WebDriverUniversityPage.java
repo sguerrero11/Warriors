@@ -11,7 +11,7 @@ public class WebDriverUniversityPage extends BasePage implements DefaultPage {
     // region SELECTORS
 
     final By contactUsTitle = By.xpath("//div[@class='section-title']/h1[text()='CONTACT US']"); // text() es igual a .
-    final By submitButton = By.xpath("//*[@id=\"form_buttons\"]/input[2]");
+    final By submitButton = By.xpath("//*[@type='submit']");
     final By contactUsFormTitle = By.xpath("//*[@id=\"contact_me\"]/div/div[1]/div/h2");
 
 
@@ -45,6 +45,7 @@ public class WebDriverUniversityPage extends BasePage implements DefaultPage {
     }
 
     public String getSubmitButton() {
+        switchToTabWithTitle("Contact Us");
         waitForElementVisible(submitButton);
         return getValue(submitButton);
     }
@@ -52,6 +53,10 @@ public class WebDriverUniversityPage extends BasePage implements DefaultPage {
     public String getContactUsFormTitle() {
         waitForElementVisible(contactUsFormTitle);
         return getText(contactUsFormTitle);
+    }
+
+    public void changeToControlledTab (){
+
     }
 
     // endregion
