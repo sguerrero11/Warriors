@@ -170,6 +170,34 @@ public class APIHelper {
      */
     public void sendRequest (String req, String path, HashMap pParams, HashMap qParams) {
 
+        if (req=="del"){
+            // arrange
+
+            RequestSpecification query = given()
+                    .auth().oauth2(accessToken)
+                    .basePath(path)
+                    .contentType(ContentType.JSON); //  .header("Content-type", "application/json") ;
+
+            if (!(pParams.get("orderId")).equals(0)){
+                query.pathParams(pParams);
+            }
+
+            query.log().all();
+
+            // act
+
+            if (!(pParams.get("orderId")).equals(0)) {
+                Response response = query.when()
+                        .delete("{orderId}");
+                // assert
+                response.then()
+                        .statusCode(204)
+                        .log().all();
+            }
+
+
+
+        }
         if (req=="post") {
             bodyPostOrder.put("toolId", "4643");
             bodyPostOrder.put("customerName", faker.name().firstName() + " " + faker.name().lastName());

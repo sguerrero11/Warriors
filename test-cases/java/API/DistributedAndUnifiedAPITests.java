@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class APIWithHelper {
+public class DistributedAndUnifiedAPITests {
 
     private APIHelper api;
 
@@ -91,24 +91,29 @@ public class APIWithHelper {
         // region ENTER HERE TO DEFINE HTTP REQUEST
 
         String req = "get";
+//        String req = "post";
+//        String req = "del";
 
         // endregion
 
         // region ENTER HERE TO DEFINE PATH
         String path = "tools";
+//        String path = "orders";
         // endregion
 
-        // region ENTER HERE TO DEFINE PATH PARAMS
-        HashMap <String, Integer> pParams = new HashMap<>();
-//        pParams.put("toolId",2177);
-        pParams.put("toolId",0); // use this line when you don't want pParams
+        // region ENTER HERE TO DEFINE PATH VARIABLES ("PATH PARAMS")
+        HashMap <String, String> pParams = new HashMap<>();
+//        pParams.put("toolId","2177");
+//        pParams.put("orderId",oewaUXPlEVIcWayVKMo1E); // value needs to match an existing order ID
+        pParams.put("toolId","4643"); // use this line when you don't want pParams
+
 
         // endregion
 
         // region ENTER HERE TO DEFINE QUERY PARAMS
         HashMap <String, String> qParams = new HashMap<>();
-        qParams.put("category", "ladders");
-        qParams.put("results", "1");
+        qParams.put("category", "plumbing");
+//        qParams.put("results", "1");
 //        qParams.put("category",""); // use this line when you don't want qParams
         // endregion
 
