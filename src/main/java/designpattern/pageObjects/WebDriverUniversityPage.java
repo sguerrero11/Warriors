@@ -1,8 +1,6 @@
 package designpattern.pageObjects;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import designpattern.pom.DefaultPage;
 import designpattern.pom.BasePage;
 
@@ -10,9 +8,9 @@ public class WebDriverUniversityPage extends BasePage implements DefaultPage {
 
     // region SELECTORS
 
-    final By contactUsTitle = By.xpath("//div[@class='section-title']/h1[text()='CONTACT US']"); // text() es igual a .
+    final By contactUsTitle = By.xpath("//h1[text()='CONTACT US']"); // text() es igual a .
     final By submitButton = By.xpath("//*[@type='submit']");
-    final By contactUsFormTitle = By.xpath("//*[@id=\"contact_me\"]/div/div[1]/div/h2");
+    final By contactUsFormTitle = By.xpath("//*[@name='contactme']"); // same as "//*[@name=\"contactme\"]"
 
 
 
@@ -50,7 +48,7 @@ public class WebDriverUniversityPage extends BasePage implements DefaultPage {
         return getValue(submitButton);
     }
 
-    public String getContactUsFormTitle() {
+    public String getContactUsFormTitleText() {
         waitForElementVisible(contactUsFormTitle);
         return getText(contactUsFormTitle);
     }

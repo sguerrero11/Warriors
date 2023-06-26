@@ -1,12 +1,11 @@
 package helpers;
 
 import com.github.javafaker.Faker;
-import io.restassured.specification.RequestSpecification;
-import org.json.simple.JSONObject;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+import org.json.simple.JSONObject;
 
 import java.util.HashMap;
 import java.util.List;
@@ -16,7 +15,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
 
-public class APIHelper {
+public class APIRentalHelper {
 
     /**
      * You need to instantiate each object in order to modify them, if not it returns null pointer.
@@ -40,7 +39,7 @@ public class APIHelper {
         Faker faker = new Faker(new Locale("en"));
 
         bodyApiClients.put("clientName", faker.name().firstName());
-        bodyApiClients.put("clientEmail", faker.name().firstName() + "@" + faker.color().name() + ".com" );
+        bodyApiClients.put("clientEmail", faker.internet().emailAddress());
 
         Response response = given()
                 .basePath("api-clients")

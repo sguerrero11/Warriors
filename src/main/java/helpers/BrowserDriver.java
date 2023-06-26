@@ -1,30 +1,21 @@
 package helpers;
 
-import helpers.LoggerHelper;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Dimension;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.remote.LocalFileDetector;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import java.io.File;
 import java.net.URL;
 import java.time.Duration;
 import java.util.ArrayList;
-import java.util.Objects;
-import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 /***
  * Helper class to handle Selenium WebDriver.
  */
-public abstract class BrowserDriver {
+public abstract class BrowserDriver extends LoggerHelper {
     private static RemoteWebDriver remoteDriver;
 
     /***
@@ -59,10 +50,10 @@ public abstract class BrowserDriver {
 
             String host = "localhost";
             String port = "4444";
-//            LoggerHelper.logInfo("[BrowserDriver/loadChromeDriver] Connecting to: " + "http://" + host + ":" + port + "/wd/hub");
+            LoggerHelper.logInfo("[BrowserDriver/loadChromeDriver] Connecting to: " + "http://" + host + ":" + port + "/wd/hub");
             setDriver(new RemoteWebDriver(new URL("http://" + host + ":" + port + "/wd/hub"), options));
         } catch(Exception ex) {
-//            LoggerHelper.logError("[BrowserDriver/loadChromeDriver] Error loading Selenium Driver: " + ex.getMessage());
+            LoggerHelper.logError("[BrowserDriver/loadChromeDriver] Error loading Selenium Driver: " + ex.getMessage());
         }
     }
 
@@ -78,10 +69,10 @@ public abstract class BrowserDriver {
 
             String host = "localhost";
             String port = "4444";
-//            LoggerHelper.logInfo("[BrowserDriver/loadChromeDriver] Connecting to: " + "http://" + host + ":" + port + "/wd/hub");
+            LoggerHelper.logInfo("[BrowserDriver/loadChromeDriver] Connecting to: " + "http://" + host + ":" + port + "/wd/hub");
             setDriver(new RemoteWebDriver(new URL("http://" + host + ":" + port + "/wd/hub"), options));
         } catch(Exception ex) {
-//            LoggerHelper.logError("[BrowserDriver/loadChromeDriver] Error loading Selenium Driver: " + ex.getMessage());
+            LoggerHelper.logError("[BrowserDriver/loadChromeDriver] Error loading Selenium Driver: " + ex.getMessage());
         }
     }
 
@@ -94,10 +85,10 @@ public abstract class BrowserDriver {
 
             String host = "localhost";
             String port = "4444";
-//            LoggerHelper.logInfo("[BrowserDriver/loadChromeDriver] Connecting to: " + "http://" + host + ":" + port + "/wd/hub");
+            LoggerHelper.logInfo("[BrowserDriver/loadChromeDriver] Connecting to: " + "http://" + host + ":" + port + "/wd/hub");
             setDriver(new RemoteWebDriver(new URL("http://" + host + ":" + port + "/wd/hub"), options));
         } catch(Exception ex) {
-//            LoggerHelper.logError("[BrowserDriver/loadChromeDriver] Error loading Selenium Driver: " + ex.getMessage());
+            LoggerHelper.logError("[BrowserDriver/loadChromeDriver] Error loading Selenium Driver: " + ex.getMessage());
         }
     }
 

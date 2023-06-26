@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Smoke" >
+    <listeners>
+        <listener class-name="utils.ProjectListener"/>
+    </listeners>
+    <test name="Smoke" group-by-instances="true">
+        <groups>
+            <run>
+                <include name="Smoke"/>
+                <exclude name="Skipped" />
+            </run>
+        </groups>
+        <classes>
+            <class name= "FrontEnd.LoadContactUsForm"/>
+
+        </classes>
+    </test>
+</suite>
+
+        <!-- change suite name everywhere to be an exact match
+        add all the classes that contain the @test
+        add attribute groups to all corresponding tests that need to be included in the suite
+        -->

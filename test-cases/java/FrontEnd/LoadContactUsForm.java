@@ -1,13 +1,15 @@
+package FrontEnd;
+
 import designpattern.pageObjects.WebDriverUniversityPage;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import utils.BeforeAndAfterTestListener;
+import utils.ProjectListener;
 
 import static org.testng.Assert.assertEquals;
 
-@Listeners({BeforeAndAfterTestListener.class})
-public class loadContactUsForm {
+@Listeners({ProjectListener.class})
+public class LoadContactUsForm {
 
     private WebDriverUniversityPage index;
 
@@ -34,9 +36,15 @@ public class loadContactUsForm {
         assertEquals(index.getSubmitButton(), "SUBMIT");
     //    assertEquals(index.getContactUsFormTitle(), "CONTACT US");
         // endregion
-
     }
 
-   // @Test(enabled=true, description = "DevSkiller", priority = 100, groups = {"Regression"})
+    @Test(description = "Test 2 example", priority = 200, groups = {"Regression", "Smoke"})
+    public void testTwo () {
+        System.out.println("Test 2");
+    }
 
+    @Test(description = "Test 3 example", priority = 300, groups = {"Regression"})
+    public void testThree () {
+        System.out.println("Test 3");
+    }
 }

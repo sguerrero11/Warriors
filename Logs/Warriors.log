@@ -1,0 +1,20 @@
+Jun 26 2023;19:19:40 2348 [main] INFO  org.testng.internal.Utils -- [TestNG] Running:
+  C:\Users\740722\AppData\Local\JetBrains\IdeaIC2020.1\temp-testng-customsuite.xml
+
+Jun 26 2023;19:19:41 2439 [main] INFO  helpers.LoggerHelper -- Starting suite
+Jun 26 2023;19:19:41 2440 [main] INFO  helpers.LoggerHelper -- I am in onStart method from suite entitled Warriors
+Jun 26 2023;19:19:41 2441 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+Jun 26 2023;19:19:41 3262 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Using chromedriver 111.0.5563.64 (resolved driver for Chrome 111)
+Jun 26 2023;19:19:41 3337 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.chrome.driver as C:\Users\740722\.cache\selenium\chromedriver\win32\111.0.5563.64\chromedriver.exe
+Jun 26 2023;19:19:41 3339 [main] INFO  helpers.LoggerHelper -- [BrowserDriver/loadChromeDriver] Connecting to: http://localhost:4444/wd/hub
+Jun 26 2023;19:19:45 6722 [main] INFO  helpers.LoggerHelper -- @Test: csvReader
+Jun 26 2023;19:19:45 6723 [main] INFO  helpers.LoggerHelper -- Description: Read from a file that has CSV format
+Jun 26 2023;19:19:45 6723 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Jun 26 2023;19:19:45 6735 [main] INFO  helpers.LoggerHelper -- Reading file: test-data-files\CSVRandomFile.csv
+Jun 26 2023;19:19:45 6753 [main] INFO  helpers.LoggerHelper -- Reading file: test-data-files\DataSetUsers.csv
+Jun 26 2023;19:19:45 6765 [main] INFO  helpers.LoggerHelper -- Reading file: test-data-files\DataSetUsers.txt
+Jun 26 2023;19:19:45 6781 [main] INFO  helpers.LoggerHelper -- @Test: csvReader has PASSED
+Jun 26 2023;19:19:45 6782 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Jun 26 2023;19:19:45 6788 [main] INFO  helpers.LoggerHelper -- Finishing suite
+Jun 26 2023;19:19:45 6790 [main] INFO  helpers.LoggerHelper -- I am in onFinish method from suite entitled Warriors
+Jun 26 2023;19:19:45 6791 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #

@@ -1,20 +1,23 @@
 package API;
 
-import helpers.APIHelper;
+import helpers.APIRentalHelper;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import utils.ProjectListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+@Listeners({ProjectListener.class})
 public class DistributedAndUnifiedAPITests {
 
-    private APIHelper api;
+    private APIRentalHelper api;
 
     @BeforeClass
     public void beforeTests() {
-        api = new APIHelper();
+        api = new APIRentalHelper();
         api.setBaseURI("https://simple-tool-rental-api.glitch.me"); // sets the endpoint
         api.postRegistration(); // creates token and thus sets Auth value
     }
