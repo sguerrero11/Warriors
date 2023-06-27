@@ -2,6 +2,7 @@ package FrontEnd;
 
 import designpattern.pageObjects.WebDriverUniversityPage;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import utils.ProjectListener;
@@ -13,7 +14,7 @@ public class LoadContactUsForm {
 
     private WebDriverUniversityPage index;
 
-    @BeforeClass(groups = {"Regression"})
+    @BeforeSuite
     public void beforeClass() {
 
         index = new WebDriverUniversityPage();

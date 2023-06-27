@@ -7,7 +7,7 @@ import utils.ProjectListener;
 
 @Listeners({ProjectListener.class})
 
-public class workWithExcel {
+public class ReadAnExcelFile {
 
     String folderPath = "test-data-files/";
     ExcelUtil excel = new ExcelUtil(folderPath + "UsersDataExcel.xlsx", "Sheet1"); // Define the excel file path that you want to work with

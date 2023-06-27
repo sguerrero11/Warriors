@@ -2,10 +2,7 @@ package FrontEnd;
 
 import designpattern.pageObjects.SauceDemoPage;
 import helpers.DataProviderHelper;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import helpers.ExcelUtil;
 import utils.ProjectListener;
 
@@ -19,13 +16,14 @@ import static org.testng.Assert.assertEquals;
 @Listeners({ProjectListener.class})
 public class LoginWithDP extends DataProviderHelper {
 
-    private SauceDemoPage index;
+    private SauceDemoPage index = new SauceDemoPage();
     String folderPath = "test-data-files/";
     String filePath=null;
     String sheetName=null;
 
+    // region DATA PROVIDERS
 
-    @DataProvider(name="data set from array")
+    @DataProvider(name="array")
     public Object[][] dataSet1 (){
         return new Object[][]
                 {
@@ -36,24 +34,26 @@ public class LoginWithDP extends DataProviderHelper {
                 };
     }
 
-    @DataProvider(name="data set from an Excel file")
+    @DataProvider(name="excel")
     public Object[][] dataSet2 () throws IOException {
 
         filePath = "UsersDataExcel.xlsx";
         sheetName = "Sheet1";
-        ExcelUtil excel = new ExcelUtil(folderPath + filePath, sheetName);
+        ExcelUtil excel = new ExcelUtil(folderPath + filePath, sheetName); // instantiate excel file
 
+        // Counting rows and cols
         int rows = excel.getRowCount();
         int cols = excel.getColCount();
 
-        Object data[][] = new Object[rows-1][cols]; // We pass -1 because we don't want to count the title
+        //Instantiate data object subject to excel
+        Object data[][] = new Object[rows-1][cols]; // We create an object that's going to be modified by the helper, passing -1 because we don't want to count the title
 
         excelGetData(excel,filePath, data,rows,cols);
 
         return data;
     }
 
-    @DataProvider(name="data set from a CSV/TXT file")
+    @DataProvider(name="csv")
     public Iterator<Object[]> dataset3 () throws IOException {
 
         filePath = folderPath + "DataSetUsers.txt"; // Specify the path to your CSV-like file
@@ -65,13 +65,28 @@ public class LoginWithDP extends DataProviderHelper {
 
     }
 
-    @BeforeClass(groups = {"Regression"})
-    public void beforeClass() {
+    //endregion
 
-        index = new SauceDemoPage();
+    @BeforeSuite
+    public void setup() {
+
+        // add code to run before suite
     }
 
-    @Test(description = "Trying a data set from an object array", dataProvider = "data set from array", priority = 100, groups = {"Regression", "Smoke"})
+    @BeforeClass
+    public void beforeClass() {
+
+        // add code to run before class
+    }
+
+    @BeforeTest
+    public void beforeTest(){
+        // add code to run before tests
+    }
+
+    // region TESTS
+
+    @Test(description = "Trying to read data from an array object", dataProvider = "array", priority = 100, groups = {"Regression", "Smoke"})
     public void readFromArray (String username, String pwd) throws IOException {
 
         // region ARRANGE
@@ -95,7 +110,7 @@ public class LoginWithDP extends DataProviderHelper {
 
     }
 
-    @Test(description = "Trying a data set from an Excel file", dataProvider = "data set from an Excel file", priority = 300, groups = {"Regression", "Smoke"})
+    @Test(description = "Trying to read data from an Excel file", dataProvider = "excel", priority = 300, groups = {"Regression", "Smoke"})
     public void readFromFileExcel (String username, String pwd) throws IOException {
 
         // region ARRANGE
@@ -119,7 +134,7 @@ public class LoginWithDP extends DataProviderHelper {
 
     }
 
-    @Test(description = "Trying a data set from a CSV/TXT file", dataProvider = "data set from a CSV/TXT file", priority = 400, groups = {"Regression", "Smoke"})
+    @Test(description = "Trying to read data from a CSV-like file", dataProvider = "csv", priority = 400, groups = {"Regression", "Smoke"})
     public void readFromFileCSVLike (String username, String pwd) throws IOException {
 
         // region ARRANGE
@@ -142,4 +157,6 @@ public class LoginWithDP extends DataProviderHelper {
         // endregion
 
     }
+
+    // endregion
 }

@@ -11,7 +11,9 @@ public class DataProviderHelper extends LoggerHelper {
 
     public void csvGetData(String filePath, List<Object[]> testData) throws IOException {
 
-        if ((filePath.substring(filePath.lastIndexOf(".") + 1).equals("csv")) || (filePath.substring(filePath.lastIndexOf(".") + 1).equals("txt"))) {
+        String extension = filePath.substring(filePath.lastIndexOf(".") + 1);
+
+        if ( (extension.equals("csv")) || (extension.equals("txt")) ) {
 
             BufferedReader br = new BufferedReader(new FileReader(filePath));
             String line;
@@ -29,7 +31,9 @@ public class DataProviderHelper extends LoggerHelper {
 
     public void excelGetData(ExcelUtil excel, String filePath, Object[][] data, int rows, int cols) throws IOException {
 
-        if ((filePath.substring(filePath.lastIndexOf(".") + 1).equals("xlsx")) || (filePath.substring(filePath.lastIndexOf(".") + 1).equals("xls"))) {
+        String extension = filePath.substring(filePath.lastIndexOf(".") + 1);
+
+        if ( (extension.equals("xlsx")) || (extension.equals("xls")) ){
 
             for (int i=1;i<rows;i++) { // We start with 1 because 0 is the title
                 for (int j = 0; j < cols; j++) {

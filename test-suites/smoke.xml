@@ -12,6 +12,7 @@
         </groups>
         <classes>
             <class name= "FrontEnd.LoadContactUsForm"/>
+            <class name= "FrontEnd.LoginWithDP"/>
 
         </classes>
     </test>
