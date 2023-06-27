@@ -1,6 +1,6 @@
 package WriteReadExamples;
 
-import helpers.CSVOrExcelWriterHelper;
+import helpers.CSVOrExcelHelper;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import utils.ProjectListener;
@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @Listeners({ProjectListener.class})
-public class WriteACSVOrExcelFile extends CSVOrExcelWriterHelper {
+public class WriteACSVOrExcelFile extends CSVOrExcelHelper {
 
     @Test(description = "Write to a CSV or Excel file")
     public void writeToCSVOrExcel() {

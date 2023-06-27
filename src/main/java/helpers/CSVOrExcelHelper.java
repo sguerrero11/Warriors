@@ -6,12 +6,39 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.List;
 
-public class CSVOrExcelWriterHelper extends LoggerHelper {
+public class CSVOrExcelHelper extends LoggerHelper {
+
+    public void readCSVFile(File file) {
+        logInfo("Reading file: " + file);
+        BufferedReader reader = null;
+        String line = "";
+        try {
+            reader = new BufferedReader(new FileReader(file));
+            while ((line = reader.readLine()) != null){
+                String[] row = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)"); // use this if values already contain commas, otherwise just (",")
+
+                for (String index : row){
+                    System.out.printf("%-30s",index);
+                }
+                System.out.println();
+            }
+        }
+        catch(Exception e){
+//            e.printStackTrace();
+            logError("File not found.");
+        }
+        finally{
+            try{
+                reader.close();
+            } catch(IOException e){
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+    }
 
     // Method to write data to a CSV file
     public static void writeDataToCSV(String filePath, List<String[]> data) throws IOException {

@@ -1,4 +1,4 @@
-package FrontEnd;
+package FrontEnd.SauceDemo;
 
 import designpattern.pageObjects.SauceDemoPage;
 import helpers.DataProviderHelper;

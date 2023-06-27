@@ -2,12 +2,10 @@ package utils;
 
 
 import designpattern.pom.BasePage;
-import helpers.BrowserDriver;
+import helpers.BrowserDriverHelper;
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;
 import org.testng.*;
-
-import static helpers.LoggerHelper.*;
 
 public class ProjectListener extends BasePage implements ITestListener {
 
@@ -87,7 +85,7 @@ public class ProjectListener extends BasePage implements ITestListener {
         //context.setAttribute("WebDriver", this.driver);
 
         // Selenium Configuration
-        BrowserDriver.loadDriver();
+        BrowserDriverHelper.loadDriver();
     }
 
     @Override
@@ -99,6 +97,6 @@ public class ProjectListener extends BasePage implements ITestListener {
         //getExtentReports().flush();
 
         // Selenium Configuration
-        BrowserDriver.closeBrowser();
+        BrowserDriverHelper.closeBrowser();
     }
 }

@@ -1,4 +1,4 @@
-package FrontEnd;
+package FrontEnd.WebDriverUniversity;
 
 import designpattern.pageObjects.WebDriverUniversityPage;
 import org.testng.annotations.BeforeClass;
@@ -12,15 +12,15 @@ import static org.testng.Assert.assertEquals;
 @Listeners({ProjectListener.class})
 public class LoadContactUsForm {
 
-    private WebDriverUniversityPage index;
+    private WebDriverUniversityPage index = new WebDriverUniversityPage();
 
     @BeforeSuite
     public void beforeClass() {
 
-        index = new WebDriverUniversityPage();
+        // add code to run before class starts
     }
 
-    @Test(enabled=true, description = "Open Contact Us Form", priority = 100, groups = {"Regression"})
+    @Test(enabled=true, description = "Open Contact Us form from WebDriverUniversity and verify if the page loads correctly", priority = 100, groups = {"Regression"})
     public void openContactUs() throws InterruptedException {
 
         // region ARRANGE
@@ -35,7 +35,7 @@ public class LoadContactUsForm {
         // region ASSERT
 
         assertEquals(index.getSubmitButton(), "SUBMIT");
-    //    assertEquals(index.getContactUsFormTitle(), "CONTACT US");
+        assertEquals(index.getContactUsFormTitleText(), "CONTACT US");
         // endregion
     }
 
@@ -47,5 +47,10 @@ public class LoadContactUsForm {
     @Test(description = "Test 3 example", priority = 300, groups = {"Regression"})
     public void testThree () {
         System.out.println("Test 3");
+    }
+
+    @Test(description = "Test 4 example", priority = 400, groups = {"Smoke"})
+    public void testFour () {
+        System.out.println("Test 4");
     }
 }

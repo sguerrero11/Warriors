@@ -15,7 +15,7 @@ import java.util.ArrayList;
 /***
  * Helper class to handle Selenium WebDriver.
  */
-public abstract class BrowserDriver extends LoggerHelper {
+public abstract class BrowserDriverHelper extends LoggerHelper {
     private static RemoteWebDriver remoteDriver;
 
     /***

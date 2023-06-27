@@ -11,8 +11,8 @@
             </run>
         </groups>
         <classes>
-            <class name= "FrontEnd.LoadContactUsForm"/>
-            <class name= "FrontEnd.LoginWithDP"/>
+            <class name= "FrontEnd.WebDriverUniversity.LoadContactUsForm"/>
+            <class name= "FrontEnd.SauceDemo.LoginWithDP"/>
 
         </classes>
     </test>

@@ -18,6 +18,15 @@ public abstract class LoggerHelper {
         _logger.warn(message);
     }
 
+    /**
+     *
+     * @param message [String]
+     */
+    public static void logTrace(String message) {
+        _logger.trace(message);
+    }
+
+
     /***
      * Write an error message in stdout console.
      * @param message [String]

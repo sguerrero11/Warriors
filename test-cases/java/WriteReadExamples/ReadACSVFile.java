@@ -1,15 +1,15 @@
 package WriteReadExamples;
 
-import helpers.CSVFormatReaderHelper;
+import helpers.CSVOrExcelHelper;
+import helpers.LoggerHelper;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import utils.ProjectListener;
 
 import java.io.File;
-import java.io.IOException;
 
 @Listeners({ProjectListener.class})
-public class ReadACSVFile extends CSVFormatReaderHelper {
+public class ReadACSVFile extends CSVOrExcelHelper {
 
     String folderPath = "test-data-files/";
     File file = new File(folderPath + "CSVRandomFile.csv"); // Define CSV file to be read
