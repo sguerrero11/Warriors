@@ -1,6 +1,6 @@
 package helpers;
 
-import helpers.LoggerHelper;
+
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -13,10 +13,12 @@ public class ExcelUtil extends LoggerHelper {
     static XSSFSheet sheet;
     static Row row;
     static Cell cell;
+    public String filePath;
 
 
     public ExcelUtil(String excelPath, String sheetName) {
 
+        filePath = excelPath;
         try {
 
             workbook = new XSSFWorkbook(projectPath + "/" + excelPath);
@@ -29,6 +31,10 @@ public class ExcelUtil extends LoggerHelper {
             logError(e.getCause());
             e.printStackTrace();
         }
+    }
+
+    public void readingFileMessage(){
+        logInfo("Reading file: " + filePath );
     }
 
     public static int getRowCount() {

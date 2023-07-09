@@ -14,10 +14,9 @@ public class LoadContactUsForm {
 
     private WebDriverUniversityPage index = new WebDriverUniversityPage();
 
-    @BeforeSuite
-    public void beforeClass() {
+    @BeforeClass (description= "Code to run before class starts", groups = {"Regression"})
+    public void setup() {
 
-        // add code to run before class starts
     }
 
     @Test(enabled=true, description = "Open Contact Us form from WebDriverUniversity and verify if the page loads correctly", priority = 100, groups = {"Regression"})
@@ -53,4 +52,16 @@ public class LoadContactUsForm {
     public void testFour () {
         System.out.println("Test 4");
     }
+
+    @Test(description = "Test fluent wait", priority = 500, groups = {"Smoke"})
+    public void testFluentWait () throws InterruptedException {
+        index.load();
+        index.contactUsTitleClick();
+
+        index.fillContactForm();
+
+
+
+    }
+
 }

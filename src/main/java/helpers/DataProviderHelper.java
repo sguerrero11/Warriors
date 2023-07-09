@@ -13,7 +13,7 @@ public class DataProviderHelper extends LoggerHelper {
 
         String extension = filePath.substring(filePath.lastIndexOf(".") + 1);
 
-        if ( (extension.equals("csv")) || (extension.equals("txt")) ) {
+        if ((extension.equals("csv")) || (extension.equals("txt"))) {
 
             BufferedReader br = new BufferedReader(new FileReader(filePath));
             String line;
@@ -21,10 +21,7 @@ public class DataProviderHelper extends LoggerHelper {
                 String[] data = line.split(",");
                 testData.add(data);
             }
-        }
-
-        else
-        {
+        } else {
             logError("You need to pass a CSV or CSV-like (e.g. txt) file");
         }
     }
@@ -33,21 +30,20 @@ public class DataProviderHelper extends LoggerHelper {
 
         String extension = filePath.substring(filePath.lastIndexOf(".") + 1);
 
-        if ( (extension.equals("xlsx")) || (extension.equals("xls")) ){
+        if ((extension.equals("xlsx")) || (extension.equals("xls"))) {
 
-            for (int i=1;i<rows;i++) { // We start with 1 because 0 is the title
+            for (int i = 1; i < rows; i++) { // We start with 1 because 0 is the title
                 for (int j = 0; j < cols; j++) {
 
                     String cellData = excel.getCellData(i, j);
-                    data[i-1][j]= cellData;
+                    data[i - 1][j] = cellData;
                 }
             }
         }
-
-          else
-        {
+        else {
             logError("You need to pass an Excel file");
         }
 
     }
+
 }

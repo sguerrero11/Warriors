@@ -11,7 +11,10 @@ public class WebDriverUniversityPage extends BasePage implements DefaultPage {
     final By contactUsTitle = By.xpath("//h1[text()='CONTACT US']"); // text() es igual a .
     final By submitButton = By.xpath("//*[@type='submit']");
     final By contactUsFormTitle = By.xpath("//*[@name='contactme']"); // same as "//*[@name=\"contactme\"]"
-
+    final By fieldFirstName = By.xpath("//*[@name='first_name']");
+    final By fieldLastName = By.xpath("//*[@name='last_name']");
+    final By fieldEmail = By.xpath("//*[@name='email']");
+    final By fieldMessage = By.xpath("//*[@name='message']");
 
 
     // endregion
@@ -38,12 +41,12 @@ public class WebDriverUniversityPage extends BasePage implements DefaultPage {
 
     // region METHODS
 
-    public void contactUsTitleClick() throws  InterruptedException{
+    public void contactUsTitleClick() throws InterruptedException {
         click(contactUsTitle);
+        switchToTabWithTitle("Contact Us");
     }
 
     public String getSubmitButton() {
-        switchToTabWithTitle("Contact Us");
         waitForElementVisible(submitButton);
         return getValue(submitButton);
     }
@@ -53,8 +56,19 @@ public class WebDriverUniversityPage extends BasePage implements DefaultPage {
         return getText(contactUsFormTitle);
     }
 
-    public void changeToControlledTab (){
+    public void changeToControlledTab() {
 
+    }
+
+    public void fillContactForm() {
+        sendKeys("John", fieldFirstName);
+        waitUntilFieldIsPopulated(fieldFirstName);
+        sendKeys("Doe", fieldLastName);
+        waitUntilFieldIsPopulated(fieldLastName);
+        sendKeys("johndoe@gmail.com", fieldEmail);
+        waitUntilFieldIsPopulated(fieldEmail);
+        sendKeys("Hey man", fieldMessage);
+        waitUntilFieldIsPopulated(fieldMessage);
     }
 
     // endregion

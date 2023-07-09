@@ -1,13 +1,12 @@
 package utils;
 
-
-import designpattern.pom.BasePage;
 import helpers.BrowserDriverHelper;
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;
+import helpers.LoggerHelper;
 import org.testng.*;
 
-public class ProjectListener extends BasePage implements ITestListener {
+public class ProjectListener extends LoggerHelper implements ITestListener {
 
     // private final Logger log = LoggerFactory.getLogger(projectListener.class);
 

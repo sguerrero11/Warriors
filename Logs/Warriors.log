@@ -1,17 +1,17 @@
-Jun 27 2023;00:38:54 6461 [main] INFO  org.testng.internal.Utils -- [TestNG] Running:
+Jul 09 2023;03:07:31 2279 [main] INFO  org.testng.internal.Utils -- [TestNG] Running:
   C:\Users\740722\AppData\Local\JetBrains\IdeaIC2020.1\temp-testng-customsuite.xml
 
-Jun 27 2023;00:38:55 6700 [main] INFO  helpers.LoggerHelper -- Starting suite
-Jun 27 2023;00:38:55 6701 [main] INFO  helpers.LoggerHelper -- I am in onStart method from suite entitled Warriors
-Jun 27 2023;00:38:55 6701 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-Jun 27 2023;00:38:56 8038 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Using chromedriver 111.0.5563.64 (resolved driver for Chrome 111)
-Jun 27 2023;00:38:56 8175 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.chrome.driver as C:\Users\740722\.cache\selenium\chromedriver\win32\111.0.5563.64\chromedriver.exe
-Jun 27 2023;00:38:56 8178 [main] INFO  helpers.LoggerHelper -- [BrowserDriver/loadChromeDriver] Connecting to: http://localhost:4444/wd/hub
-Jun 27 2023;00:39:04 15772 [main] INFO  helpers.LoggerHelper -- @Test: pdfReader
-Jun 27 2023;00:39:04 15773 [main] INFO  helpers.LoggerHelper -- Description: Read a PDF file
-Jun 27 2023;00:39:04 15773 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Jun 27 2023;00:39:07 19421 [main] INFO  helpers.LoggerHelper -- @Test: pdfReader has PASSED
-Jun 27 2023;00:39:07 19421 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Jun 27 2023;00:39:07 19427 [main] INFO  helpers.LoggerHelper -- Finishing suite
-Jun 27 2023;00:39:07 19429 [main] INFO  helpers.LoggerHelper -- I am in onFinish method from suite entitled Warriors
-Jun 27 2023;00:39:07 19430 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+Jul 09 2023;03:07:31 2350 [main] INFO  helpers.LoggerHelper -- Starting suite
+Jul 09 2023;03:07:31 2351 [main] INFO  helpers.LoggerHelper -- I am in onStart method from suite entitled Warriors
+Jul 09 2023;03:07:31 2352 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+Jul 09 2023;03:07:32 3233 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Using chromedriver 113.0.5672.63 (resolved driver for Chrome 113)
+Jul 09 2023;03:07:32 3322 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.chrome.driver as C:\Users\740722\.cache\selenium\chromedriver\win32\113.0.5672.63\chromedriver.exe
+Jul 09 2023;03:07:32 3324 [main] INFO  helpers.LoggerHelper -- [BrowserDriver/loadChromeDriver] Connecting to: http://localhost:4444/wd/hub
+Jul 09 2023;03:07:35 6252 [main] INFO  helpers.LoggerHelper -- @Test: testingRead
+Jul 09 2023;03:07:35 6252 [main] INFO  helpers.LoggerHelper -- Description: 
+Jul 09 2023;03:07:35 6252 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Jul 09 2023;03:07:35 6277 [main] INFO  helpers.LoggerHelper -- @Test: testingRead has FAILED
+Jul 09 2023;03:07:35 6277 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Jul 09 2023;03:07:35 6282 [main] INFO  helpers.LoggerHelper -- Finishing suite
+Jul 09 2023;03:07:35 6283 [main] INFO  helpers.LoggerHelper -- I am in onFinish method from suite entitled Warriors
+Jul 09 2023;03:07:35 6284 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #

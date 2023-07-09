@@ -50,7 +50,7 @@ public class RequestAllVerbs {
 
 
         bodyApiClients.put("clientName", faker.name().firstName());
-        bodyApiClients.put("clientEmail", faker.name().firstName()+"@" + faker.animal().name() + ".com" );
+        bodyApiClients.put("clientEmail", faker.internet().emailAddress());
 
         Response response = given()
                 .body(bodyApiClients.toJSONString())

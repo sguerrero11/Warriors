@@ -18,24 +18,24 @@ public class LoginWithDP extends DataProviderHelper {
 
     private SauceDemoPage index = new SauceDemoPage();
     String folderPath = "test-data-files/";
-    String filePath=null;
-    String sheetName=null;
+    String filePath = null;
+    String sheetName = null;
 
     // region DATA PROVIDERS
 
-    @DataProvider(name="array")
-    public Object[][] dataSet1 (){
+    @DataProvider(name = "array")
+    public Object[][] dataSet1() {
         return new Object[][]
                 {
-                        {"standard_user","secret_sauce"},
-                        {"locked_out_user","secret_sauce"},
-                        {"problem_user","secret_sauce"},
-                        {"performance_glitch_user","secret_sauce"}
+                        {"standard_user", "secret_sauce"},
+                        {"locked_out_user", "secret_sauce"},
+                        {"problem_user", "secret_sauce"},
+                        {"performance_glitch_user", "secret_sauce"}
                 };
     }
 
-    @DataProvider(name="excel")
-    public Object[][] dataSet2 () throws IOException {
+    @DataProvider(name = "excel")
+    public Object[][] dataSet2() throws IOException {
 
         filePath = "UsersDataExcel.xlsx";
         sheetName = "Sheet1";
@@ -46,20 +46,20 @@ public class LoginWithDP extends DataProviderHelper {
         int cols = excel.getColCount();
 
         //Instantiate data object subject to excel
-        Object data[][] = new Object[rows-1][cols]; // We create an object that's going to be modified by the helper, passing -1 because we don't want to count the title
+        Object data[][] = new Object[rows - 1][cols]; // We create an object that's going to be modified by the helper, passing -1 because we don't want to count the title
 
-        excelGetData(excel,filePath, data,rows,cols);
+        excelGetData(excel, filePath, data, rows, cols);
 
         return data;
     }
 
-    @DataProvider(name="csv")
-    public Iterator<Object[]> dataset3 () throws IOException {
+    @DataProvider(name = "csv")
+    public Iterator<Object[]> dataset3() throws IOException {
 
         filePath = folderPath + "DataSetUsers.txt"; // Specify the path to your CSV-like file
         List<Object[]> testData = new ArrayList<>(); // We create a list that's going to be modified by the helper
 
-        csvGetData(filePath,testData);
+        csvGetData(filePath, testData);
 
         return testData.iterator();
 
@@ -67,6 +67,7 @@ public class LoginWithDP extends DataProviderHelper {
 
     //endregion
 
+    // region BEFORE ANNOTATIONS
     @BeforeSuite
     public void setup() {
 
@@ -80,14 +81,16 @@ public class LoginWithDP extends DataProviderHelper {
     }
 
     @BeforeTest
-    public void beforeTest(){
+    public void beforeTest() {
         // add code to run before tests
     }
+
+    // endregion
 
     // region TESTS
 
     @Test(description = "Trying to read data from an array object", dataProvider = "array", priority = 100, groups = {"Regression", "Smoke"})
-    public void readFromArray (String username, String pwd) throws IOException {
+    public void readFromArray(String username, String pwd) throws IOException {
 
         // region ARRANGE
 
@@ -111,7 +114,7 @@ public class LoginWithDP extends DataProviderHelper {
     }
 
     @Test(description = "Trying to read data from an Excel file", dataProvider = "excel", priority = 300, groups = {"Regression", "Smoke"})
-    public void readFromFileExcel (String username, String pwd) throws IOException {
+    public void readFromFileExcel(String username, String pwd) throws IOException {
 
         // region ARRANGE
 
@@ -135,7 +138,7 @@ public class LoginWithDP extends DataProviderHelper {
     }
 
     @Test(description = "Trying to read data from a CSV-like file", dataProvider = "csv", priority = 400, groups = {"Regression", "Smoke"})
-    public void readFromFileCSVLike (String username, String pwd) throws IOException {
+    public void readFromFileCSVLike(String username, String pwd) throws IOException {
 
         // region ARRANGE
 
