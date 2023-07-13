@@ -1,16 +1,17 @@
 package FrontEnd.WebDriverUniversity;
 
 import designpattern.pageObjects.WebDriverUniversityPage;
+import helpers.LoggerHelper;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import utils.ProjectListener;
 
+import static helpers.BrowserDriverHelper.remoteDriver;
 import static org.testng.Assert.assertEquals;
 
 @Listeners({ProjectListener.class})
-public class LoadContactUsForm {
+public class LoadContactUsForm extends LoggerHelper {
 
     private WebDriverUniversityPage index;
 
@@ -36,6 +37,7 @@ public class LoadContactUsForm {
 
         assertEquals(index.getSubmitButton(), "SUBMIT");
         assertEquals(index.getContactUsFormTitleText(), "CONTACT US");
+
         // endregion
     }
 

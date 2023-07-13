@@ -1,40 +1,17 @@
-Jul 12 2023;18:10:35 2382 [main] INFO  org.testng.internal.Utils -- [TestNG] Running:
+Jul 13 2023;04:01:20 2379 [main] INFO  org.testng.internal.Utils -- [TestNG] Running:
   C:\Users\740722\AppData\Local\JetBrains\IdeaIC2020.1\temp-testng-customsuite.xml
 
-Jul 12 2023;18:10:35 2460 [main] INFO  helpers.LoggerHelper -- Starting suite
-Jul 12 2023;18:10:35 2462 [main] INFO  helpers.LoggerHelper -- I am in onStart method from suite entitled Warriors
-Jul 12 2023;18:10:35 2462 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-Jul 12 2023;18:10:35 3026 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Using chromedriver 113.0.5672.63 (resolved driver for Chrome 113)
-Jul 12 2023;18:10:35 3085 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.chrome.driver as C:\Users\740722\.cache\selenium\chromedriver\win32\113.0.5672.63\chromedriver.exe
-Jul 12 2023;18:10:35 3087 [main] INFO  helpers.LoggerHelper -- [BrowserDriver/loadChromeDriver] Connecting to: http://localhost:4444/wd/hub
-Jul 12 2023;18:10:38 6050 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray
-Jul 12 2023;18:10:38 6050 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an array object
-Jul 12 2023;18:10:38 6050 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Jul 12 2023;18:10:40 7445 [main] INFO  helpers.LoggerHelper -- Testing user: standard_user
-Jul 12 2023;18:10:40 7704 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
-Jul 12 2023;18:10:41 8323 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray has PASSED
-Jul 12 2023;18:10:41 8323 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Jul 12 2023;18:10:41 8327 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray
-Jul 12 2023;18:10:41 8328 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an array object
-Jul 12 2023;18:10:41 8328 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Jul 12 2023;18:10:41 8841 [main] INFO  helpers.LoggerHelper -- Testing user: locked_out_user
-Jul 12 2023;18:10:41 9051 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
-Jul 12 2023;18:10:42 9405 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray has PASSED
-Jul 12 2023;18:10:42 9406 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Jul 12 2023;18:10:42 9408 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray
-Jul 12 2023;18:10:42 9409 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an array object
-Jul 12 2023;18:10:42 9409 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Jul 12 2023;18:10:42 9799 [main] INFO  helpers.LoggerHelper -- Testing user: problem_user
-Jul 12 2023;18:10:42 10019 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
-Jul 12 2023;18:10:43 10409 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray has PASSED
-Jul 12 2023;18:10:43 10409 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Jul 12 2023;18:10:43 10412 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray
-Jul 12 2023;18:10:43 10412 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an array object
-Jul 12 2023;18:10:43 10412 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Jul 12 2023;18:10:43 10805 [main] INFO  helpers.LoggerHelper -- Testing user: performance_glitch_user
-Jul 12 2023;18:10:43 11016 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
-Jul 12 2023;18:10:49 16434 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray has PASSED
-Jul 12 2023;18:10:49 16435 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Jul 12 2023;18:10:49 16441 [main] INFO  helpers.LoggerHelper -- Finishing suite
-Jul 12 2023;18:10:49 16442 [main] INFO  helpers.LoggerHelper -- I am in onFinish method from suite entitled Warriors
-Jul 12 2023;18:10:49 16442 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+Jul 13 2023;04:01:20 2431 [main] INFO  helpers.LoggerHelper -- Starting suite
+Jul 13 2023;04:01:20 2432 [main] INFO  helpers.LoggerHelper -- I am in onStart method from suite entitled Warriors
+Jul 13 2023;04:01:20 2432 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+Jul 13 2023;04:01:20 2964 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Using chromedriver 113.0.5672.63 (resolved driver for Chrome 113)
+Jul 13 2023;04:01:20 3007 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.chrome.driver as C:\Users\740722\.cache\selenium\chromedriver\win32\113.0.5672.63\chromedriver.exe
+Jul 13 2023;04:01:20 3008 [main] INFO  helpers.LoggerHelper -- [BrowserDriver/loadChromeDriver] Connecting to: http://localhost:4444/wd/hub
+Jul 13 2023;04:01:23 5667 [main] INFO  helpers.LoggerHelper -- @Test: openContactUs
+Jul 13 2023;04:01:23 5668 [main] INFO  helpers.LoggerHelper -- Description: Open Contact Us form from WebDriverUniversity and verify if the page loads correctly
+Jul 13 2023;04:01:23 5668 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Jul 13 2023;04:01:26 8713 [main] INFO  helpers.LoggerHelper -- @Test: openContactUs has PASSED
+Jul 13 2023;04:01:26 8714 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Jul 13 2023;04:01:26 8920 [main] INFO  helpers.LoggerHelper -- Finishing suite
+Jul 13 2023;04:01:26 8921 [main] INFO  helpers.LoggerHelper -- I am in onFinish method from suite entitled Warriors
+Jul 13 2023;04:01:26 8921 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #

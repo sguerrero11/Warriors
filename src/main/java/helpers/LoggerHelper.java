@@ -1,5 +1,11 @@
 package helpers;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -122,6 +128,17 @@ public abstract class LoggerHelper {
             writer.write(formattedStep + "\n");
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public static void takeASS(RemoteWebDriver driver, String fileName) {
+        // Take screenshot and save to a file
+        File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(screenshotFile, new File("Screenshots/" + fileName + "_screenshot.png"));
+            System.out.println("Screenshot saved successfully.");
+        } catch (IOException e) {
+            System.out.println("Failed to save screenshot: " + e.getMessage());
         }
     }
 

@@ -13,9 +13,12 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import static helpers.BrowserDriverHelper.remoteDriver;
+
 public class ProjectListener extends LoggerHelper implements ITestListener {
 
-    // private final Logger log = LoggerFactory.getLogger(projectListener.class);
+    // private final Logger log = LoggerFactory.getLogger(ProjectListener.class); // if you don't use extends
+    public String screenshotName;
 
     @Override
     public void onTestStart(ITestResult result) {
@@ -41,17 +44,27 @@ public class ProjectListener extends LoggerHelper implements ITestListener {
 
     @Override
     public void onTestSuccess(ITestResult result) {
+
+        String timestamp = new SimpleDateFormat("MMMM d_ yyyy HH-mm-ss").format(new Date());
+        screenshotName =  timestamp + "_" + result.getName() + "_PASSED";
+
         logInfo("@Test: {}", result.getName() + " has PASSED");
         logSeparator();
         finalizeTest("Test Passed");
+        takeASS(remoteDriver,screenshotName);
 
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
+
+        String timestamp = new SimpleDateFormat("MMMM d_ yyyy HH-mm-ss").format(new Date());
+        screenshotName =  timestamp + "_" + result.getName() + "_FAILED";
+
         logInfo("@Test: {}", result.getName() + " has FAILED");
         logSeparator();
         finalizeTest("Test Failed");
+        takeASS(remoteDriver,screenshotName);
 
         /* TO BE REVIEWED
         //Get driver from BaseTest and assign to local webdriver variable.

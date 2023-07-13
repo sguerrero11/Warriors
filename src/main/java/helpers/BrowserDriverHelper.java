@@ -1,6 +1,7 @@
 package helpers;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.math3.geometry.spherical.twod.Edge;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeOptions;
@@ -16,7 +17,7 @@ import java.util.ArrayList;
  * Helper class to handle Selenium WebDriver.
  */
 public abstract class BrowserDriverHelper extends LoggerHelper {
-    private static RemoteWebDriver remoteDriver;
+    public static RemoteWebDriver remoteDriver;
 
     /***
      * Load the current driver with one of the different available options
@@ -27,11 +28,14 @@ public abstract class BrowserDriverHelper extends LoggerHelper {
         int option = 1; // Change this to switch browser
 
         switch (option) {
-            case 1: loadChromeDriver();
+            case 1:
+                loadChromeDriver();
                 break;
-            case 2: loadFFDriver();
+            case 2:
+                loadFFDriver();
                 break;
-            case 3: loadEdgeDriver();
+            case 3:
+                loadEdgeDriver();
                 break;
         }
 
@@ -42,17 +46,17 @@ public abstract class BrowserDriverHelper extends LoggerHelper {
      * Load and Instantiate Chrome driver to the current one.
      */
     private static void loadChromeDriver() {
+
         try {
+
             ChromeOptions options = new ChromeOptions();
-
             WebDriverManager.chromedriver().setup();
-
 
             String host = "localhost";
             String port = "4444";
             LoggerHelper.logInfo("[BrowserDriver/loadChromeDriver] Connecting to: " + "http://" + host + ":" + port + "/wd/hub");
             setDriver(new RemoteWebDriver(new URL("http://" + host + ":" + port + "/wd/hub"), options));
-        } catch(Exception ex) {
+        } catch (Exception ex) {
             LoggerHelper.logError("[BrowserDriver/loadChromeDriver] Error loading Selenium Driver: " + ex.getMessage());
         }
     }
@@ -62,32 +66,30 @@ public abstract class BrowserDriverHelper extends LoggerHelper {
      */
     private static void loadFFDriver() {
         try {
+
             FirefoxOptions options = new FirefoxOptions();
-
             WebDriverManager.firefoxdriver().setup();
-
 
             String host = "localhost";
             String port = "4444";
             LoggerHelper.logInfo("[BrowserDriver/loadChromeDriver] Connecting to: " + "http://" + host + ":" + port + "/wd/hub");
             setDriver(new RemoteWebDriver(new URL("http://" + host + ":" + port + "/wd/hub"), options));
-        } catch(Exception ex) {
+        } catch (Exception ex) {
             LoggerHelper.logError("[BrowserDriver/loadChromeDriver] Error loading Selenium Driver: " + ex.getMessage());
         }
     }
 
     private static void loadEdgeDriver() {
         try {
+
             EdgeOptions options = new EdgeOptions();
-
             WebDriverManager.edgedriver().setup();
-
 
             String host = "localhost";
             String port = "4444";
             LoggerHelper.logInfo("[BrowserDriver/loadChromeDriver] Connecting to: " + "http://" + host + ":" + port + "/wd/hub");
             setDriver(new RemoteWebDriver(new URL("http://" + host + ":" + port + "/wd/hub"), options));
-        } catch(Exception ex) {
+        } catch (Exception ex) {
             LoggerHelper.logError("[BrowserDriver/loadChromeDriver] Error loading Selenium Driver: " + ex.getMessage());
         }
     }
@@ -96,11 +98,11 @@ public abstract class BrowserDriverHelper extends LoggerHelper {
      * Set new remote driver to the current one.
      * @param newRemoteDriver [RemoteWebDriver]
      */
-    public static void setDriver(RemoteWebDriver newRemoteDriver){
+    public static void setDriver(RemoteWebDriver newRemoteDriver) {
         remoteDriver = newRemoteDriver;
         remoteDriver.setFileDetector(new LocalFileDetector());
         remoteDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        remoteDriver.manage().window().setSize(new Dimension(1300,1024));
+        remoteDriver.manage().window().setSize(new Dimension(1300, 1024));
     }
 
     /***
