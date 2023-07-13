@@ -74,6 +74,13 @@ public class WriteACSVOrExcelFile {
         CSVOrExcelHelper.insertColumnInExcel(folderPath + filePathXLS, sheetName, 1, newDataCol); // this means it will insert the column between column 0 and column 1
     }
 
+    @Test(description = "Add data to a specific cell in Excel file")
+    public void setDataToSpecificCell() {
+
+        CSVOrExcelHelper.insertDataToCellInExcel(folderPath + filePathXLS, sheetName,7,7,"testing");
+    }
+
+
 }
 
 

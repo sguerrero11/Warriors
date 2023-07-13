@@ -6,6 +6,13 @@ import helpers.BrowserDriverHelper;
 import helpers.LoggerHelper;
 import org.testng.*;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class ProjectListener extends LoggerHelper implements ITestListener {
 
     // private final Logger log = LoggerFactory.getLogger(projectListener.class);
@@ -13,9 +20,21 @@ public class ProjectListener extends LoggerHelper implements ITestListener {
     @Override
     public void onTestStart(ITestResult result) {
 
+        currentTestName = result.getMethod().getMethodName();
+        String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String fileName = currentTestName + "_" + timestamp + "_report.txt";
+        String path = "Reports/" + fileName;
+
         logInfo("@Test: {}", result.getName());
         logInfo("Description: {}", result.getMethod().getDescription());
         logSeparator();
+
+        createReport(path);
+        logStep("Test case name: " + result.getName());
+        logStep("Test case description: " + result.getMethod().getDescription());
+        logBreak();
+        logStep("Steps:");
+
         //result.setAttribute("WebDriver", this.driver1);
 
     }
@@ -24,6 +43,7 @@ public class ProjectListener extends LoggerHelper implements ITestListener {
     public void onTestSuccess(ITestResult result) {
         logInfo("@Test: {}", result.getName() + " has PASSED");
         logSeparator();
+        finalizeTest("Test Passed");
 
     }
 
@@ -31,6 +51,7 @@ public class ProjectListener extends LoggerHelper implements ITestListener {
     public void onTestFailure(ITestResult result) {
         logInfo("@Test: {}", result.getName() + " has FAILED");
         logSeparator();
+        finalizeTest("Test Failed");
 
         /* TO BE REVIEWED
         //Get driver from BaseTest and assign to local webdriver variable.
@@ -58,6 +79,7 @@ public class ProjectListener extends LoggerHelper implements ITestListener {
 
         logInfo("@Test: {}", result.getName() + " was SKIPPED");
         logSeparator();
+        finalizeTest("Test Skipped");
 
         //ExtentReports log operation for skipped tests.
         //getTest().log(Status.SKIP, "Test Skipped");
@@ -67,12 +89,14 @@ public class ProjectListener extends LoggerHelper implements ITestListener {
     public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
         logInfo("@Test: {}", result.getName() + " has FAILED but it is within defined success ratio");
         logSeparator();
+        finalizeTest("@Test: {}", result.getName() + " has FAILED but it is within defined success ratio");
     }
 
     @Override
     public void onTestFailedWithTimeout(ITestResult result) {
         logInfo("@Test: {}", result.getName() + " has FAILED due to timeout");
         logSeparator();
+        finalizeTest("@Test: {}", result.getName() + " has FAILED due to timeout");
 
     }
 

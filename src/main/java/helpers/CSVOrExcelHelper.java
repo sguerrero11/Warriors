@@ -275,4 +275,40 @@ public abstract class CSVOrExcelHelper extends LoggerHelper {
             e.printStackTrace();
         }
     }
+
+    public static void insertDataToCellInExcel(String filePath, String sheetName, int rowNum, int colNum, String data) {
+        Row excelRow = null;
+        Cell cell = null;
+
+        try {
+
+            Workbook workbook = new XSSFWorkbook(new FileInputStream(filePath));
+            Sheet sheet = workbook.getSheet(sheetName);
+
+            if (sheet.getRow(rowNum) != null) {
+                excelRow = sheet.getRow(rowNum);
+                cell = excelRow.getCell(colNum);
+            } else {
+                excelRow = sheet.createRow((rowNum));
+                cell = excelRow.createCell(colNum);
+            }
+
+            cell.setCellValue(data);
+
+
+            try (FileOutputStream outputStream = new FileOutputStream(filePath)) {
+                workbook.write(outputStream);  // Write the Workbook to the output stream
+
+                outputStream.close();
+                workbook.close();
+            }
+
+            logInfo("\"" + data + "\"" + " was added to row " + rowNum + " and col " + colNum);
+
+        } catch (Exception e) {
+            logError(e.getMessage());
+            logError(e.getCause());
+            e.printStackTrace();
+        }
+    }
 }

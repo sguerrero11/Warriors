@@ -9,7 +9,7 @@ import utils.ProjectListener;
 import java.io.File;
 
 @Listeners({ProjectListener.class})
-public class ReadACSVFile extends CSVOrExcelHelper {
+public class ReadACSVLikeFile extends CSVOrExcelHelper {
 
     String folderPath = "test-data-files/";
     File file = new File(folderPath + "CSVRandomFile.csv"); // Define CSV file to be read

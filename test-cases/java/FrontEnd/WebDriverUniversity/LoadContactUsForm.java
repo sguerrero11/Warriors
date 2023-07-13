@@ -12,11 +12,12 @@ import static org.testng.Assert.assertEquals;
 @Listeners({ProjectListener.class})
 public class LoadContactUsForm {
 
-    private WebDriverUniversityPage index = new WebDriverUniversityPage();
+    private WebDriverUniversityPage index;
 
     @BeforeClass (description= "Code to run before class starts", groups = {"Regression"})
     public void setup() {
 
+        index = new WebDriverUniversityPage();
     }
 
     @Test(enabled=true, description = "Open Contact Us form from WebDriverUniversity and verify if the page loads correctly", priority = 100, groups = {"Regression"})

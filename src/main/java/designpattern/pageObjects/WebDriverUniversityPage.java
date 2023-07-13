@@ -21,6 +21,8 @@ public class WebDriverUniversityPage extends BasePage implements DefaultPage {
 
     // region LOAD
 
+    @SafeVarargs // is like @SuppressWarnings("what you want to suppress" e.g. "deprecation", "unchecked", "unused", etc)
+
     @Override
     public final <T> String getUrl(T... values) {
 

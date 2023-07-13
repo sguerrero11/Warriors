@@ -16,10 +16,16 @@ import static org.testng.Assert.assertEquals;
 @Listeners({ProjectListener.class})
 public class LoginWithDP extends DataProviderHelper {
 
+    // region VARIABLES
+
     private SauceDemoPage index = new SauceDemoPage();
+
     String folderPath = "test-data-files/";
     String filePath = null;
     String sheetName = null;
+
+
+    // endregion
 
     // region DATA PROVIDERS
 
@@ -93,6 +99,7 @@ public class LoginWithDP extends DataProviderHelper {
     public void readFromArray(String username, String pwd) throws IOException {
 
         // region ARRANGE
+        List<String> validationList = new ArrayList<>();
 
         // endregion
 
@@ -108,6 +115,19 @@ public class LoginWithDP extends DataProviderHelper {
 
         // region ASSERT
 
+        if (username!="locked_out_user")
+        {
+            assertEquals(index.getTitle(),"Swag Labs");
+            assertEquals(index.getProductsTitle(),"Products");
+            validationList.add("assertEquals(index.getTitle(),\"Swag Labs\")");
+            validationList.add("assertEquals(index.getProductsTitle(),\"Products\")");
+        }
+        else{
+            assertEquals(index.getErrorMessage(),"Epic sadface: Sorry, this user has been locked out.");
+            validationList.add("assertEquals(index.getErrorMessage(),\"Epic sadface: Sorry, this user has been locked out.\")");
+        }
+
+        logAssertion(validationList);
 
         // endregion
 
