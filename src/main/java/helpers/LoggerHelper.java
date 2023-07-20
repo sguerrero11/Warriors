@@ -140,7 +140,7 @@ public abstract class LoggerHelper {
     public static void takeASS(RemoteWebDriver driver, String fileName) {
         // Take screenshot and save to a file
         File screenshotSourceFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        String destinationFile = System.getProperty("user.dir") + File.separator + "Screenshots/" + fileName + "_screenshot.png";
+        String destinationFile = System.getProperty("user.dir") + File.separator + "screenshots/" + fileName + "_screenshot.png";
         try {
             FileUtils.copyFile(screenshotSourceFile, new File(destinationFile));
 //            System.out.println("Screenshot saved successfully.");
@@ -184,7 +184,7 @@ public abstract class LoggerHelper {
 
         // ExtentReports, ExtentSparkReporter
         String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String path = System.getProperty("user.dir") + File.separator + "ReportsForTeam" + File.separator + timestamp + "_team_report.html";
+        String path = System.getProperty("user.dir") + File.separator + "reportsForTeam" + File.separator + timestamp + "_team_report.html";
         ExtentReports extent = new ExtentReports();
         ExtentSparkReporter reporter = new ExtentSparkReporter(path);
 

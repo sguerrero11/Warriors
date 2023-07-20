@@ -8,13 +8,13 @@ public class WebDriverUniversityPage extends BasePage implements DefaultPage {
 
     // region SELECTORS
 
-    final By contactUsTitle = By.xpath("//h1[text()='CONTACT US']"); // text() es igual a .
-    final By submitButton = By.xpath("//*[@type='submit']");
-    final By contactUsFormTitle = By.xpath("//*[@name='contactme']"); // same as "//*[@name=\"contactme\"]"
-    final By fieldFirstName = By.xpath("//*[@name='first_name']");
-    final By fieldLastName = By.xpath("//*[@name='last_name']");
-    final By fieldEmail = By.xpath("//*[@name='email']");
-    final By fieldMessage = By.xpath("//*[@name='message']");
+    private final By contactUsTitle = By.xpath("//h1[text()='CONTACT US']"); // text() es igual a .
+    private final By submitButton = By.xpath("//*[@type='submit']");
+    private final By contactUsFormTitle = By.xpath("//*[@name='contactme']"); // same as "//*[@name=\"contactme\"]"
+    private final By fieldFirstName = By.xpath("//*[@name='first_name']");
+    private final By fieldLastName = By.xpath("//*[@name='last_name']");
+    private final By fieldEmail = By.xpath("//*[@name='email']");
+    private final By fieldMessage = By.xpath("//*[@name='message']");
 
 
     // endregion

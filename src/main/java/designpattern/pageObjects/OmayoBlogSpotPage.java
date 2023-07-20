@@ -8,7 +8,7 @@ public class OmayoBlogSpotPage extends BasePage implements DefaultPage {
 
     // region SELECTORS
 
-    final By uploadFileButton = By.id("uploadfile");
+    private final By uploadFileButton = By.id("uploadfile");
 
 
     // endregion

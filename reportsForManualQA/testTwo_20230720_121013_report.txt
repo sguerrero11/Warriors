@@ -1,0 +1,9 @@
+[July 20, 2023 12:10:13] Test case name: testTwo
+[July 20, 2023 12:10:13] Test case description: Test 2 example
+
+[July 20, 2023 12:10:13] Steps:
+
+[July 20, 2023 12:10:13] Outcome:
+[July 20, 2023 12:10:13] Test Failed. The following error was found: 
+
+java.lang.AssertionError: expected [two] but found [one]

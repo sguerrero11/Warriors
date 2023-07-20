@@ -30,7 +30,7 @@ public class ProjectListener extends LoggerHelper implements ITestListener {
         currentTestName = result.getMethod().getMethodName();
         String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String fileName = currentTestName + "_" + timestamp + "_report.txt";
-        String path = System.getProperty("user.dir") + File.separator + "ReportsForManualQA" + File.separator + fileName; // folder needs to exist
+        String path = System.getProperty("user.dir") + File.separator + "reportsForManualQA" + File.separator + fileName; // folder needs to exist
 
         logInfo("@Test: {}", result.getName());
         logInfo("Description: {}", result.getMethod().getDescription());
@@ -61,7 +61,7 @@ public class ProjectListener extends LoggerHelper implements ITestListener {
         finalizeTest("Test Passed");
         takeASS(remoteDriver,screenshotName);
         test.log(Status.PASS, "Test successfully passed")
-                .addScreenCaptureFromPath(System.getProperty("user.dir") + File.separator + "Screenshots" + File.separator + screenshotName + "_screenshot.png");
+                .addScreenCaptureFromPath(System.getProperty("user.dir") + File.separator + "screenshots" + File.separator + screenshotName + "_screenshot.png");
 
 
     }
@@ -77,8 +77,8 @@ public class ProjectListener extends LoggerHelper implements ITestListener {
         finalizeTest("Test Failed. The following error was found: \n\n" + result.getThrowable());
         takeASS(remoteDriver,screenshotName);
         test.log(Status.FAIL, "Test failed: " + result.getThrowable())
-                .addScreenCaptureFromPath(System.getProperty("user.dir") + File.separator + "Screenshots" + File.separator + screenshotName + "_screenshot.png")
-                .fail(MediaEntityBuilder.createScreenCaptureFromPath(System.getProperty("user.dir") + File.separator + "Screenshots" + File.separator + screenshotName + "_screenshot.png").build());
+                .addScreenCaptureFromPath(System.getProperty("user.dir") + File.separator + "screenshots" + File.separator + screenshotName + "_screenshot.png")
+                .fail(MediaEntityBuilder.createScreenCaptureFromPath(System.getProperty("user.dir") + File.separator + "screenshots" + File.separator + screenshotName + "_screenshot.png").build());
 
     }
 

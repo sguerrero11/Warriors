@@ -8,12 +8,12 @@ public class SauceDemoPage extends BasePage implements DefaultPage {
 
     // region SELECTORS
 
-    final By userField = By.id("user-name");
-    final By pwdField = By.id("password");
-    final By loginButton = By.id("login-button");
-    final By swagLabsLogo = By.className("app_logo");
-    final By productsTitle = By.className("title");
-    final By errorButton = By.xpath("//*[contains(text(),\"sadface\")]");
+    private final By userField = By.id("user-name");
+    private final By pwdField = By.id("password");
+    private final By loginButton = By.id("login-button");
+    private final By swagLabsLogo = By.className("app_logo");
+    private final By productsTitle = By.className("title");
+    private final By errorButton = By.xpath("//*[contains(text(),\"sadface\")]");
 
     // endregion
 

@@ -1,0 +1,9 @@
+[July 20, 2023 12:10:08] Test case name: openContactUs
+[July 20, 2023 12:10:08] Test case description: Open Contact Us form from WebDriverUniversity and verify if the page loads correctly
+
+[July 20, 2023 12:10:08] Steps:
+[July 20, 2023 12:10:10] Navigate to URL: http://webdriveruniversity.com/index.html
+[July 20, 2023 12:10:11] Click on button identified as "By.xpath: //h1[text()='CONTACT US']" (locator)
+
+[July 20, 2023 12:10:12] Outcome:
+[July 20, 2023 12:10:12] Test Passed

@@ -15,7 +15,7 @@ public class LoadContactUsForm extends LoggerHelper {
 
     private WebDriverUniversityPage index;
 
-    @BeforeClass (description= "Code to run before class starts", groups = {"Regression"})
+    @BeforeClass (description= "Code to run before class starts", alwaysRun = true)
     public void setup() {
 
         index = new WebDriverUniversityPage();
@@ -53,7 +53,7 @@ public class LoadContactUsForm extends LoggerHelper {
         System.out.println("Test 3");
     }
 
-    @Test(description = "Test 4 example", priority = 400, groups = {"Smoke"})
+    @Test(description = "Test 4 example", priority = 400, groups = {"Regression", "Skipped", "Smoke"})
     public void testFour () {
         System.out.println("Test 4");
     }

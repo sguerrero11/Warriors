@@ -8,6 +8,7 @@
             <run>
                 <include name="Regression"/>
                 <exclude name="Skipped" />
+                <exclude name="Not.*" />
             </run>
         </groups>
         <classes>
@@ -20,4 +21,6 @@
         <!-- change suite name everywhere to be an exact match
         add all the classes that contain the @test
         add attribute groups to all corresponding tests that need to be included in the suite
+
+        <exclude name="Not.*" /> this is a REGEX = REGULAR EXPRESSION
         -->
