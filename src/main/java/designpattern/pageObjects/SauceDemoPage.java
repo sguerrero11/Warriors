@@ -29,7 +29,6 @@ public class SauceDemoPage extends BasePage implements DefaultPage {
     @Override
     public <T> void load(T... values) {
         visit(getUrl(values));
-        logStep("Navigate to URL: " + getUrl(values));
     }
 
     @Override
@@ -44,18 +43,15 @@ public class SauceDemoPage extends BasePage implements DefaultPage {
     public void userInput(String text){
         waitForElementVisible(userField);
         sendKeys(text,userField);
-        logStep("Fill in USER field (LOCATOR: " + userField + "), Value: " + text);
     }
 
     public void pwdInput(String text){
         waitForElementVisible(pwdField);
         sendKeys(text,pwdField);
-        logStep("Fill in PASSWORD field (LOCATOR: " + pwdField + "), Value: " + text);
     }
 
     public void loginClick(){
         waitForElementVisible(loginButton);
-        logStep("Click on element called: " + getValue(loginButton));
         click(loginButton);
 
     }

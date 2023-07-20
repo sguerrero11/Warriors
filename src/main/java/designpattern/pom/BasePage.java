@@ -12,9 +12,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class BasePage extends LoggerHelper {
 
@@ -36,6 +35,7 @@ public class BasePage extends LoggerHelper {
      ***********************************
      */
     // region GETS
+
     /***
      * Get the plain text of element. (innerHTML)
      * @param element [WebElement] -> Target element
@@ -106,7 +106,7 @@ public class BasePage extends LoggerHelper {
 
         boolean areEqual = true;
         for (WebElement label : labels) {
-            String formattedLabel = label.getText().replaceAll("\\s+"," ");
+            String formattedLabel = label.getText().replaceAll("\\s+", " ");
             areEqual = areEqual && expectedLabels.contains(formattedLabel);
             if (!areEqual)
                 LoggerHelper.logInfo("[BasePage/checkFormLabels]: Expected label doesn't exist in current form: " + formattedLabel);
@@ -138,7 +138,7 @@ public class BasePage extends LoggerHelper {
     }
     // endregion
 
-    public String getCurrentUrl(){
+    public String getCurrentUrl() {
         return BrowserDriverHelper.getDriver().getCurrentUrl();
     }
     // endregion
@@ -149,6 +149,7 @@ public class BasePage extends LoggerHelper {
      ***********************************
      */
     // region ACTIONS
+
     /***
      * Set Text to element.
      * @param inputText [String] -> Value to write.
@@ -156,6 +157,7 @@ public class BasePage extends LoggerHelper {
      */
     public void sendKeys(String inputText, By locator) {
         BrowserDriverHelper.getDriver().findElement(locator).sendKeys(inputText);
+        logStep("Fill in field identified as " + returnAttributeBasedOnExistence(locator) + " with value: " + inputText);
     }
 
     /***
@@ -191,6 +193,7 @@ public class BasePage extends LoggerHelper {
      * @param locator [By] -> The locator of the target element.
      */
     public void click(By locator) {
+        logStep("Click on button identified as " + returnAttributeBasedOnExistence(locator));
         BrowserDriverHelper.getDriver().findElement(locator).click();
     }
 
@@ -326,7 +329,7 @@ public class BasePage extends LoggerHelper {
         //ToDo -> Acá si hay otros resultados falla, ya que solo da click al primero que aparece. Es un primer approach
     }
 
-    public void mouseHover(By locator){
+    public void mouseHover(By locator) {
         WebElement element = BrowserDriverHelper.getDriver().findElement(locator);
         Actions builder = new Actions(BrowserDriverHelper.getDriver());
         builder.moveToElement(element).perform();
@@ -340,9 +343,9 @@ public class BasePage extends LoggerHelper {
      ***********************************
      */
 
-    public boolean isAlertPresent(){
+    public boolean isAlertPresent() {
         boolean foundAlert;
-        var wait = new WebDriverWait(BrowserDriverHelper.getDriver(),Duration.ofSeconds (0)  /*timeout in seconds*/);
+        var wait = new WebDriverWait(BrowserDriverHelper.getDriver(), Duration.ofSeconds(0)  /*timeout in seconds*/);
         try {
             wait.until(ExpectedConditions.alertIsPresent());
             foundAlert = true;
@@ -352,9 +355,9 @@ public class BasePage extends LoggerHelper {
         return foundAlert;
     }
 
-    public String getJavascriptAlertText(){
+    public String getJavascriptAlertText() {
         var alert = BrowserDriverHelper.getDriver().switchTo().alert();
-        String alertMessage= BrowserDriverHelper.getDriver().switchTo().alert().getText();
+        String alertMessage = BrowserDriverHelper.getDriver().switchTo().alert().getText();
         alert.accept();
         return alertMessage;
     }
@@ -367,7 +370,6 @@ public class BasePage extends LoggerHelper {
     public WebElement findElement(By locator) {
         return BrowserDriverHelper.getDriver().findElement(locator);
     }
-
 
 
     /***
@@ -444,10 +446,9 @@ public class BasePage extends LoggerHelper {
                 .until(driver -> {
                     List<WebElement> elements = BrowserDriverHelper.getDriver().findElements(locator);
 //                    return elements.size() == qty; // this line is the same as below
-                    if (elements.size()==qty) {
+                    if (elements.size() == qty) {
                         return true;
-                    }
-                    else {
+                    } else {
                         return false;
                     }
                 });
@@ -487,6 +488,7 @@ public class BasePage extends LoggerHelper {
      */
     public void visit(String url) {
         BrowserDriverHelper.getDriver().get(url);
+        logStep("Navigate to URL: " + url);
     }
 
     /***
@@ -536,7 +538,7 @@ public class BasePage extends LoggerHelper {
     public boolean verifyValueInTable(By colNameLocator, String expectedValue) {
         boolean result = false;
 
-        for (WebElement singleRowEl: findElements (colNameLocator)) {
+        for (WebElement singleRowEl : findElements(colNameLocator)) {
             if (singleRowEl.getText().equals(expectedValue)) {
                 result = true;
                 break;
@@ -556,7 +558,7 @@ public class BasePage extends LoggerHelper {
     public boolean verifyValueInTable(By colNameLocator, String expectedValue, boolean contains) {
         boolean result = false;
 
-        for (WebElement singleRowEl: findElements (colNameLocator)) {
+        for (WebElement singleRowEl : findElements(colNameLocator)) {
             if (contains ? singleRowEl.getText().contains(expectedValue) : singleRowEl.getText().equals(expectedValue)) {
                 result = true;
                 break;
@@ -577,9 +579,9 @@ public class BasePage extends LoggerHelper {
         List<WebElement> btnsToClick = findElements(btnLocator);
         List<WebElement> users = findElements(colNameLocator);
 
-        for (WebElement singleRowEl: users) {
+        for (WebElement singleRowEl : users) {
             if (singleRowEl.getText().equals(targetValue)) {
-                if (!btnsToClick.get(index).isDisplayed()){
+                if (!btnsToClick.get(index).isDisplayed()) {
                     scrollToElement(btnsToClick.get(index));
                 }
 
@@ -600,9 +602,9 @@ public class BasePage extends LoggerHelper {
      */
     public boolean verifyDependencyValue(String conditionValue, String targetValue, By conditionLocator, By targetLocator) {
         int index = 0;
-        List<WebElement> conditionalValues = findElements (targetLocator);
+        List<WebElement> conditionalValues = findElements(targetLocator);
 
-        for (WebElement singleRowEl: findElements (conditionLocator)) {
+        for (WebElement singleRowEl : findElements(conditionLocator)) {
             if (singleRowEl.getText().equals(conditionValue)) {
                 return conditionalValues.get(index).getText().trim().equals(targetValue);
             }
@@ -704,7 +706,7 @@ public class BasePage extends LoggerHelper {
     /***
      * Scroll to Top of the page
      */
-    public void goToTop(){
+    public void goToTop() {
         ((JavascriptExecutor) BrowserDriverHelper.getDriver()).executeScript("window.scrollTo(0, 0);");
     }
 
@@ -720,7 +722,7 @@ public class BasePage extends LoggerHelper {
      * @param locator [By] -> Target
      */
     public void scrollToElement(By locator) throws InterruptedException {
-        Coordinates cor = ((Locatable)findElement(locator)).getCoordinates();
+        Coordinates cor = ((Locatable) findElement(locator)).getCoordinates();
 
         cor.inViewPort();
         Thread.sleep(700);
@@ -731,7 +733,7 @@ public class BasePage extends LoggerHelper {
      * @param element [WebElement] -> Target
      */
     public void scrollToElement(WebElement element) throws InterruptedException {
-        Coordinates cor = ((Locatable)element).getCoordinates();
+        Coordinates cor = ((Locatable) element).getCoordinates();
 
         cor.inViewPort();
         Thread.sleep(700);
@@ -756,7 +758,7 @@ public class BasePage extends LoggerHelper {
         }
     }
 
-    public Boolean exists(By locator){
+    public Boolean exists(By locator) {
         return !BrowserDriverHelper.getDriver().findElements(locator).isEmpty();
     }
 
@@ -778,5 +780,35 @@ public class BasePage extends LoggerHelper {
 
         // Si llegamos hasta aquí, significa que no se encontró ninguna pestaña con la cadena dada en su título
         throw new IllegalArgumentException("No tab with title containing '" + titlePart + "' was found.");
+    }
+
+    public String returnAttributeBasedOnExistence(By locator) {
+        // Find the element
+        WebElement element = BrowserDriverHelper.getDriver().findElement(locator);
+        // Save all the attributes of the element
+        Map<String, String> attributes = new HashMap<>();
+        for (String attribute : element.getAttribute("outerHTML").split("\\s")) {
+            int indexOfEquals = attribute.indexOf('=');
+            if (indexOfEquals != -1) {
+                String attributeName = attribute.substring(0, indexOfEquals);
+                String attributeValue = element.getAttribute(attributeName);
+                attributes.put(attributeName, attributeValue);
+            }
+        }
+        // Analyze the attributes and return a string based on each case
+        String result;
+        if (attributes.containsKey("text")) {
+            result = "\"" + attributes.get("text") + "\" (attribute: text)";
+        } else if (attributes.containsKey("name")) {
+            result = "\"" + attributes.get("name") + "\" (attribute: name)";
+        } else if (attributes.containsKey("data-test")) {
+            result = "\"" + attributes.get("data-test") + "\" (attribute: data-test)";
+        } else if (attributes.containsKey("id")) {
+            result = "\"" + attributes.get("id") + "\" (attribute: id)";
+        } else {
+            result = "\"" + locator + "\" (locator)";
+        }
+        return result;
+
     }
 }

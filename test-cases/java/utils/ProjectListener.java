@@ -1,15 +1,16 @@
 package utils;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.Status;
 import helpers.BrowserDriverHelper;
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;
 import helpers.LoggerHelper;
 import org.testng.*;
 
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -19,6 +20,8 @@ public class ProjectListener extends LoggerHelper implements ITestListener {
 
     // private final Logger log = LoggerFactory.getLogger(ProjectListener.class); // if you don't use extends
     public String screenshotName;
+    ExtentReports extent = LoggerHelper.getReporterObject();
+    ExtentTest test;
 
     @Override
     public void onTestStart(ITestResult result) {
@@ -26,19 +29,23 @@ public class ProjectListener extends LoggerHelper implements ITestListener {
         currentTestName = result.getMethod().getMethodName();
         String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String fileName = currentTestName + "_" + timestamp + "_report.txt";
-        String path = "Reports/" + fileName;
+        String path = System.getProperty("user.dir") + File.separator + "ReportsForManualQA" + File.separator + fileName; // folder needs to exist
 
         logInfo("@Test: {}", result.getName());
         logInfo("Description: {}", result.getMethod().getDescription());
         logSeparator();
 
-        createReport(path);
+        createReportForQAs(path);
         logStep("Test case name: " + result.getName());
         logStep("Test case description: " + result.getMethod().getDescription());
         logBreak();
         logStep("Steps:");
 
         //result.setAttribute("WebDriver", this.driver1);
+
+        //Creating Extent Report
+        test = extent.createTest(currentTestName)
+                .assignAuthor("Santiago Guerrero");
 
     }
 
@@ -52,6 +59,9 @@ public class ProjectListener extends LoggerHelper implements ITestListener {
         logSeparator();
         finalizeTest("Test Passed");
         takeASS(remoteDriver,screenshotName);
+        test.log(Status.PASS, "Test successfully passed")
+                .addScreenCaptureFromPath(System.getProperty("user.dir") + File.separator + "Screenshots" + File.separator + screenshotName + "_screenshot.png");
+
 
     }
 
@@ -63,28 +73,12 @@ public class ProjectListener extends LoggerHelper implements ITestListener {
 
         logInfo("@Test: {}", result.getName() + " has FAILED");
         logSeparator();
-        finalizeTest("Test Failed");
+        finalizeTest("Test Failed. The following error was found: \n\n" + result.getThrowable());
         takeASS(remoteDriver,screenshotName);
+        test.log(Status.FAIL, "Test failed: " + result.getThrowable())
+                .addScreenCaptureFromPath(System.getProperty("user.dir") + File.separator + "Screenshots" + File.separator + screenshotName + "_screenshot.png")
+                .fail(MediaEntityBuilder.createScreenCaptureFromPath(System.getProperty("user.dir") + File.separator + "Screenshots" + File.separator + screenshotName + "_screenshot.png").build());
 
-        /* TO BE REVIEWED
-        //Get driver from BaseTest and assign to local webdriver variable.
-//        Object testClass = result.getInstance();
-        //WebDriver driver = ((BaseTest) testClass).getDriver();
-        //Take base64Screenshot screenshot for extent reports
-//        String base64Screenshot =
-//                "data:image/png;base64," + ((TakesScreenshot) Objects.requireNonNull(driver)).getScreenshotAs(OutputType.BASE64);
-        //ExtentReports log and screenshot operations for failed tests.
-        //getTest().log(Status.FAIL, "Test Failed",
-        //getTest().addScreenCaptureFromBase64String(base64Screenshot).getModel().getMedia().get(0));
-        //Take the screenshot
-        try {
-            takeScreenshot(result.getName());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        logInfo();("# # # # # # # # # # # # # # # # # # # # # # # # # # # ");
-
-         */
     }
 
     @Override
@@ -120,6 +114,7 @@ public class ProjectListener extends LoggerHelper implements ITestListener {
         logSeparatorSpaced();
         //context.setAttribute("WebDriver", this.driver);
 
+
         // Selenium Configuration
         BrowserDriverHelper.loadDriver();
     }
@@ -129,10 +124,13 @@ public class ProjectListener extends LoggerHelper implements ITestListener {
         logInfo("Finishing suite");
         logInfo("I am in onFinish method from suite entitled " + context.getName());
         logSeparatorSpaced();
-        //Do tier down operations for ExtentReports reporting!
-        //getExtentReports().flush();
+
+        //Do tier down operations for ExtentReports reporting
+        test.assignCategory(context.getName());
+        extent.flush();
 
         // Selenium Configuration
         BrowserDriverHelper.closeBrowser();
+
     }
 }

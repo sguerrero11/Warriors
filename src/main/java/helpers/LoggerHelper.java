@@ -1,5 +1,9 @@
 package helpers;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -25,6 +29,8 @@ public abstract class LoggerHelper {
     private final static Logger _logger = LoggerFactory.getLogger(LoggerHelper.class);
     public static BufferedWriter writer;
     public String currentTestName;
+    public static String destinationFile;
+
 
     /***
      * Write a warning message in stdout console.
@@ -82,7 +88,10 @@ public abstract class LoggerHelper {
         logInfo("# # # # # # # # # # # # # # # # # # # # # # # # # # # #");
     }
 
-    public void createReport(String path){
+
+    // region Reports for QAs
+
+    public void createReportForQAs(String path) {
 
         try {
             writer = new BufferedWriter(new FileWriter(new File(path)));
@@ -91,7 +100,7 @@ public abstract class LoggerHelper {
         }
     }
 
-    public void logBreak(){
+    public void logBreak() {
         try {
             writer.write("\n");
         } catch (IOException e) {
@@ -114,7 +123,7 @@ public abstract class LoggerHelper {
     public void logAssertion(List<String> validation) {
         logBreak();
         logStep("Assertions:");
-        for(String s: validation) {
+        for (String s : validation) {
             logStep(s);
         }
 
@@ -133,12 +142,16 @@ public abstract class LoggerHelper {
 
     public static void takeASS(RemoteWebDriver driver, String fileName) {
         // Take screenshot and save to a file
-        File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File screenshotSourceFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        destinationFile = System.getProperty("user.dir") + File.separator + "Screenshots/" + fileName + "_screenshot.png";
         try {
-            FileUtils.copyFile(screenshotFile, new File("Screenshots/" + fileName + "_screenshot.png"));
-            System.out.println("Screenshot saved successfully.");
+            FileUtils.copyFile(screenshotSourceFile, new File(destinationFile));
+//            System.out.println("Screenshot saved successfully.");
+            logInfo("Screenshot saved successfully.");
+
         } catch (IOException e) {
-            System.out.println("Failed to save screenshot: " + e.getMessage());
+//            System.out.println("Failed to save screenshot: " + e.getMessage());
+            logInfo("Failed to save screenshot: " + e.getMessage());
         }
     }
 
@@ -163,5 +176,34 @@ public abstract class LoggerHelper {
             e.printStackTrace();
         }
     }
+
+    // endregion
+
+
+    // region Reports for squad (Extent Reports)
+
+
+    public static ExtentReports getReporterObject() {
+
+        // ExtentReports, ExtentSparkReporter
+        String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String path = System.getProperty("user.dir") + File.separator + "ReportsForTeam" + File.separator + timestamp + "_team_report.html";
+        ExtentReports extent = new ExtentReports();
+        ExtentSparkReporter reporter = new ExtentSparkReporter(path);
+
+
+        reporter.config().setReportName("Automation results");
+        reporter.config().setDocumentTitle("Automation test results");
+        reporter.config().setTheme(Theme.DARK);
+        reporter.config().setEncoding("utf-8");
+
+        extent.attachReporter(reporter);
+        extent.setSystemInfo("Operating System", "Windows 11");
+        return extent;
+
+    }
+
+
+    // endregion
 
 }

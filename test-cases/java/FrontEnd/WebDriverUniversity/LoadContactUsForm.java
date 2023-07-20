@@ -44,6 +44,8 @@ public class LoadContactUsForm extends LoggerHelper {
     @Test(description = "Test 2 example", priority = 200, groups = {"Regression", "Smoke"})
     public void testTwo () {
         System.out.println("Test 2");
+
+        assertEquals("one","two");
     }
 
     @Test(description = "Test 3 example", priority = 300, groups = {"Regression"})
