@@ -20,6 +20,7 @@ public class ProjectListener extends LoggerHelper implements ITestListener {
 
     // private final Logger log = LoggerFactory.getLogger(ProjectListener.class); // if you don't use extends
     public String screenshotName;
+    public String currentTestName;
     ExtentReports extent = LoggerHelper.getReporterObject();
     ExtentTest test;
 

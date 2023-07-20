@@ -28,9 +28,6 @@ public abstract class LoggerHelper {
 
     private final static Logger _logger = LoggerFactory.getLogger(LoggerHelper.class);
     public static BufferedWriter writer;
-    public String currentTestName;
-    public static String destinationFile;
-
 
     /***
      * Write a warning message in stdout console.
@@ -143,7 +140,7 @@ public abstract class LoggerHelper {
     public static void takeASS(RemoteWebDriver driver, String fileName) {
         // Take screenshot and save to a file
         File screenshotSourceFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        destinationFile = System.getProperty("user.dir") + File.separator + "Screenshots/" + fileName + "_screenshot.png";
+        String destinationFile = System.getProperty("user.dir") + File.separator + "Screenshots/" + fileName + "_screenshot.png";
         try {
             FileUtils.copyFile(screenshotSourceFile, new File(destinationFile));
 //            System.out.println("Screenshot saved successfully.");
