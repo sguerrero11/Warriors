@@ -1,7 +1,0 @@
-[July 20, 2023 12:10:13] Test case name: testThree
-[July 20, 2023 12:10:13] Test case description: Test 3 example
-
-[July 20, 2023 12:10:13] Steps:
-
-[July 20, 2023 12:10:13] Outcome:
-[July 20, 2023 12:10:13] Test Passed
