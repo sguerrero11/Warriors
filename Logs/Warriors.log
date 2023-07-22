@@ -1,30 +1,18 @@
-Jul 20 2023;12:09:53 3831 [main] INFO  org.testng.internal.Utils -- [TestNG] Running:
-  C:\Users\740722\IdeaProjects\Warriors\test-suites\regression.xml
+Jul 22 2023;20:11:42 2518 [main] INFO  org.testng.internal.Utils -- [TestNG] Running:
+  C:\Users\740722\AppData\Local\JetBrains\IdeaIC2020.1\temp-testng-customsuite.xml
 
-Jul 20 2023;12:09:54 3934 [main] INFO  helpers.LoggerHelper -- Starting suite
-Jul 20 2023;12:09:54 3936 [main] INFO  helpers.LoggerHelper -- I am in onStart method from suite entitled Regression
-Jul 20 2023;12:09:54 3936 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-Jul 20 2023;12:09:59 9234 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Using chromedriver 113.0.5672.63 (resolved driver for Chrome 113)
-Jul 20 2023;12:09:59 9273 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.chrome.driver as C:\Users\740722\.cache\selenium\chromedriver\win32\113.0.5672.63\chromedriver.exe
-Jul 20 2023;12:09:59 9274 [main] INFO  helpers.LoggerHelper -- [BrowserDriver/loadChromeDriver] Connecting to: http://localhost:4444/wd/hub
-Jul 20 2023;12:10:08 18495 [main] INFO  helpers.LoggerHelper -- @Test: openContactUs
-Jul 20 2023;12:10:08 18495 [main] INFO  helpers.LoggerHelper -- Description: Open Contact Us form from WebDriverUniversity and verify if the page loads correctly
-Jul 20 2023;12:10:08 18496 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Jul 20 2023;12:10:12 22902 [main] INFO  helpers.LoggerHelper -- @Test: openContactUs has PASSED
-Jul 20 2023;12:10:12 22902 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Jul 20 2023;12:10:13 23214 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
-Jul 20 2023;12:10:13 23233 [main] INFO  helpers.LoggerHelper -- @Test: testTwo
-Jul 20 2023;12:10:13 23233 [main] INFO  helpers.LoggerHelper -- Description: Test 2 example
-Jul 20 2023;12:10:13 23233 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Jul 20 2023;12:10:13 23261 [main] INFO  helpers.LoggerHelper -- @Test: testTwo has FAILED
-Jul 20 2023;12:10:13 23262 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Jul 20 2023;12:10:13 23664 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
-Jul 20 2023;12:10:13 23674 [main] INFO  helpers.LoggerHelper -- @Test: testThree
-Jul 20 2023;12:10:13 23674 [main] INFO  helpers.LoggerHelper -- Description: Test 3 example
-Jul 20 2023;12:10:13 23674 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Jul 20 2023;12:10:13 23682 [main] INFO  helpers.LoggerHelper -- @Test: testThree has PASSED
-Jul 20 2023;12:10:13 23682 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Jul 20 2023;12:10:14 24002 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
-Jul 20 2023;12:10:14 24004 [main] INFO  helpers.LoggerHelper -- Finishing suite
-Jul 20 2023;12:10:14 24005 [main] INFO  helpers.LoggerHelper -- I am in onFinish method from suite entitled Regression
-Jul 20 2023;12:10:14 24005 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+Jul 22 2023;20:11:42 2563 [main] INFO  helpers.LoggerHelper -- Starting suite
+Jul 22 2023;20:11:42 2564 [main] INFO  helpers.LoggerHelper -- I am in onStart method from suite entitled Warriors
+Jul 22 2023;20:11:42 2564 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+Jul 22 2023;20:11:43 2992 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Using chromedriver 113.0.5672.63 (resolved driver for Chrome 113)
+Jul 22 2023;20:11:43 3041 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.chrome.driver as C:\Users\740722\.cache\selenium\chromedriver\win32\113.0.5672.63\chromedriver.exe
+Jul 22 2023;20:11:43 3042 [main] INFO  helpers.LoggerHelper -- [BrowserDriver/loadChromeDriver] Connecting to: http://localhost:4444/wd/hub
+Jul 22 2023;20:11:45 5702 [main] INFO  helpers.LoggerHelper -- @Test: checkIfEmailIsPresent
+Jul 22 2023;20:11:45 5702 [main] INFO  helpers.LoggerHelper -- Description: Check if an email is present in the inbox
+Jul 22 2023;20:11:45 5702 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Jul 22 2023;20:11:48 8347 [main] INFO  helpers.LoggerHelper -- @Test: checkIfEmailIsPresent has PASSED
+Jul 22 2023;20:11:48 8347 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Jul 22 2023;20:11:48 8487 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
+Jul 22 2023;20:11:48 8497 [main] INFO  helpers.LoggerHelper -- Finishing suite
+Jul 22 2023;20:11:48 8498 [main] INFO  helpers.LoggerHelper -- I am in onFinish method from suite entitled Warriors
+Jul 22 2023;20:11:48 8498 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #

@@ -22,7 +22,6 @@ public class SauceDemoPage extends BasePage implements DefaultPage {
     @SafeVarargs // is like @SuppressWarnings("what you want to suppress" e.g. "deprecation", "unchecked", "unused", etc)
     @Override
     public final <T> String getUrl(T... values) {
-
         return "http:/www.saucedemo.com";
     }
 

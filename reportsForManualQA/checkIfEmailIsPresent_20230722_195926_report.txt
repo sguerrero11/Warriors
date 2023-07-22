@@ -1,0 +1,9 @@
+[July 22, 2023 19:59:26] Test case name: checkIfEmailIsPresent
+[July 22, 2023 19:59:26] Test case description: Check if an email is present in the inbox
+
+[July 22, 2023 19:59:26] Steps:
+
+[July 22, 2023 19:59:26] Outcome:
+[July 22, 2023 19:59:26] Test Failed. The following error was found: 
+
+java.lang.IllegalStateException: Not provider of jakarta.mail.util.StreamProvider was found

@@ -15,7 +15,8 @@ public class OmayoBlogSpotPage extends BasePage implements DefaultPage {
 
     // region LOAD
 
-    @SafeVarargs // is like @SuppressWarnings("what you want to suppress" e.g. "deprecation", "unchecked", "unused", etc)
+    @SafeVarargs
+    // is like @SuppressWarnings("what you want to suppress" e.g. "deprecation", "unchecked", "unused", etc)
 
     @Override
     public final <T> String getUrl(T... values) {
@@ -37,8 +38,8 @@ public class OmayoBlogSpotPage extends BasePage implements DefaultPage {
 
     // region METHODS
 
-    public void uploadFile(String filePath){
-        sendKeys(filePath,uploadFileButton);
+    public void uploadFile(String filePath) {
+        sendKeys(filePath, uploadFileButton);
     }
 
 

@@ -62,7 +62,6 @@ public class LoadContactUsForm extends LoggerHelper {
     public void testFluentWait () throws InterruptedException {
         index.load();
         index.contactUsTitleClick();
-
         index.fillContactForm();
 
 

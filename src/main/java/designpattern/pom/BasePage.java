@@ -805,10 +805,16 @@ public class BasePage extends LoggerHelper {
             result = "\"" + attributes.get("data-test") + "\" (attribute: data-test)";
         } else if (attributes.containsKey("id")) {
             result = "\"" + attributes.get("id") + "\" (attribute: id)";
-        } else {
+        } else if (attributes.containsKey("data-action")) {
+            result = "\"" + attributes.get("data-action") + "\" (attribute: data-action)";
+        }
+        else {
             result = "\"" + locator + "\" (locator)";
         }
         return result;
+    }
 
+    public void printM(String message){
+        System.out.println(message);
     }
 }
