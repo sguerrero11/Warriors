@@ -21,6 +21,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import static helpers.AssertionsList.assertions;
+
 /***
  * Helper Class to Handle logs in execution time.
  */
@@ -154,6 +156,7 @@ public abstract class LoggerHelper {
 
     public void finalizeTest(String outcome) {
         try {
+            logAssertion(assertions);
             logBreak();
             logStep("Outcome:");
             logStep(outcome);
@@ -165,6 +168,7 @@ public abstract class LoggerHelper {
 
     public void finalizeTest(String outcome, String extendedMessage) {
         try {
+            logAssertion(assertions);
             logBreak();
             logStep("Outcome:");
             logStep(outcome);

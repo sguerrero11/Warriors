@@ -14,6 +14,7 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import static helpers.AssertionsList.assertions;
 import static helpers.BrowserDriverHelper.remoteDriver;
 
 public class ProjectListener extends LoggerHelper implements ITestListener {

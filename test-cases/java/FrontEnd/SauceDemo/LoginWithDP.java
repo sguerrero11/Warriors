@@ -1,6 +1,7 @@
 package FrontEnd.SauceDemo;
 
 import designpattern.pageObjects.SauceDemoPage;
+import helpers.AssertionsList;
 import helpers.DataProviderHelper;
 import org.testng.annotations.*;
 import helpers.ExcelUtil;
@@ -11,7 +12,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import static org.testng.Assert.assertEquals;
 
 @Listeners({ProjectListener.class})
 public class LoginWithDP extends DataProviderHelper {
@@ -23,6 +23,7 @@ public class LoginWithDP extends DataProviderHelper {
     String folderPath = "test-data-files/";
     String filePath = null;
     String sheetName = null;
+    AssertionsList asserts = new AssertionsList();
 
 
     // endregion
@@ -99,7 +100,7 @@ public class LoginWithDP extends DataProviderHelper {
     public void readFromArray(String username, String pwd) throws IOException {
 
         // region ARRANGE
-        List<String> validationList = new ArrayList<>();
+
 
         // endregion
 
@@ -117,17 +118,12 @@ public class LoginWithDP extends DataProviderHelper {
 
         if (username!="locked_out_user")
         {
-            assertEquals(index.getTitle(),"Swag Labs");
-            assertEquals(index.getProductsTitle(),"Products");
-            validationList.add("assertEquals(index.getTitle(),\"Swag Labs\")");
-            validationList.add("assertEquals(index.getProductsTitle(),\"Products\")");
+            asserts.equals(index.getTitle(),"Swag Labs")
+                    .equals(index.getProductsTitle(),"Products");
         }
         else{
-            assertEquals(index.getErrorMessage(),"Epic sadface: Sorry, this user has been locked out.");
-            validationList.add("assertEquals(index.getErrorMessage(),\"Epic sadface: Sorry, this user has been locked out.\")");
+            asserts.equals(index.getErrorMessage(),"Epic sadface: Sorry, this user has been locked out.");
         }
-
-        logAssertion(validationList);
 
         // endregion
 

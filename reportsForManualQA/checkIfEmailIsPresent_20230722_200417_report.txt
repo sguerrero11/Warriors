@@ -1,9 +1,0 @@
-[July 22, 2023 20:04:17] Test case name: checkIfEmailIsPresent
-[July 22, 2023 20:04:17] Test case description: Check if an email is present in the inbox
-
-[July 22, 2023 20:04:17] Steps:
-
-[July 22, 2023 20:04:17] Outcome:
-[July 22, 2023 20:04:17] Test Failed. The following error was found: 
-
-java.lang.NoSuchMethodError: com.sun.mail.util.LineInputStream.<init>(Ljava/io/InputStream;Z)V

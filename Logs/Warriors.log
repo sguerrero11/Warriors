@@ -1,18 +1,15 @@
-Jul 22 2023;20:11:42 2518 [main] INFO  org.testng.internal.Utils -- [TestNG] Running:
-  C:\Users\740722\AppData\Local\JetBrains\IdeaIC2020.1\temp-testng-customsuite.xml
-
-Jul 22 2023;20:11:42 2563 [main] INFO  helpers.LoggerHelper -- Starting suite
-Jul 22 2023;20:11:42 2564 [main] INFO  helpers.LoggerHelper -- I am in onStart method from suite entitled Warriors
-Jul 22 2023;20:11:42 2564 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-Jul 22 2023;20:11:43 2992 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Using chromedriver 113.0.5672.63 (resolved driver for Chrome 113)
-Jul 22 2023;20:11:43 3041 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.chrome.driver as C:\Users\740722\.cache\selenium\chromedriver\win32\113.0.5672.63\chromedriver.exe
-Jul 22 2023;20:11:43 3042 [main] INFO  helpers.LoggerHelper -- [BrowserDriver/loadChromeDriver] Connecting to: http://localhost:4444/wd/hub
-Jul 22 2023;20:11:45 5702 [main] INFO  helpers.LoggerHelper -- @Test: checkIfEmailIsPresent
-Jul 22 2023;20:11:45 5702 [main] INFO  helpers.LoggerHelper -- Description: Check if an email is present in the inbox
-Jul 22 2023;20:11:45 5702 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Jul 22 2023;20:11:48 8347 [main] INFO  helpers.LoggerHelper -- @Test: checkIfEmailIsPresent has PASSED
-Jul 22 2023;20:11:48 8347 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Jul 22 2023;20:11:48 8487 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
-Jul 22 2023;20:11:48 8497 [main] INFO  helpers.LoggerHelper -- Finishing suite
-Jul 22 2023;20:11:48 8498 [main] INFO  helpers.LoggerHelper -- I am in onFinish method from suite entitled Warriors
-Jul 22 2023;20:11:48 8498 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+Jul 25 2023;12:02:55 2077 [main] INFO  helpers.LoggerHelper -- Starting suite
+Jul 25 2023;12:02:55 2136 [main] INFO  helpers.LoggerHelper -- I am in onStart method from suite entitled Warriors
+Jul 25 2023;12:02:55 2137 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+Jul 25 2023;12:02:56 3107 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Using chromedriver 113.0.5672.63 (resolved driver for Chrome 113)
+Jul 25 2023;12:02:56 3201 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.chrome.driver as C:\Users\740722\.cache\selenium\chromedriver\win32\113.0.5672.63\chromedriver.exe
+Jul 25 2023;12:02:56 3204 [main] INFO  helpers.LoggerHelper -- [BrowserDriver/loadChromeDriver] Connecting to: http://localhost:4444/wd/hub
+Jul 25 2023;12:03:02 8842 [main] INFO  helpers.LoggerHelper -- @Test: saveAlphaNumStringFromBody
+Jul 25 2023;12:03:02 8843 [main] INFO  helpers.LoggerHelper -- Description: Check if an email is present in the inbox and save a specific alphanumeric string from its body
+Jul 25 2023;12:03:02 8843 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Jul 25 2023;12:03:05 12748 [main] INFO  helpers.LoggerHelper -- @Test: saveAlphaNumStringFromBody has PASSED
+Jul 25 2023;12:03:05 12749 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Jul 25 2023;12:03:06 12900 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
+Jul 25 2023;12:03:06 12909 [main] INFO  helpers.LoggerHelper -- Finishing suite
+Jul 25 2023;12:03:06 12909 [main] INFO  helpers.LoggerHelper -- I am in onFinish method from suite entitled Warriors
+Jul 25 2023;12:03:06 12910 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #

@@ -1,7 +1,0 @@
-[July 22, 2023 20:11:45] Test case name: checkIfEmailIsPresent
-[July 22, 2023 20:11:45] Test case description: Check if an email is present in the inbox
-
-[July 22, 2023 20:11:45] Steps:
-
-[July 22, 2023 20:11:48] Outcome:
-[July 22, 2023 20:11:48] Test Passed
