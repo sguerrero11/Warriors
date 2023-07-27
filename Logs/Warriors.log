@@ -1,15 +1,41 @@
-Jul 25 2023;12:02:55 2077 [main] INFO  helpers.LoggerHelper -- Starting suite
-Jul 25 2023;12:02:55 2136 [main] INFO  helpers.LoggerHelper -- I am in onStart method from suite entitled Warriors
-Jul 25 2023;12:02:55 2137 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-Jul 25 2023;12:02:56 3107 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Using chromedriver 113.0.5672.63 (resolved driver for Chrome 113)
-Jul 25 2023;12:02:56 3201 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.chrome.driver as C:\Users\740722\.cache\selenium\chromedriver\win32\113.0.5672.63\chromedriver.exe
-Jul 25 2023;12:02:56 3204 [main] INFO  helpers.LoggerHelper -- [BrowserDriver/loadChromeDriver] Connecting to: http://localhost:4444/wd/hub
-Jul 25 2023;12:03:02 8842 [main] INFO  helpers.LoggerHelper -- @Test: saveAlphaNumStringFromBody
-Jul 25 2023;12:03:02 8843 [main] INFO  helpers.LoggerHelper -- Description: Check if an email is present in the inbox and save a specific alphanumeric string from its body
-Jul 25 2023;12:03:02 8843 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Jul 25 2023;12:03:05 12748 [main] INFO  helpers.LoggerHelper -- @Test: saveAlphaNumStringFromBody has PASSED
-Jul 25 2023;12:03:05 12749 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Jul 25 2023;12:03:06 12900 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
-Jul 25 2023;12:03:06 12909 [main] INFO  helpers.LoggerHelper -- Finishing suite
-Jul 25 2023;12:03:06 12909 [main] INFO  helpers.LoggerHelper -- I am in onFinish method from suite entitled Warriors
-Jul 25 2023;12:03:06 12910 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+Jul 27 2023;19:23:36 1169 [main] INFO  helpers.LoggerHelper -- Starting suite
+Jul 27 2023;19:23:36 1205 [main] INFO  helpers.LoggerHelper -- I am in onStart method from suite entitled Surefire test
+Jul 27 2023;19:23:36 1205 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+Jul 27 2023;19:23:40 4945 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Using chromedriver 113.0.5672.63 (resolved driver for Chrome 113)
+Jul 27 2023;19:23:40 4992 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.chrome.driver as C:\Users\740722\.cache\selenium\chromedriver\win32\113.0.5672.63\chromedriver.exe
+Jul 27 2023;19:23:40 4993 [main] INFO  helpers.LoggerHelper -- [BrowserDriver/loadChromeDriver] Connecting to: http://localhost:4444/wd/hub
+Jul 27 2023;19:23:56 20587 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray
+Jul 27 2023;19:23:56 20588 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an array object
+Jul 27 2023;19:23:56 20588 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Jul 27 2023;19:24:01 26221 [main] INFO  helpers.LoggerHelper -- Testing user: standard_user
+Jul 27 2023;19:24:03 27814 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
+Jul 27 2023;19:24:04 28792 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray has PASSED
+Jul 27 2023;19:24:04 28793 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Jul 27 2023;19:24:05 29626 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
+Jul 27 2023;19:24:05 29635 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray
+Jul 27 2023;19:24:05 29635 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an array object
+Jul 27 2023;19:24:05 29636 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Jul 27 2023;19:24:06 30681 [main] INFO  helpers.LoggerHelper -- Testing user: locked_out_user
+Jul 27 2023;19:24:07 31465 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
+Jul 27 2023;19:24:07 32146 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray has PASSED
+Jul 27 2023;19:24:07 32146 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Jul 27 2023;19:24:08 32908 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
+Jul 27 2023;19:24:08 32909 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray
+Jul 27 2023;19:24:08 32910 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an array object
+Jul 27 2023;19:24:08 32910 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Jul 27 2023;19:24:09 33746 [main] INFO  helpers.LoggerHelper -- Testing user: problem_user
+Jul 27 2023;19:24:10 34737 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
+Jul 27 2023;19:24:11 35813 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray has PASSED
+Jul 27 2023;19:24:11 35814 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Jul 27 2023;19:24:14 38426 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
+Jul 27 2023;19:24:14 38429 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray
+Jul 27 2023;19:24:14 38429 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an array object
+Jul 27 2023;19:24:14 38429 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Jul 27 2023;19:24:16 40896 [main] INFO  helpers.LoggerHelper -- Testing user: performance_glitch_user
+Jul 27 2023;19:24:18 42603 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
+Jul 27 2023;19:24:24 49065 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray has PASSED
+Jul 27 2023;19:24:24 49065 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Jul 27 2023;19:24:25 49490 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
+Jul 27 2023;19:24:25 49495 [main] INFO  helpers.LoggerHelper -- Finishing suite
+Jul 27 2023;19:24:25 49495 [main] INFO  helpers.LoggerHelper -- I am in onFinish method from suite entitled Surefire test
+Jul 27 2023;19:24:25 49496 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #

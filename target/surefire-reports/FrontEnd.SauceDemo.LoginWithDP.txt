@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: FrontEnd.SauceDemo.LoginWithDP
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 51.947 s - in FrontEnd.SauceDemo.LoginWithDP
