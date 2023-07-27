@@ -20,7 +20,7 @@ That's it, let's rock and roll!
 #####1) Logs
 #####2) Properties files
 #####3) Reports for QA Team
-#####4) Reports for Management Team
+#####4) Reports for Team (usually Management and others)
 #####5) Screenshots
 #####6) Helpers and POM
 #####7) Test cases
