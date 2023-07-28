@@ -12,6 +12,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.net.URL;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /***
  * Helper class to handle Selenium WebDriver.
@@ -25,18 +27,29 @@ public abstract class BrowserDriverHelper extends LoggerHelper {
     public static void loadDriver() {
         closeBrowser();
 
-        int option = 1; // Change this to switch browser
+        int option = 2; // Change this to switch browser
 
         switch (option) {
             case 1:
-                loadChromeDriver();
+                loadChromeDriver(false); //mobile emulation OFF
                 break;
             case 2:
-                loadFFDriver();
+                loadFFDriver(false);
                 break;
             case 3:
-                loadEdgeDriver();
+                loadEdgeDriver(false);
                 break;
+            case 4:
+                loadChromeDriver(true); //mobile emulation ON
+                break;
+            case 5:
+                loadFFDriver(true);
+                break;
+            case 6:
+                loadEdgeDriver(true);
+                break;
+
+
         }
 
 
@@ -45,12 +58,18 @@ public abstract class BrowserDriverHelper extends LoggerHelper {
     /***
      * Load and Instantiate Chrome driver to the current one.
      */
-    private static void loadChromeDriver() {
+    private static void loadChromeDriver(boolean isMobileEmulation) {
 
         try {
 
             ChromeOptions options = new ChromeOptions();
             WebDriverManager.chromedriver().setup();
+
+            if (isMobileEmulation) {
+                Map<String, Object> mobileEmulation = new HashMap<>();
+                mobileEmulation.put("deviceName", "iPhone X"); // Set the desired device name for mobile emulation.
+                options.setExperimentalOption("mobileEmulation", mobileEmulation);
+            }
 
             String host = "localhost";
             String port = "4444";
@@ -64,11 +83,17 @@ public abstract class BrowserDriverHelper extends LoggerHelper {
     /***
      * Load and Instantiate FF driver to the current one.
      */
-    private static void loadFFDriver() {
+    private static void loadFFDriver(boolean isMobileEmulation) {
         try {
 
             FirefoxOptions options = new FirefoxOptions();
             WebDriverManager.firefoxdriver().setup();
+
+            if (isMobileEmulation) {
+                Map<String, Object> mobileEmulation = new HashMap<>();
+                mobileEmulation.put("deviceName", "iPhone X"); // Set the desired device name for mobile emulation.
+                options.addPreference("devtools.responsiveUI.presets", "{'iPhone X': {'width': 375, 'height': 812, 'deviceScaleFactor': 3}}"); // Set specific device properties.
+            }
 
             String host = "localhost";
             String port = "4444";
@@ -79,11 +104,17 @@ public abstract class BrowserDriverHelper extends LoggerHelper {
         }
     }
 
-    private static void loadEdgeDriver() {
+    private static void loadEdgeDriver(boolean isMobileEmulation) {
         try {
 
             EdgeOptions options = new EdgeOptions();
             WebDriverManager.edgedriver().setup();
+
+            if (isMobileEmulation) {
+                Map<String, String> mobileEmulation = new HashMap<>();
+                mobileEmulation.put("deviceName", "iPhone X"); // Set the desired device name for mobile emulation.
+                options.setExperimentalOption("mobileEmulation", mobileEmulation);
+            }
 
             String host = "localhost";
             String port = "4444";
