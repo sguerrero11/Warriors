@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import org.hamcrest.Matchers;
 import org.json.simple.JSONObject;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
@@ -11,8 +12,10 @@ import org.testng.annotations.Test;
 import utils.ProjectListener;
 import io.restassured.http.ContentType;
 import io.restassured.specification.ResponseSpecification;
+
 import java.util.HashMap;
 import java.util.Locale;
+
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.equalTo;
 
@@ -34,12 +37,12 @@ public class reqSpecAndResp {
     }
 
     // region Response
-    @Test(enabled=true, description = "Get all the tools available", priority=100)
+    @Test(enabled = true, description = "Get all the tools available", priority = 100)
     public void getRequestAllTools() {
 
         given()
                 .contentType(ContentType.JSON) //  .header("Content-type", "application/json")
-                .queryParam("category","ladders")
+                .queryParam("category", "ladders")
                 .log().all()
                 .when()
                 // .get("/tools?category=ladders") //we can pass url like this or with query params
@@ -50,12 +53,12 @@ public class reqSpecAndResp {
                 .log().all();
     }
 
-    @Test (enabled=true, description = "To get the token", priority=300)
+    @Test(enabled = true, description = "To get the token", priority = 300)
     public void registerApi() {
         bodyApiClients = new JSONObject();
 
         bodyApiClients.put("clientName", faker.name().firstName());
-        bodyApiClients.put("clientEmail", faker.internet().emailAddress() );
+        bodyApiClients.put("clientEmail", faker.internet().emailAddress());
 
         Response response = given()
                 .body(bodyApiClients.toJSONString())
@@ -74,7 +77,7 @@ public class reqSpecAndResp {
         System.out.println("Token: " + bearerToken);
     }
 
-    @Test (enabled=true, description = "Create an order via POST", priority=500, dependsOnMethods = "registerApi")
+    @Test(enabled = true, description = "Create an order via POST", priority = 500, dependsOnMethods = "registerApi")
     public void postOrder() {
         bodyPostOrder = new JSONObject();
 
@@ -99,12 +102,12 @@ public class reqSpecAndResp {
 
     String id = "2177";
 
-    @Test(description = "Get order by ID", priority=900)
+    @Test(description = "Get order by ID", priority = 900)
     public void getRequestOrderById() {
 
         given()
                 .basePath("tools")
-                .pathParam("toolid",id)
+                .pathParam("toolid", id)
                 .contentType(ContentType.JSON) //  .header("Content-type", "application/json")
                 .log().all()
                 .when()
@@ -122,7 +125,7 @@ public class reqSpecAndResp {
     // endregion
 
     // region Request Specification and Response Specification
-    @Test (description = "Using Request Spec and Response Spec instead of Response", priority = 1000)
+    @Test(description = "Using Request Spec and Response Spec instead of Response", priority = 1000)
     public void requestSpecAndResp() {
         // Define the base URL for the API
 
@@ -130,10 +133,10 @@ public class reqSpecAndResp {
         // Tool ID for the request
         HashMap<String, Integer> pParams = new HashMap<>();
         HashMap<String, Boolean> qParams = new HashMap<>();
-        pParams.put("toolId",2177);
-        qParams.put("user-manual",true);
+        pParams.put("toolId", 2177);
+        qParams.put("user-manual", true);
 
-        // Define Request Specification
+        // Define Request Specification, common across all requests that use this
         RequestSpecification requestSpec = given()
                 .basePath(path)
                 // you could use both queryParams or params, they are the same
@@ -146,18 +149,20 @@ public class reqSpecAndResp {
         // Define Response Specification
         ResponseSpecification responseSpec = expect()
                 .contentType(ContentType.JSON) // Assuming the response will be in JSON format
+                .time(Matchers.lessThan(5000L)) // Assuming the response takes less than 5 seconds
+                .statusLine("HTTP/1.1 200 OK")
                 .statusCode(200) // Expecting a successful response with status code 200
                 .body("category", equalTo("ladders")) // Assuming category in the first node is ladders
                 .body("manufacturer", equalTo("CoscoProducts")); // Assuming manufacturer in the first node is CoscoProducts
         // Send GET request and verify the response using specifications
         given()
                 .spec(requestSpec) // Use Request Specification
-            .when()
+                .when()
                 .pathParams(pParams)
                 .params(qParams) // used after the when applies only for this request
 //                .queryParams(qParams) // both params or queryParams are valid
                 .get("{toolId}")
-            .then()
+                .then()
                 .spec(responseSpec) // Use Response Specification
                 .log().all();
 
@@ -166,6 +171,7 @@ public class reqSpecAndResp {
                 .when()
                 .get()
                 .then()
+                .body("size()", Matchers.greaterThan(5)) // Assuming the response returns more than 5 elements
                 .log().body();
 
     }
