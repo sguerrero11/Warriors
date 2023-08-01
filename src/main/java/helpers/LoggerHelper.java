@@ -31,6 +31,7 @@ public abstract class LoggerHelper {
     private final static Logger _logger = LoggerFactory.getLogger(LoggerHelper.class);
     public static BufferedWriter writer;
 
+
     /***
      * Write a warning message in stdout console.
      * @param message [String]

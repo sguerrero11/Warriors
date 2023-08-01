@@ -10,6 +10,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * This files shows how to use the APIRentalHelper for both unified requests and distributed
+ * Based on the methods found in the Helper
+ */
+
 @Listeners({ProjectListener.class})
 public class DistributedAndUnifiedAPITests {
 

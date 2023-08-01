@@ -1,7 +1,6 @@
 package helpers;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.commons.math3.geometry.spherical.twod.Edge;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeOptions;
@@ -9,8 +8,8 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.LocalFileDetector;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.io.File;
 import java.net.URL;
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -27,7 +26,44 @@ public abstract class BrowserDriverHelper extends LoggerHelper {
     public static void loadDriver() {
         closeBrowser();
 
-        int option = 2; // Change this to switch browser
+        /* We need to make a distinction between the Logger inputStreams to use the below code
+        // Define config file
+        String folderPath = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" + File.separator + "java" + File.separator + "config" + File.separator;
+        String filePath = folderPath + "config.yaml";
+
+        try {
+            // Load the YML reader object
+            YMLHelper yml = new YMLHelper(filePath);
+
+            // Access the values directly from the nested LinkedHashMap using the helper method
+            String browserDefault = YMLHelper.getYMLValue(yml.yamlData, "browsers.default");
+            boolean isMobileEmulation = YMLHelper.getYMLValue(yml.yamlData, "browsers.mobile");
+
+            if (browserDefault == "chrome") {
+                if (isMobileEmulation) {
+                    loadChromeDriver(true); //mobile emulation ON
+                } else {
+                    loadChromeDriver(false); //mobile emulation OFF
+                }
+            } else if (browserDefault == "firefox") {
+                if (isMobileEmulation) {
+                    loadFFDriver(true); //mobile emulation ON
+                } else {
+                    loadFFDriver(false); //mobile emulation OFF
+                }
+            } else if (browserDefault == "edge") {
+                if (isMobileEmulation) {
+                    loadEdgeDriver(true); //mobile emulation ON
+                } else {
+                    loadEdgeDriver(false); //mobile emulation OFF
+                }
+            }
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+
+ */
+        int option = 1; // Change this to switch browser
 
         switch (option) {
             case 1:
@@ -48,11 +84,7 @@ public abstract class BrowserDriverHelper extends LoggerHelper {
             case 6:
                 loadEdgeDriver(true);
                 break;
-
-
         }
-
-
     }
 
     /***
@@ -132,8 +164,11 @@ public abstract class BrowserDriverHelper extends LoggerHelper {
     public static void setDriver(RemoteWebDriver newRemoteDriver) {
         remoteDriver = newRemoteDriver;
         remoteDriver.setFileDetector(new LocalFileDetector());
-        remoteDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+//        remoteDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); // uncomment if necessary only
+//        remoteDriver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5)); // uncomment if necessary only
+//        remoteDriver.manage().deleteAllCookies(); // uncomment if necessary only
         remoteDriver.manage().window().setSize(new Dimension(1300, 1024));
+
     }
 
     /***

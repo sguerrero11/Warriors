@@ -1,0 +1,16 @@
+database:
+  host: localhost
+  port: 3306
+  username: myuser
+  password: mypassword
+app:
+  name: My Application
+  version: 1.0.0
+  debug: true
+gmail:
+  mail: automationtestsg@gmail.com
+  pwd: Test12345!
+  appPwd: sgrqbwxumwdtgloz
+browsers:
+  default: chrome
+  mobile: true

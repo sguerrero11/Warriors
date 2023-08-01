@@ -1,0 +1,37 @@
+{
+  "environment": "dev",
+  "products_file": "2023",
+  "global": {
+    "password": "",
+    "email": {
+      "prefix": "test.email.",
+      "suffix": "test.com"
+    },
+    "mobile": false,
+    "browser": "chrome",
+    "runHeadless": false,
+    "fluentWait": {
+      "integration": {
+        "timeoutSeconds": 40,
+        "pollingMilliseconds": 1000
+      }
+    }
+  },
+  "projects": {
+    "project_name": {
+      "graphQLEndpoint": ""
+    },
+    "website": {
+      "url": ""
+    },
+    "aws": {
+      "x-api-key": ""
+    },
+    "netSuite": {
+      "endpoint": "",
+      "consumerKey": "",
+      "consumerSecret": "",
+      "accessToken": ""
+    }
+  }
+}

@@ -1,21 +1,26 @@
 package API;
 
-
-import com.fasterxml.jackson.core.JsonpCharacterEscapes;
 import com.github.javafaker.Faker;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.json.simple.JSONObject;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import utils.ProjectListener;
 
 import java.util.Locale;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
+/**
+ * This file shows all the VERBS from Rest Assured
+ *
+ */
+
+@Listeners({ProjectListener.class})
 public class RequestAllVerbs {
 
     private static JSONObject bodyApiClients;
@@ -27,12 +32,12 @@ public class RequestAllVerbs {
         RestAssured.baseURI = "https://simple-tool-rental-api.glitch.me";
     }
 
-    @Test(enabled=true, description = "Get all the tools available for category ladders", priority=100)
+    @Test(enabled = true, description = "Get all the tools available for category ladders", priority = 100)
     public void getRequestAllTools() {
 
         given()
                 .contentType(ContentType.JSON) //  .header("Content-type", "application/json")
-                .queryParam("category","ladders")
+                .queryParam("category", "ladders")
                 .log().all()
                 .when()
                 // .get("/tools?category=ladders") //we can pass url like this or with query params
@@ -43,7 +48,7 @@ public class RequestAllVerbs {
                 .log().all();
     }
 
-    @Test (enabled=true, description = "To get the token", priority=300)
+    @Test(enabled = true, description = "To get the token", priority = 300)
     public void registerApi() {
         bodyApiClients = new JSONObject();
         Faker faker = new Faker(new Locale("en"));
@@ -69,7 +74,7 @@ public class RequestAllVerbs {
         System.out.println("Token: " + bearerToken);
     }
 
-    @Test (enabled=true, description = "Create an order via POST", priority=500, dependsOnMethods = "registerApi")
+    @Test(enabled = true, description = "Create an order via POST", priority = 500, dependsOnMethods = "registerApi")
     public void postOrder() {
         bodyPostOrder = new JSONObject();
         Faker faker = new Faker(new Locale("en"));
