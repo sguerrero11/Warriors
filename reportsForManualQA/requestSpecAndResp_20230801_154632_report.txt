@@ -1,9 +1,0 @@
-[August 1, 2023 15:46:32] Test case name: requestSpecAndResp
-[August 1, 2023 15:46:32] Test case description: Using Request Spec and Response Spec instead of Response
-
-[August 1, 2023 15:46:32] Steps:
-
-[August 1, 2023 15:46:37] Assertions:
-
-[August 1, 2023 15:46:37] Outcome:
-[August 1, 2023 15:46:37] Test Passed
