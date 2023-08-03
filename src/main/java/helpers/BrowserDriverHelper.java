@@ -63,7 +63,7 @@ public abstract class BrowserDriverHelper extends LoggerHelper {
         }
 
  */
-        int option = 1; // Change this to switch browser
+        int option = 2; // Change this to switch browser
 
         switch (option) {
             case 1:

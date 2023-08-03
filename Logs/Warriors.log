@@ -1,3 +1,2 @@
-Aug 01 2023;19:56:18 1976 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Using geckodriver 0.33.0 (resolved driver for Firefox 114)
-Aug 01 2023;19:56:19 2123 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.gecko.driver as C:\Users\740722\.cache\selenium\geckodriver\win64\0.33.0\geckodriver.exe
-Aug 01 2023;19:56:47 30462 [main] INFO  helpers.LoggerHelper -- Test case has PASSED
+Aug 03 2023;01:18:28 1214 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Using chromedriver 113.0.5672.63 (resolved driver for Chrome 113)
+Aug 03 2023;01:18:28 1338 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.chrome.driver as C:\Users\740722\.cache\selenium\chromedriver\win32\113.0.5672.63\chromedriver.exe
