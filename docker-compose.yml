@@ -5,14 +5,15 @@ services:
     image: selenium/hub:latest
     container_name: selenium-hub-warriors
     ports:
-      - "4442:4442"
+      - "4442:4443"
       - "4443:4443"
       - "4444:4444"
-  chrome:
+
+  chrome-node:
     image: selenium/node-chrome:beta
     shm_size: 2gb
     ports:
-      - "5900:5900"
+      - "5555:5900"
     depends_on:
       - selenium-hub-warriors
     environment:
@@ -20,27 +21,29 @@ services:
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
 
-  edge:
-    image: selenium/node-edge:beta
-    shm_size: 2gb
-    ports:
-      - "4900:4900"
-    depends_on:
-      - selenium-hub-warriors
-    environment:
-      - SE_EVENT_BUS_HOST=selenium-hub-warriors
-      - SE_EVENT_BUS_PUBLISH_PORT=4442
-      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-
-  firefox:
+  firefox-node:
     image: selenium/node-firefox:beta
     shm_size: 2gb
     ports:
-      - "5000:5000"
+      - "5556:5900"
     depends_on:
       - selenium-hub-warriors
     environment:
       - SE_EVENT_BUS_HOST=selenium-hub-warriors
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+
+  edge-node:
+    image: selenium/node-edge:beta
+    shm_size: 2gb
+    ports:
+      - "5557:5900"
+    depends_on:
+      - selenium-hub-warriors
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub-warriors
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+
+
 

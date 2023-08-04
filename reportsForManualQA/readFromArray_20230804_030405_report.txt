@@ -1,0 +1,11 @@
+[August 4, 2023 03:04:05] Test case name: readFromArray
+[August 4, 2023 03:04:05] Test case description: Trying to read data from an array object
+
+[August 4, 2023 03:04:05] Steps:
+
+[August 4, 2023 03:04:05] Assertions:
+
+[August 4, 2023 03:04:05] Outcome:
+[August 4, 2023 03:04:05] Test Failed. The following error was found: 
+
+java.lang.NullPointerException

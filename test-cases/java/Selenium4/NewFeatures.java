@@ -31,16 +31,16 @@ import java.util.function.Predicate;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.openqa.selenium.remote.http.Contents.utf8String;
 
+// Turn off Docker to run these tests
+
 public class NewFeatures {
 
-    String host = "localhost";
-    String port = "4443";
+    ChromeDriver driver = new ChromeDriver();
 
     @Test
     public void geoLocationTest() throws MalformedURLException {
-        ChromeOptions chromeOptions = new ChromeOptions();
-        WebDriver driver = new RemoteWebDriver(new URL("http://" + host + ":" + port + "/wd/hub"), chromeOptions);
-        driver = new Augmenter().augment(driver);
+
+        driver = (ChromeDriver) new Augmenter().augment(driver);
 
         DevTools devTools = ((HasDevTools) driver).getDevTools();
         devTools.createSession();
@@ -55,8 +55,7 @@ public class NewFeatures {
 
     @Test
     public void overrideDevice(){
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+
         DevTools devTools = ((ChromeDriver) driver).getDevTools();
         devTools.createSession();
 // iPhone 11 Pro dimensions
@@ -79,8 +78,7 @@ public class NewFeatures {
 
     @Test
     public void performanceMetrics(){
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+
         DevTools devTools = ((ChromeDriver) driver).getDevTools();
         devTools.createSession();
         devTools.send(Performance.enable(Optional.empty()));
@@ -96,8 +94,7 @@ public class NewFeatures {
 
     @Test
     public void pauseAction(){ // When you want to pause in between actions
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+
         WebElement clickable = driver.findElement(By.id("clickable"));
         new Actions(driver)
                 .moveToElement(clickable)
@@ -112,7 +109,6 @@ public class NewFeatures {
 
     @Test
     public void clickAndHold(){
-        ChromeDriver driver = new ChromeDriver();
         WebElement clickable = driver.findElement(By.id("clickable"));
         new Actions(driver)
                 .clickAndHold(clickable)
@@ -121,7 +117,6 @@ public class NewFeatures {
 
     @Test
     public void clickAndRelease(){ // Left click
-        ChromeDriver driver = new ChromeDriver();
         WebElement clickable = driver.findElement(By.id("click"));
         new Actions(driver)
                 .click(clickable)
@@ -130,7 +125,6 @@ public class NewFeatures {
 
     @Test
     public void rightClick(){ // Context click
-        ChromeDriver driver = new ChromeDriver();
         WebElement clickable = driver.findElement(By.id("clickable"));
         new Actions(driver)
                 .contextClick(clickable)
@@ -139,7 +133,6 @@ public class NewFeatures {
 
     @Test
     public void doubleClick(){ // Context click
-        ChromeDriver driver = new ChromeDriver();
         WebElement clickable = driver.findElement(By.id("clickable"));
         new Actions(driver)
                 .doubleClick(clickable)
@@ -157,7 +150,6 @@ public class NewFeatures {
 
     @Test
     public void dragAndDrop(){
-        ChromeDriver driver = new ChromeDriver();
         WebElement draggable = driver.findElement(By.id("draggable"));
         WebElement droppable = driver.findElement(By.id("droppable"));
         new Actions(driver)
@@ -167,7 +159,6 @@ public class NewFeatures {
 
     @Test
     public void scrollToElement(){
-        ChromeDriver driver = new ChromeDriver();
         WebElement iframe = driver.findElement(By.tagName("iframe"));
         new Actions(driver)
                 .scrollToElement(iframe)
@@ -176,7 +167,6 @@ public class NewFeatures {
 
     @Test
     public void scrollByGivenAmount(){
-        ChromeDriver driver = new ChromeDriver();
         WebElement footer = driver.findElement(By.tagName("footer"));
         int deltaY = footer.getRect().y;
         new Actions(driver)
@@ -185,7 +175,6 @@ public class NewFeatures {
     }
     @Test
     public void scrollFromElementByGivenAmount(){
-        ChromeDriver driver = new ChromeDriver();
         WebElement iframe = driver.findElement(By.tagName("iframe"));
         WheelInput.ScrollOrigin scrollOrigin = WheelInput.ScrollOrigin.fromElement(iframe);
         new Actions(driver)
@@ -195,7 +184,6 @@ public class NewFeatures {
 
     @Test
     public void basicAuth(){
-        ChromeDriver driver = new ChromeDriver();
         Predicate<URI> uriPredicate = uri -> uri.getHost().contains("the-internet.herokuapp.com"); // here goes the domain
 
         ((HasAuthentication) driver).register(uriPredicate, UsernameAndPassword.of("admin", "admin"));
@@ -204,7 +192,6 @@ public class NewFeatures {
 
     @Test
     public void listenToConsoleLogs(){
-        ChromeDriver driver = new ChromeDriver();
         DevTools devTools = driver.getDevTools();
         devTools.createSession();
         devTools.send(Log.enable());
@@ -220,7 +207,6 @@ public class NewFeatures {
 
     @Test
     public void networkIntercept(){
-        ChromeDriver driver = new ChromeDriver();
         NetworkInterceptor interceptor = new NetworkInterceptor(
                 driver,
                 Route.matching(req -> true)

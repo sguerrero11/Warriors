@@ -63,7 +63,7 @@ public abstract class BrowserDriverHelper extends LoggerHelper {
         }
 
  */
-        int option = 2; // Change this to switch browser
+        int option = 1; // Change this to switch browser
 
         switch (option) {
             case 1:
@@ -129,6 +129,7 @@ public abstract class BrowserDriverHelper extends LoggerHelper {
 
             String host = "localhost";
             String port = "4444";
+
             LoggerHelper.logInfo("[BrowserDriver/loadChromeDriver] Connecting to: " + "http://" + host + ":" + port + "/wd/hub");
             setDriver(new RemoteWebDriver(new URL("http://" + host + ":" + port + "/wd/hub"), options));
         } catch (Exception ex) {
