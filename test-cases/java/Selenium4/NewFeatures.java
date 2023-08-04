@@ -95,7 +95,7 @@ public class NewFeatures {
     }
 
     @Test
-    public void pauseAction(){ // When to want to pause in between actions
+    public void pauseAction(){ // When you want to pause in between actions
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         WebElement clickable = driver.findElement(By.id("clickable"));
@@ -196,10 +196,10 @@ public class NewFeatures {
     @Test
     public void basicAuth(){
         ChromeDriver driver = new ChromeDriver();
-        Predicate<URI> uriPredicate = uri -> uri.getHost().contains("your-domain.com");
+        Predicate<URI> uriPredicate = uri -> uri.getHost().contains("the-internet.herokuapp.com"); // here goes the domain
 
-        ((HasAuthentication) driver).register(uriPredicate, UsernameAndPassword.of("admin", "password"));
-        driver.get("https://your-domain.com/login");
+        ((HasAuthentication) driver).register(uriPredicate, UsernameAndPassword.of("admin", "admin"));
+        driver.get("https://the-internet.herokuapp.com/basic_auth");
     }
 
     @Test
@@ -229,7 +229,7 @@ public class NewFeatures {
                                 .addHeader("Content-Type", MediaType.HTML_UTF_8.toString())
                                 .setContent(utf8String("Creamy, delicious cheese!"))));
 
-        driver.get("https://example-sausages-site.com");
+        driver.get("https://www.ole.com");
 
         String source = driver.getPageSource();
 
