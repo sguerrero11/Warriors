@@ -14,7 +14,6 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static helpers.AssertionsList.assertions;
 import static helpers.BrowserDriverHelper.remoteDriver;
 
 public class ProjectListener extends LoggerHelper implements ITestListener {
@@ -60,7 +59,7 @@ public class ProjectListener extends LoggerHelper implements ITestListener {
         logInfo("@Test: {}", result.getName() + " has PASSED");
         logSeparator();
         finalizeTest("Test Passed");
-        takeASS(remoteDriver,screenshotName);
+        takeSS(remoteDriver,screenshotName);
         test.log(Status.PASS, "Test successfully passed")
                 .addScreenCaptureFromPath(System.getProperty("user.dir") + File.separator + "screenshots" + File.separator + screenshotName + "_screenshot.png");
 
@@ -76,7 +75,7 @@ public class ProjectListener extends LoggerHelper implements ITestListener {
         logInfo("@Test: {}", result.getName() + " has FAILED");
         logSeparator();
         finalizeTest("Test Failed. The following error was found: \n\n" + result.getThrowable());
-        takeASS(remoteDriver,screenshotName);
+        takeSS(remoteDriver,screenshotName);
         test.log(Status.FAIL, "Test failed: " + result.getThrowable())
                 .addScreenCaptureFromPath(System.getProperty("user.dir") + File.separator + "screenshots" + File.separator + screenshotName + "_screenshot.png")
                 .fail(MediaEntityBuilder.createScreenCaptureFromPath(System.getProperty("user.dir") + File.separator + "screenshots" + File.separator + screenshotName + "_screenshot.png").build());

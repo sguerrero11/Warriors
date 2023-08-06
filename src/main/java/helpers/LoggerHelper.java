@@ -8,6 +8,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.slf4j.Logger;
@@ -140,9 +141,24 @@ public abstract class LoggerHelper {
         }
     }
 
-    public static void takeASS(RemoteWebDriver driver, String fileName) {
+    public static void takeSS(RemoteWebDriver driver, String fileName) {
         // Take screenshot and save to a file
         File screenshotSourceFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        String destinationFile = System.getProperty("user.dir") + File.separator + "screenshots/" + fileName + "_screenshot.png";
+        try {
+            FileUtils.copyFile(screenshotSourceFile, new File(destinationFile));
+//            System.out.println("Screenshot saved successfully.");
+            logInfo("Screenshot saved successfully.");
+
+        } catch (IOException e) {
+//            System.out.println("Failed to save screenshot: " + e.getMessage());
+            logInfo("Failed to save screenshot: " + e.getMessage());
+        }
+    }
+
+    public static void takePartialSS(WebElement element, String fileName) {
+        // Take screenshot and save to a file
+        File screenshotSourceFile = ((TakesScreenshot) element).getScreenshotAs(OutputType.FILE);
         String destinationFile = System.getProperty("user.dir") + File.separator + "screenshots/" + fileName + "_screenshot.png";
         try {
             FileUtils.copyFile(screenshotSourceFile, new File(destinationFile));

@@ -223,3 +223,5 @@ public class NewFeatures {
     }
 
 }
+
+// https://chromedevtools.github.io/devtools-protocol/tot/Emulation/

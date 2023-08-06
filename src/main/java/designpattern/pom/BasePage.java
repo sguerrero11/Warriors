@@ -763,22 +763,22 @@ public class BasePage extends LoggerHelper {
     }
 
     public void switchToTabWithTitle(String titlePart) {
-        // Obtenemos todos los identificadores de pestaña (tab)
+        // We get all tabs' identifiers (tab)
         ArrayList<String> tabs = new ArrayList<>(BrowserDriverHelper.getDriver().getWindowHandles());
 
-        // Recorremos todas las pestañas
+        // We traverse all tabs
         for (String tab : tabs) {
-            // Cambiamos a cada pestaña
+            // We switch to each tab
             BrowserDriverHelper.getDriver().switchTo().window(tab);
 
-            // Comprobamos si el título de la pestaña contiene la cadena dada
+            // We verify if the tab title contains the titlePart
             if (BrowserDriverHelper.getDriver().getTitle().contains(titlePart)) {
-                // Si es así, terminamos la función
+                // If so, functions ends
                 return;
             }
         }
 
-        // Si llegamos hasta aquí, significa que no se encontró ninguna pestaña con la cadena dada en su título
+        // If we reach this point, nothing was found
         throw new IllegalArgumentException("No tab with title containing '" + titlePart + "' was found.");
     }
 
