@@ -8,3 +8,5 @@ ebean:
       username: test
       password: test
       url: jdbc:postgresql://localhost:5432/test
+
+# This file is meant to be used for DB connections (ebean library)

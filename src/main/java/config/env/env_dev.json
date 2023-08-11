@@ -1,5 +1,4 @@
 {
-  "environment": "dev",
   "products_file": "2023",
   "global": {
     "password": "",
@@ -33,5 +32,7 @@
       "consumerSecret": "",
       "accessToken": ""
     }
-  }
+  },
+  "_comment": "This file is meant to be used by the ENV Helper"
 }
+

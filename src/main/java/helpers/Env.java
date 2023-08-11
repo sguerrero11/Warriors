@@ -1,4 +1,4 @@
-package config;
+package helpers;
 
 import com.github.wnameless.json.flattener.JsonFlattener;
 import helpers.LoggerHelper;
@@ -52,6 +52,7 @@ public abstract class Env extends LoggerHelper {
      */
     public static String get(String propertyKey) {
         try {
+            // If we have environment variables in our OS
             if (System.getenv(propertyKey.replace(".", "_").replace("-", "_")) != null) {
                 return System.getenv(propertyKey.replace(".", "_").replace("-", "_"));
             }

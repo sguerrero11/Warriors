@@ -8,11 +8,11 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.LocalFileDetector;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 /***
  * Helper class to handle Selenium WebDriver.
@@ -25,6 +25,11 @@ public abstract class BrowserDriverHelper extends LoggerHelper {
      */
     public static void loadDriver() {
         closeBrowser();
+
+        // We initialize the Environment properties based on env_jason
+        Env.setProperties();
+
+        // Option A: Using the YML Helper
 
         /* We need to make a distinction between the Logger inputStreams to use the below code
         // Define config file
@@ -63,6 +68,9 @@ public abstract class BrowserDriverHelper extends LoggerHelper {
         }
 
  */
+
+        // Option B: Using a local variable to choose the browser and mobile mode
+
         int option = 1; // Change this to switch browser
 
         switch (option) {
@@ -85,6 +93,9 @@ public abstract class BrowserDriverHelper extends LoggerHelper {
                 loadEdgeDriver(true);
                 break;
         }
+
+        // Option C: Using the Enum helper to choose the browser
+
     }
 
     /***
@@ -97,11 +108,29 @@ public abstract class BrowserDriverHelper extends LoggerHelper {
             ChromeOptions options = new ChromeOptions();
             WebDriverManager.chromedriver().setup();
 
-            if (isMobileEmulation) {
-                Map<String, Object> mobileEmulation = new HashMap<>();
-                mobileEmulation.put("deviceName", "iPhone X"); // Set the desired device name for mobile emulation.
-                options.setExperimentalOption("mobileEmulation", mobileEmulation);
+            // Using the Env helper to check the mobile mode
+
+            if (Objects.equals(Env.get("global.mobile"),"true")) {
+                Map<String,String> mobileEmulation = new HashMap<>();
+                mobileEmulation.put("deviceName","Nexus 5");
+                options.setExperimentalOption("mobileEmulation",mobileEmulation);
             }
+
+            // Using the Env helper to check the mobile mode
+
+            if (Objects.equals(Env.get("global.runHeadless"),"true")) {
+                options.addArguments("--headless"); // Enable headless mode
+                options.addArguments("--disable-gpu"); // Disable GPU usage in headless mode
+            }
+
+
+            // Using the argument isMobileEmulation that's being passed with options A and B
+
+//            if (isMobileEmulation) {
+//                Map<String, Object> mobileEmulation = new HashMap<>();
+//                mobileEmulation.put("deviceName", "iPhone X"); // Set the desired device name for mobile emulation.
+//                options.setExperimentalOption("mobileEmulation", mobileEmulation);
+//            }
 
             String host = "localhost";
             String port = "4444";
