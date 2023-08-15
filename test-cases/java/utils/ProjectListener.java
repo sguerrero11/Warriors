@@ -8,6 +8,7 @@ import helpers.BrowserDriverHelper;
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;
 import helpers.LoggerHelper;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.*;
 
 import java.io.File;
@@ -59,7 +60,7 @@ public class ProjectListener extends LoggerHelper implements ITestListener {
         logInfo("@Test: {}", result.getName() + " has PASSED");
         logSeparator();
         finalizeTest("Test Passed");
-        takeSS(remoteDriver,screenshotName);
+        takeSS((RemoteWebDriver) remoteDriver,screenshotName);
         test.log(Status.PASS, "Test successfully passed")
                 .addScreenCaptureFromPath(System.getProperty("user.dir") + File.separator + "screenshots" + File.separator + screenshotName + "_screenshot.png");
 
@@ -75,7 +76,7 @@ public class ProjectListener extends LoggerHelper implements ITestListener {
         logInfo("@Test: {}", result.getName() + " has FAILED");
         logSeparator();
         finalizeTest("Test Failed. The following error was found: \n\n" + result.getThrowable());
-        takeSS(remoteDriver,screenshotName);
+        takeSS((RemoteWebDriver) remoteDriver,screenshotName);
         test.log(Status.FAIL, "Test failed: " + result.getThrowable())
                 .addScreenCaptureFromPath(System.getProperty("user.dir") + File.separator + "screenshots" + File.separator + screenshotName + "_screenshot.png")
                 .fail(MediaEntityBuilder.createScreenCaptureFromPath(System.getProperty("user.dir") + File.separator + "screenshots" + File.separator + screenshotName + "_screenshot.png").build());

@@ -2,6 +2,7 @@ package helpers;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -18,7 +19,7 @@ import java.util.Objects;
  * Helper class to handle Selenium WebDriver.
  */
 public abstract class BrowserDriverHelper extends LoggerHelper {
-    public static RemoteWebDriver remoteDriver;
+    public static WebDriver remoteDriver;
 
     /***
      * Load the current driver with one of the different available options
@@ -193,7 +194,7 @@ public abstract class BrowserDriverHelper extends LoggerHelper {
      */
     public static void setDriver(RemoteWebDriver newRemoteDriver) {
         remoteDriver = newRemoteDriver;
-        remoteDriver.setFileDetector(new LocalFileDetector());
+        ((RemoteWebDriver) remoteDriver).setFileDetector(new LocalFileDetector());
 //        remoteDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); // uncomment if necessary only
 //        remoteDriver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5)); // uncomment if necessary only
 //        remoteDriver.manage().deleteAllCookies(); // uncomment if necessary only
@@ -206,7 +207,7 @@ public abstract class BrowserDriverHelper extends LoggerHelper {
      * @return [WebDriver]
      */
     public static RemoteWebDriver getDriver() {
-        return remoteDriver;
+        return (RemoteWebDriver) remoteDriver;
     }
 
     /***

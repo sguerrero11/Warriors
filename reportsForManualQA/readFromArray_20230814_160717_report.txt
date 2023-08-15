@@ -1,0 +1,18 @@
+[August 14, 2023 16:07:17] Test case name: readFromArray
+[August 14, 2023 16:07:17] Test case description: Trying to read data from an array object
+
+[August 14, 2023 16:07:17] Steps:
+[August 14, 2023 16:07:17] Navigate to URL: http:/www.saucedemo.com
+[August 14, 2023 16:07:17] Fill in field identified as "user-name" (attribute: name) with value: problem_user
+[August 14, 2023 16:07:18] Fill in field identified as "password" (attribute: name) with value: secret_sauce
+[August 14, 2023 16:07:18] Click on button identified as "login-button" (attribute: name)
+
+[August 14, 2023 16:07:19] Assertions:
+[August 14, 2023 16:07:19] Assert if argument "Swag Labs" is equal to argument "Swag Labs" - PASSED
+[August 14, 2023 16:07:19] Assert if argument "Products" is equal to argument "Products" - PASSED
+[August 14, 2023 16:07:19] Assert if argument "Epic sadface: Sorry, this user has been locked out." is equal to argument "Epic sadface: Sorry, this user has been locked out." - PASSED
+[August 14, 2023 16:07:19] Assert if argument "Swag Labs" is equal to argument "Swag Labs" - PASSED
+[August 14, 2023 16:07:19] Assert if argument "Products" is equal to argument "Products" - PASSED
+
+[August 14, 2023 16:07:19] Outcome:
+[August 14, 2023 16:07:19] Test Passed

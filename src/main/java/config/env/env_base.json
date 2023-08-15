@@ -16,7 +16,7 @@
       "synchronize": false
     },
     "browser": "chrome",
-    "runHeadless": true,
+    "runHeadless": false,
     "data": {
       "creditCardNumber": "4111111111111111",
       "creditCardConfNumber": "777",

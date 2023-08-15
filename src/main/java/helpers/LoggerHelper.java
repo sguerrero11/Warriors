@@ -57,6 +57,10 @@ public abstract class LoggerHelper {
         _logger.error(message);
     }
 
+    public static void logError(String message, String extendedMessage) {
+        _logger.error(message, extendedMessage);
+    }
+
     public static void logError(Throwable errorMessage) {
         _logger.error(String.valueOf(errorMessage));
     }
@@ -78,6 +82,14 @@ public abstract class LoggerHelper {
     }
 
     public static void logInfo(String message, String extendedMessage) {
+        _logger.info(message, extendedMessage);
+    }
+
+    public static void logInfo(String message, String eMess1, String eMess2, String eMess3) {
+        _logger.info(message, eMess1, eMess2, eMess3);
+    }
+
+    public static void logInfo(String message, List extendedMessage) {
         _logger.info(message, extendedMessage);
     }
 
