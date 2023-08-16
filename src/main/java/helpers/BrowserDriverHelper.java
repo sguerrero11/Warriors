@@ -27,80 +27,90 @@ public abstract class BrowserDriverHelper extends LoggerHelper {
     public static void loadDriver() {
         closeBrowser();
 
-        // We initialize the Environment properties based on env_jason
-        Env.setProperties();
+        // We initialize the Environment properties based on env_jason, when using option C
+//        EnvHelper.setProperties();
 
         // Option A: Using the YML Helper
 
-        /* We need to make a distinction between the Logger inputStreams to use the below code
-        // Define config file
-        String folderPath = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" + File.separator + "java" + File.separator + "config" + File.separator;
-        String filePath = folderPath + "config.yaml";
-
         try {
             // Load the YML reader object
-            YMLHelper yml = new YMLHelper(filePath);
+            YMLHelper.setProperties();
 
             // Access the values directly from the nested LinkedHashMap using the helper method
-            String browserDefault = YMLHelper.getYMLValue(yml.yamlData, "browsers.default");
-            boolean isMobileEmulation = YMLHelper.getYMLValue(yml.yamlData, "browsers.mobile");
+            String browserDefault = YMLHelper.getYMLValue(YMLHelper.yamlData, "browsers.default");
 
-            if (browserDefault == "chrome") {
-                if (isMobileEmulation) {
-                    loadChromeDriver(true); //mobile emulation ON
-                } else {
-                    loadChromeDriver(false); //mobile emulation OFF
-                }
-            } else if (browserDefault == "firefox") {
+/*
+You can define mobile mode here and pass the variable when loading the driver,
+or you can analyze it inside each driver as with the Env helper
+ */
+            boolean isMobileEmulation = YMLHelper.getYMLValue(YMLHelper.yamlData, "browsers.mobile"); // this can be removed if using the simplified way
+
+
+            if (browserDefault.equals("chrome")) {
+                loadChromeDriver(Objects.equals(YMLHelper.getYMLValue(YMLHelper.yamlData, "browsers.mobile"), true)); // this simplifies the if and else inside each driver
+            } else if (browserDefault.equals("firefox")) {
                 if (isMobileEmulation) {
                     loadFFDriver(true); //mobile emulation ON
                 } else {
                     loadFFDriver(false); //mobile emulation OFF
                 }
-            } else if (browserDefault == "edge") {
+            } else if (browserDefault.equals("edge")) {
                 if (isMobileEmulation) {
                     loadEdgeDriver(true); //mobile emulation ON
                 } else {
                     loadEdgeDriver(false); //mobile emulation OFF
                 }
             }
-        }catch (Exception e) {
+
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
- */
+//        // Option B: Using a local variable to choose the browser and mobile mode
+//
+//        int option = 1; // Change this to switch browser
+//
+//        switch (option) {
+//            case 1:
+//                loadChromeDriver(false); //mobile emulation OFF
+//                break;
+//            case 2:
+//                loadFFDriver(false);
+//                break;
+//            case 3:
+//                loadEdgeDriver(false);
+//                break;
+//            case 4:
+//                loadChromeDriver(true); //mobile emulation ON
+//                break;
+//            case 5:
+//                loadFFDriver(true);
+//                break;
+//            case 6:
+//                loadEdgeDriver(true);
+//                break;
+//        }
 
-        // Option B: Using a local variable to choose the browser and mobile mode
+        // Option C: Using the Env helper to choose the browser
 
-        int option = 1; // Change this to switch browser
-
-        switch (option) {
-            case 1:
-                loadChromeDriver(false); //mobile emulation OFF
-                break;
-            case 2:
-                loadFFDriver(false);
-                break;
-            case 3:
-                loadEdgeDriver(false);
-                break;
-            case 4:
-                loadChromeDriver(true); //mobile emulation ON
-                break;
-            case 5:
-                loadFFDriver(true);
-                break;
-            case 6:
-                loadEdgeDriver(true);
-                break;
-        }
-
-        // Option C: Using the Enum helper to choose the browser
+//        if (Objects.equals(EnvHelper.get("global.browser"),"chrome")) {
+//            loadChromeDriver(Objects.equals(EnvHelper.get("global.mobile"),"true")); // another way of passing isMobileEmulation as true or false
+//        }
+//        else if (Objects.equals(EnvHelper.get("global.browser"),"firefox")) {
+//            loadFFDriver(Objects.equals(EnvHelper.get("global.mobile"),"true")); // another way of passing isMobileEmulation as true or false
+//        }
+//
+//        else if (Objects.equals(EnvHelper.get("global.browser"),"edge")) {
+//            loadEdgeDriver(Objects.equals(EnvHelper.get("global.mobile"),"true")); // another way of passing isMobileEmulation as true or false
+//        }
 
     }
 
-    /***
+    /**
      * Load and Instantiate Chrome driver to the current one.
+     *
+     * @param isMobileEmulation can be removed entirely and define its value inside with both helpers
      */
     private static void loadChromeDriver(boolean isMobileEmulation) {
 
@@ -109,29 +119,29 @@ public abstract class BrowserDriverHelper extends LoggerHelper {
             ChromeOptions options = new ChromeOptions();
             WebDriverManager.chromedriver().setup();
 
-            // Using the Env helper to check the mobile mode
-
-            if (Objects.equals(Env.get("global.mobile"),"true")) {
-                Map<String,String> mobileEmulation = new HashMap<>();
-                mobileEmulation.put("deviceName","Nexus 5");
-                options.setExperimentalOption("mobileEmulation",mobileEmulation);
-            }
-
-            // Using the Env helper to check the mobile mode
-
-            if (Objects.equals(Env.get("global.runHeadless"),"true")) {
-                options.addArguments("--headless"); // Enable headless mode
-                options.addArguments("--disable-gpu"); // Disable GPU usage in headless mode
-            }
-
-
-            // Using the argument isMobileEmulation that's being passed with options A and B
-
-//            if (isMobileEmulation) {
-//                Map<String, Object> mobileEmulation = new HashMap<>();
-//                mobileEmulation.put("deviceName", "iPhone X"); // Set the desired device name for mobile emulation.
-//                options.setExperimentalOption("mobileEmulation", mobileEmulation);
+//            // Option A: Using the Env helper to check the mobile mode
+//
+//            if (Objects.equals(EnvHelper.get("global.mobile"),"true")) {
+//                Map<String,String> mobileEmulation = new HashMap<>();
+//                mobileEmulation.put("deviceName","Nexus 5");
+//                options.setExperimentalOption("mobileEmulation",mobileEmulation);
 //            }
+//
+//            // Option B: Using the Env helper to check the mobile mode
+//
+//            if (Objects.equals(EnvHelper.get("global.runHeadless"),"true")) {
+//                options.addArguments("--headless"); // Enable headless mode
+//                options.addArguments("--disable-gpu"); // Disable GPU usage in headless mode
+//            }
+
+
+            // Option C: Using the argument isMobileEmulation that's being passed with options A and B from loadDriver
+
+            if (isMobileEmulation) {
+                Map<String, Object> mobileEmulation = new HashMap<>();
+                mobileEmulation.put("deviceName", "iPhone X"); // Set the desired device name for mobile emulation.
+                options.setExperimentalOption("mobileEmulation", mobileEmulation);
+            }
 
             String host = "localhost";
             String port = "4444";
@@ -144,6 +154,7 @@ public abstract class BrowserDriverHelper extends LoggerHelper {
 
     /***
      * Load and Instantiate FF driver to the current one.
+     * @param isMobileEmulation can be removed entirely and define its value inside
      */
     private static void loadFFDriver(boolean isMobileEmulation) {
         try {
@@ -167,6 +178,11 @@ public abstract class BrowserDriverHelper extends LoggerHelper {
         }
     }
 
+    /**
+     * Load and Instantiate Edge driver to the current one.
+     *
+     * @param isMobileEmulation can be removed entirely and define its value inside
+     */
     private static void loadEdgeDriver(boolean isMobileEmulation) {
         try {
 

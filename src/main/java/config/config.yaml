@@ -13,6 +13,6 @@ gmail:
   appPwd: sgrqbwxumwdtgloz
 browsers:
   default: chrome
-  mobile: true
+  mobile: false
 
-# This file is meant to be used with the YML helper
+# This file is meant to be used with the YML helper and without the Listener

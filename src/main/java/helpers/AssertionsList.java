@@ -5,6 +5,7 @@ import designpattern.pom.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.asserts.SoftAssert;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +15,8 @@ import static org.testng.Assert.assertTrue;
 
 
 public class AssertionsList extends BasePage {
-    public static List<String> assertions = new ArrayList<>();
+    public static List<String> assertions = new ArrayList<>();;
+    public static SoftAssert softAssert = new SoftAssert();
 
     public AssertionsList equals(String actual, String expected) {
         boolean result = expected.equals(actual);
@@ -22,6 +24,22 @@ public class AssertionsList extends BasePage {
         addAssertion(description, result);
 
         assertEquals(actual, expected);
+        return this;
+    }
+
+    public AssertionsList equalsSoft(String actual, String expected) {
+        boolean result = expected.equals(actual);
+        String description = String.format("Softly assert if argument \"%s\" is equal to argument \"%s\"", expected, actual);
+        addAssertion(description, result);
+
+        softAssert.assertEquals(actual, expected);
+
+        return this;
+    }
+
+    public AssertionsList assertAll() {
+        softAssert.assertAll(); // we call this method to throw the error, otherwise it won't fail
+
         return this;
     }
 

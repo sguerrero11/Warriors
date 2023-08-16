@@ -1,16 +1,41 @@
-Aug 14 2023;16:07:48 2034 [main] INFO  helpers.LoggerHelper -- Starting suite
-Aug 14 2023;16:07:49 2061 [main] INFO  helpers.LoggerHelper -- I am in onStart method from suite entitled Warriors
-Aug 14 2023;16:07:49 2062 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-Aug 14 2023;16:07:49 2725 [main] INFO  helpers.LoggerHelper -- [Env/setProperties] Configuration Properties successfully loaded.
-Aug 14 2023;16:07:50 3261 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Using chromedriver 114.0.5735.90 (resolved driver for Chrome 114)
-Aug 14 2023;16:07:50 3324 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.chrome.driver as C:\Users\740722\.cache\selenium\chromedriver\win32\114.0.5735.90\chromedriver.exe
-Aug 14 2023;16:07:50 3327 [main] INFO  helpers.LoggerHelper -- [BrowserDriver/loadChromeDriver] Connecting to: http://localhost:4444/wd/hub
-Aug 14 2023;16:07:54 7495 [main] INFO  helpers.LoggerHelper -- @Test: checkAccessibility
-Aug 14 2023;16:07:54 7496 [main] INFO  helpers.LoggerHelper -- Description: Accessibility test for web
-Aug 14 2023;16:07:54 7496 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Aug 14 2023;16:07:54 7554 [main] INFO  helpers.LoggerHelper -- @Test: checkAccessibility has FAILED
-Aug 14 2023;16:07:54 7554 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Aug 14 2023;16:07:54 7770 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
-Aug 14 2023;16:07:54 7803 [main] INFO  helpers.LoggerHelper -- Finishing suite
-Aug 14 2023;16:07:54 7804 [main] INFO  helpers.LoggerHelper -- I am in onFinish method from suite entitled Warriors
-Aug 14 2023;16:07:54 7805 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+Aug 15 2023;23:38:56 4085 [main] INFO  helpers.LoggerHelper -- Starting suite
+Aug 15 2023;23:38:56 4126 [main] INFO  helpers.LoggerHelper -- I am in onStart method from Default Suite
+Aug 15 2023;23:38:56 4126 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+Aug 15 2023;23:39:07 15172 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Using chromedriver 114.0.5735.90 (resolved driver for Chrome 114)
+Aug 15 2023;23:39:07 15344 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.chrome.driver as C:\Users\740722\.cache\selenium\chromedriver\win32\114.0.5735.90\chromedriver.exe
+Aug 15 2023;23:39:07 15347 [main] INFO  helpers.LoggerHelper -- [BrowserDriver/loadChromeDriver] Connecting to: http://localhost:4444/wd/hub
+Aug 15 2023;23:39:17 25107 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray
+Aug 15 2023;23:39:17 25108 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an array object
+Aug 15 2023;23:39:17 25108 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Aug 15 2023;23:39:22 29577 [main] INFO  helpers.LoggerHelper -- Testing user: standard_user
+Aug 15 2023;23:39:23 30992 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
+Aug 15 2023;23:39:24 32297 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray has FAILED
+Aug 15 2023;23:39:24 32297 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Aug 15 2023;23:39:25 33123 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
+Aug 15 2023;23:39:25 33189 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray
+Aug 15 2023;23:39:25 33189 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an array object
+Aug 15 2023;23:39:25 33189 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Aug 15 2023;23:39:27 35021 [main] INFO  helpers.LoggerHelper -- Testing user: locked_out_user
+Aug 15 2023;23:39:28 36055 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
+Aug 15 2023;23:39:29 37016 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray has PASSED
+Aug 15 2023;23:39:29 37017 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Aug 15 2023;23:39:29 37385 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
+Aug 15 2023;23:39:29 37390 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray
+Aug 15 2023;23:39:29 37390 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an array object
+Aug 15 2023;23:39:29 37391 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Aug 15 2023;23:39:31 38726 [main] INFO  helpers.LoggerHelper -- Testing user: problem_user
+Aug 15 2023;23:39:32 39771 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
+Aug 15 2023;23:39:33 41209 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray has FAILED
+Aug 15 2023;23:39:33 41210 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Aug 15 2023;23:39:34 42386 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
+Aug 15 2023;23:39:34 42394 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray
+Aug 15 2023;23:39:34 42394 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an array object
+Aug 15 2023;23:39:34 42394 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Aug 15 2023;23:39:37 44799 [main] INFO  helpers.LoggerHelper -- Testing user: performance_glitch_user
+Aug 15 2023;23:39:39 46495 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
+Aug 15 2023;23:39:45 53285 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray has FAILED
+Aug 15 2023;23:39:45 53285 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Aug 15 2023;23:39:46 53842 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
+Aug 15 2023;23:39:50 57908 [main] INFO  helpers.LoggerHelper -- Finishing suite
+Aug 15 2023;23:39:50 57909 [main] INFO  helpers.LoggerHelper -- I am in onFinish method from Default Suite
+Aug 15 2023;23:39:50 57910 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #

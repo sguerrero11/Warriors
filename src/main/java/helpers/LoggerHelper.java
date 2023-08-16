@@ -1,24 +1,23 @@
 package helpers;
 
 import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.annotations.AfterMethod;
+import org.testng.asserts.SoftAssert;
 
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -30,7 +29,16 @@ import static helpers.AssertionsList.assertions;
 public abstract class LoggerHelper {
 
     private final static Logger _logger = LoggerFactory.getLogger(LoggerHelper.class);
-    public static BufferedWriter writer;
+
+    //Using BufferedWriter (uncomment all required lines). This has better performance
+    public static PrintWriter writer;
+
+    // This variable is needed for each class that has a @Test and an assertion
+    public static AssertionsList asserts = new AssertionsList();
+
+    // Using OutputStream + OutputStreamWriter (uncomment all required lines)
+//    public static OutputStream outputStream;
+//    public static OutputStreamWriter reportWriter;
 
 
     /***
@@ -107,18 +115,21 @@ public abstract class LoggerHelper {
     public void createReportForQAs(String path) {
 
         try {
-            writer = new BufferedWriter(new FileWriter(new File(path)));
+            // One way of doing it (using BufferedWriter, better performance)
+            writer = new PrintWriter(new File(path));
+
+            // Second way of doing it
+//            outputStream = new FileOutputStream(path);
+//            reportWriter = new OutputStreamWriter(outputStream);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public void logBreak() {
-        try {
-            writer.write("\n");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        //            reportWriter.write("\n");
+        writer.write("\n");
 
     }
 
@@ -126,11 +137,8 @@ public abstract class LoggerHelper {
         String timestamp = new SimpleDateFormat("MMMM d, yyyy HH:mm:ss").format(new Date());
         String formattedStep = "[" + timestamp + "] " + step;
 //        logInfo(formattedStep); // optional if you want to see it in the console as well
-        try {
-            writer.write(formattedStep + "\n");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        //            reportWriter.write(formattedStep + "\n");
+        writer.write(formattedStep + "\n");
     }
 
     public void logAssertion(List<String> validation) {
@@ -144,13 +152,10 @@ public abstract class LoggerHelper {
 
     public void logStep(String step, String extendedMessage) {
         String timestamp = new SimpleDateFormat("MMMM d, yyyy HH:mm:ss").format(new Date());
-        String formattedStep = "[" + timestamp + "] " + step;
+        String formattedStep = "[" + timestamp + "] " + step + extendedMessage;
 //        logInfo(formattedStep); // optional if you want to see it in the console as well
-        try {
-            writer.write(formattedStep + "\n");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        //            reportWriter.write(formattedStep + "\n");
+        writer.write(formattedStep + "\n");
     }
 
     public static void takeSS(RemoteWebDriver driver, String fileName) {
@@ -184,27 +189,23 @@ public abstract class LoggerHelper {
     }
 
     public void finalizeTest(String outcome) {
-        try {
-            logAssertion(assertions);
-            logBreak();
-            logStep("Outcome:");
-            logStep(outcome);
-            writer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        logAssertion(assertions);
+        logBreak();
+        logStep("Outcome:");
+        logStep(outcome);
+//            reportWriter.close();
+//            writer.flush(); // optional
+        writer.close();
     }
 
     public void finalizeTest(String outcome, String extendedMessage) {
-        try {
-            logAssertion(assertions);
-            logBreak();
-            logStep("Outcome:");
-            logStep(outcome);
-            writer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        logAssertion(assertions);
+        logBreak();
+        logStep("Outcome:");
+        logStep(outcome + extendedMessage);
+//            reportWriter.close();
+//            writer.flush(); // optional
+        writer.close();
     }
 
     // endregion
@@ -235,5 +236,13 @@ public abstract class LoggerHelper {
 
 
     // endregion
+
+
+    // Since ProjectListener extends from LoggerHelper, this after method will be applied for each @Test
+    @AfterMethod
+    public void afterEachIteration() {
+        AssertionsList.softAssert = new SoftAssert(); // We clean the soft assert object after each iteration
+        AssertionsList.assertions = new ArrayList<>(); // We clean the assertions list after each iteration
+    }
 
 }

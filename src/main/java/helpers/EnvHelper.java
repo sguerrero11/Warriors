@@ -9,7 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 @SuppressWarnings("unchecked")
-public abstract class Env extends LoggerHelper {
+public abstract class EnvHelper extends LoggerHelper {
     public static JSONObject properties = null;
     public static String environment = null;
 

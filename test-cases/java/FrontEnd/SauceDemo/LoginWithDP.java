@@ -1,78 +1,25 @@
 package FrontEnd.SauceDemo;
 
 import designpattern.pageObjects.SauceDemoPage;
+import designpattern.pom.BasePage;
 import helpers.AssertionsList;
-import helpers.DataProviderHelper;
 import org.testng.annotations.*;
-import helpers.ExcelUtil;
+import utils.DataProviders;
 import utils.ProjectListener;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 
 @Listeners({ProjectListener.class})
-public class LoginWithDP extends DataProviderHelper {
+public class LoginWithDP extends BasePage {
 
     // region VARIABLES
 
     private SauceDemoPage index = new SauceDemoPage();
 
-    String folderPath = "test-data-files/";
-    String filePath = null;
-    String sheetName = null;
-    AssertionsList asserts = new AssertionsList();
-
 
     // endregion
 
-    // region DATA PROVIDERS
-
-    @DataProvider(name = "array")
-    public Object[][] dataSet1() {
-        return new Object[][]
-                {
-                        {"standard_user", "secret_sauce"},
-                        {"locked_out_user", "secret_sauce"},
-                        {"problem_user", "secret_sauce"},
-                        {"performance_glitch_user", "secret_sauce"}
-                };
-    }
-
-    @DataProvider(name = "excel")
-    public Object[][] dataSet2() throws IOException {
-
-        filePath = "UsersDataExcel.xlsx";
-        sheetName = "Sheet1";
-        ExcelUtil excel = new ExcelUtil(folderPath + filePath, sheetName); // instantiate excel file
-
-        // Counting rows and cols
-        int rows = excel.getRowCount();
-        int cols = excel.getColCount();
-
-        //Instantiate data object subject to excel
-        Object data[][] = new Object[rows - 1][cols]; // We create an object that's going to be modified by the helper, passing -1 because we don't want to count the title
-
-        excelGetData(excel, filePath, data, rows, cols);
-
-        return data;
-    }
-
-    @DataProvider(name = "csv")
-    public Iterator<Object[]> dataset3() throws IOException {
-
-        filePath = folderPath + "DataSetUsers.txt"; // Specify the path to your CSV-like file
-        List<Object[]> testData = new ArrayList<>(); // We create a list that's going to be modified by the helper
-
-        csvGetData(filePath, testData);
-
-        return testData.iterator();
-
-    }
-
-    //endregion
 
     // region BEFORE ANNOTATIONS
     @BeforeSuite
@@ -96,7 +43,7 @@ public class LoginWithDP extends DataProviderHelper {
 
     // region TESTS
 
-    @Test(description = "Trying to read data from an array object", dataProvider = "array", priority = 100, groups = {"Regression", "Smoke"})
+    @Test(description = "Trying to read data from an array object", dataProviderClass = DataProviders.class, dataProvider = "array", priority = 100, groups = {"Regression", "Smoke"})
     public void readFromArray(String username, String pwd) throws IOException {
 
         // region ARRANGE
@@ -116,20 +63,26 @@ public class LoginWithDP extends DataProviderHelper {
 
         // region ASSERT
 
-        if (username!="locked_out_user")
-        {
-            asserts.equals(index.getTitle(),"Swag Labs")
-                    .equals(index.getProductsTitle(),"Products");
+        if (username != "locked_out_user") {
+            asserts.equalsSoft(index.getTitle(),"fasdfads") // forcing a soft fail // since it's soft, code will continue to run
+                    .equals(index.getTitle(), "Swag Labs")
+                    .equals(index.getProductsTitle(), "Products");
+
+        } else {
+            asserts.equals(index.getErrorMessage(), "Epic sadface: Sorry, this user has been locked out.");
         }
-        else{
-            asserts.equals(index.getErrorMessage(),"Epic sadface: Sorry, this user has been locked out.");
-        }
+
+        // we call the below method if we want to fail the whole iteration when there's at least one failed soft assertion,
+        // unless we use successPercentage attribute to bypass it (it's a wrong usage but it serves the purpose)
+        // and thus the status will be "FAILED within success ratio" (we do this to see this message)
+        asserts.assertAll(); // if we comment this, iteration will always pass even though there's a soft fail (assertion will be marked as failed in the report)
+        // usually we wouldn't use it so we can pass the test
 
         // endregion
 
     }
 
-    @Test(description = "Trying to read data from an Excel file", dataProvider = "excel", priority = 300, groups = {"Regression", "Smoke"})
+    @Test(description = "Trying to read data from an Excel file", dataProviderClass = DataProviders.class, dataProvider = "excel", priority = 300, groups = {"Regression", "Smoke"})
     public void readFromFileExcel(String username, String pwd) throws IOException {
 
         // region ARRANGE
@@ -153,7 +106,7 @@ public class LoginWithDP extends DataProviderHelper {
 
     }
 
-    @Test(description = "Trying to read data from a CSV-like file", dataProvider = "csv", priority = 400, groups = {"Regression", "Smoke"})
+    @Test(description = "Trying to read data from a CSV-like file", dataProviderClass = DataProviders.class, dataProvider = "csv", priority = 400, groups = {"Regression", "Smoke"})
     public void readFromFileCSVLike(String username, String pwd) throws IOException {
 
         // region ARRANGE
@@ -178,4 +131,5 @@ public class LoginWithDP extends DataProviderHelper {
     }
 
     // endregion
+
 }

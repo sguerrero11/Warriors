@@ -2,7 +2,7 @@ package helpers.functions;
 
 import com.github.javafaker.Faker;
 
-import helpers.Env;
+import helpers.EnvHelper;
 import helpers.Minify;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -62,7 +62,7 @@ public abstract class FunctionsHelper {
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd_HHmmss");
         String randomNum = dateFormat.format(todayDate);
 
-        return Env.get("global.email.prefix") + randomNum + Env.get("global.email.suffix");
+        return EnvHelper.get("global.email.prefix") + randomNum + EnvHelper.get("global.email.suffix");
     }
 
 
@@ -331,11 +331,11 @@ public abstract class FunctionsHelper {
      * @return [String]
      */
     public static String getUserPassword() {
-        if(Objects.equals(Env.get("project"), "cbw")) {
-            return Env.get("password.cbw");
+        if(Objects.equals(EnvHelper.get("project"), "cbw")) {
+            return EnvHelper.get("password.cbw");
         }
 
-        return Env.get("global.credentials.passwordEncrypted");
+        return EnvHelper.get("global.credentials.passwordEncrypted");
     }
 
     /**
