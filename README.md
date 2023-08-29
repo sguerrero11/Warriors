@@ -16,16 +16,17 @@ After forking the framework, start by running the following commands:
 
 That's it, let's rock and roll!
 
-##_How this framework is structured:_
-#####1) Logs
-#####2) Properties files
-#####3) Reports for QA Team
-#####4) Reports for Team (usually Management and others)
-#####5) Screenshots
-#####6) Helpers and POM
-#####7) Test cases
-#####8) Test data files
-#####9) Test suites
+## _How this framework is structured:_
+##### 1) Logs
+##### 2) Properties files
+##### 3) Reports for QA Team
+##### 4) Reports for Team (usually Management and others)
+##### 5) Screenshots
+##### 6) Config files, Helpers and POM
+##### 7) Test cases
+##### 8) Test data files
+##### 9) Test properties files
+##### 9) Test suites
 
 
 

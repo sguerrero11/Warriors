@@ -1,0 +1,58 @@
+{
+  "environment": "dev",
+  "products_file": "2023",
+  "global": {
+    "password": "",
+    "email": {
+      "prefix": "test.email.",
+      "suffix": "test.com"
+    },
+    "mobile": false,
+    "zephyr": {
+      "access_token": "",
+      "url": "https://api.zephyrscale.smartbear.com/v2",
+      "testCycleFolder": "3256277",
+      "name": "Automated BE",
+      "synchronize": false
+    },
+    "browser": "chrome",
+    "runHeadless": false,
+    "data": {
+      "creditCardNumber": "4111111111111111",
+      "creditCardConfNumber": "777",
+      "registeredUserEmail": "test@gmail.com"
+    },
+    "fluentWait": {
+      "integration": {
+        "timeoutSeconds": 40,
+        "pollingMilliseconds": 1000
+      }
+    }
+  },
+  "projects": {
+    "project_name": {
+      "graphQLEndpoint": ""
+    },
+    "website": {
+      "url": ""
+    },
+    "aws": {
+      "graphQLEndpoint": "",
+      "x-api-key": "",
+      "default-token": "",
+      "last-token": "",
+      "useAuthentication": false
+    },
+    "netSuite": {
+      "endpoint": "",
+      "consumerKey": "",
+      "consumerSecret": "",
+      "accessToken": "",
+      "tokenSecret": "",
+      "realm": "",
+      "incoming": "https://ecomm-incoming-integreation-uat.us-e1.cloudhub.io/api/v1"
+    }
+  },
+  "_comment": "This file is meant to be used by the ENV Helper. This is the base config that will be bypassed by each environment setup"
+}
+

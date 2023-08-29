@@ -11,7 +11,7 @@ Feature: Perform a search
     When User inputs text "selenium test" on "//input[@id='twotabsearchtextbox']"
     When User clicks on "//input[@type='submit']"
     When User clicks on "//span[contains(text(),'Testing Tools Cookbook')]"
-    Then User verifies value of "//span[@class='a-color-base']/span" is "$46.99"
+    Then User verifies value of "//span[@class='a-color-base']/span" is "$29.99"
     Then User closes the browser
 
   ##Example:

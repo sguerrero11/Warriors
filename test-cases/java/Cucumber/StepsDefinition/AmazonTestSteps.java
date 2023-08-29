@@ -45,7 +45,7 @@ public class AmazonTestSteps {
     @Then("User verifies value of {string} is {string}")
     public void userVerifiesText(String identifier, String expectedVal){
 
-        WebDriverWait wait= new WebDriverWait(driver,Duration.ofSeconds(10));
+        WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(identifier)));
 
         WebElement element = driver.findElement(By.xpath(identifier));
