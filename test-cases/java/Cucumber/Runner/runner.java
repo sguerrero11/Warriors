@@ -19,3 +19,7 @@ public class runner extends AbstractTestNGCucumberTests {
 
  */
 }
+
+/*
+The runner is what you need to run the test
+ */

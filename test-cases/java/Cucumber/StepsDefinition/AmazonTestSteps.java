@@ -61,3 +61,7 @@ public class AmazonTestSteps {
 
 
 }
+
+/*
+The steps definition will be used by the runner, based on the features file
+ */
