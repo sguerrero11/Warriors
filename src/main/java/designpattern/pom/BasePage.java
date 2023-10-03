@@ -314,7 +314,7 @@ public class BasePage extends LoggerHelper {
 
     /***
      * Select value from dropdown by Visible Text.
-     * @param targetValue [String] -> Option's Visible text, if is empty, the first value will be selected.
+     * @param targetValue [String] -> Option's Visible text, if it is empty, the first value will be selected.
      * @param dropdownId [By] -> Locator of the target element.
      */
     public void selectValueByTextFromSpecialDropdown(String targetValue, String dropdownId) throws InterruptedException {
@@ -393,6 +393,11 @@ public class BasePage extends LoggerHelper {
 
     }
 
+    /**
+     * Wait until the field in the table is filled in with data
+     * @param locator --> the field that needs to be completed
+     * We'll check every 2 seconds if the field is completed, and after 10 seconds, we'll throw an exception
+     */
     public void waitUntilFieldIsPopulated(final By locator) {
         new FluentWait<WebDriver>(BrowserDriverHelper.getDriver()).withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2))

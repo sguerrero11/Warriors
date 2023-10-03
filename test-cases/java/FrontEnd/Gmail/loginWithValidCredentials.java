@@ -60,7 +60,7 @@ public class loginWithValidCredentials extends GmailPage {
         //assert
 
         asserts.equals(index.getSearchMailInputAttribute(), "Search mail") // we verify we're in the right page comparing text against search input
-                .isPresent(searchMailInput); // we verify we're in the right page by checking if the search input field is present
+               .isPresent(searchMailInput); // we verify we're in the right page by checking if the search input field is present
 
     }
 
