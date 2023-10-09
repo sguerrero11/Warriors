@@ -8,10 +8,11 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.HasDevTools;
 import org.openqa.selenium.devtools.NetworkInterceptor;
-import org.openqa.selenium.devtools.v113.emulation.Emulation;
-import org.openqa.selenium.devtools.v113.log.Log;
-import org.openqa.selenium.devtools.v113.performance.Performance;
-import org.openqa.selenium.devtools.v113.performance.model.Metric;
+
+import org.openqa.selenium.devtools.v117.emulation.Emulation;
+import org.openqa.selenium.devtools.v117.log.Log;
+import org.openqa.selenium.devtools.v117.performance.Performance;
+import org.openqa.selenium.devtools.v117.performance.model.Metric;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.WheelInput;
 import org.openqa.selenium.remote.Augmenter;

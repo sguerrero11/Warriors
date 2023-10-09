@@ -15,6 +15,7 @@ import java.time.Duration;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
+
 public class BasePage extends LoggerHelper {
 
     private By uiNotifyDynamicMultiplePopupMessageLocator(String text) {
@@ -150,11 +151,17 @@ public class BasePage extends LoggerHelper {
      */
     // region ACTIONS
 
+
+    public void sendEnterKey(String text, By locator) {
+        BrowserDriverHelper.getDriver().findElement(locator).sendKeys(text,Keys.ENTER);
+    }
+
     /***
      * Set Text to element.
      * @param inputText [String] -> Value to write.
      * @param locator [By] -> Locator of the target element.
      */
+
     public void sendKeys(String inputText, By locator) {
         BrowserDriverHelper.getDriver().findElement(locator).sendKeys(inputText);
         logStep("Fill in field identified as " + returnAttributeBasedOnExistence(locator) + " with value: " + inputText);

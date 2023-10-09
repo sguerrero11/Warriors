@@ -1,0 +1,19 @@
+[October 9, 2023 20:43:30] Test case name: readFromArray
+[October 9, 2023 20:43:30] Test case description: Trying to read data from an array object
+
+[October 9, 2023 20:43:30] Steps:
+[October 9, 2023 20:43:30] Navigate to URL: http:/www.saucedemo.com
+[October 9, 2023 20:43:31] Fill in field identified as "user-name" (attribute: name) with value: problem_user
+[October 9, 2023 20:43:31] Fill in field identified as "password" (attribute: name) with value: secret_sauce
+[October 9, 2023 20:43:32] Click on button identified as "login-button" (attribute: name)
+
+[October 9, 2023 20:43:32] Assertions:
+[October 9, 2023 20:43:32] Softly assert if argument "fasdfads" is equal to argument "Swag Labs" - FAILED
+[October 9, 2023 20:43:32] Assert if argument "Swag Labs" is equal to argument "Swag Labs" - PASSED
+[October 9, 2023 20:43:32] Assert if argument "Products" is equal to argument "Products" - PASSED
+
+[October 9, 2023 20:43:32] Outcome:
+[October 9, 2023 20:43:32] Test Failed. The following errors were found: 
+
+java.lang.AssertionError: The following asserts failed:
+	expected [fasdfads] but found [Swag Labs]

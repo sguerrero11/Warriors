@@ -52,7 +52,6 @@ public class SauceDemoPage extends BasePage implements DefaultPage {
     public void loginClick(){
         waitForElementVisible(loginButton);
         click(loginButton);
-
     }
 
     public String getTitle(){

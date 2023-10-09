@@ -1,0 +1,11 @@
+[October 9, 2023 21:44:07] Test case name: searchAKeyword
+[October 9, 2023 21:44:07] Test case description: 
+
+[October 9, 2023 21:44:07] Steps:
+[October 9, 2023 21:44:11] Navigate to URL: http:/www.google.com
+
+[October 9, 2023 21:44:15] Assertions:
+[October 9, 2023 21:44:15] Assert if argument "test" is equal to argument "test" - PASSED
+
+[October 9, 2023 21:44:15] Outcome:
+[October 9, 2023 21:44:15] Test Passed

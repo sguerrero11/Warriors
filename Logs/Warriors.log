@@ -1,3 +1,15 @@
-Aug 29 2023;02:13:48 1494 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Using geckodriver 0.33.0 (resolved driver for Firefox 114)
-Aug 29 2023;02:13:48 1606 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.gecko.driver as C:\Users\740722\.cache\selenium\geckodriver\win64\0.33.0\geckodriver.exe
-Aug 29 2023;02:14:15 29236 [main] INFO  helpers.LoggerHelper -- Test case has PASSED
+Oct 09 2023;21:43:44 6597 [main] INFO  helpers.LoggerHelper -- Starting suite
+Oct 09 2023;21:43:44 6648 [main] INFO  helpers.LoggerHelper -- I am in onStart method from Default Suite
+Oct 09 2023;21:43:44 6649 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+Oct 09 2023;21:43:54 16242 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Using chromedriver 117.0.5938.149 (resolved driver for Chrome 117)
+Oct 09 2023;21:43:54 16384 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.chrome.driver as C:\Users\740722\.cache\selenium\chromedriver\win64\117.0.5938.149\chromedriver.exe
+Oct 09 2023;21:43:54 16387 [main] INFO  helpers.LoggerHelper -- [BrowserDriver/loadChromeDriver] Connecting to: http://localhost:4444/wd/hub
+Oct 09 2023;21:44:07 28864 [main] INFO  helpers.LoggerHelper -- @Test: searchAKeyword
+Oct 09 2023;21:44:07 28864 [main] INFO  helpers.LoggerHelper -- Description: 
+Oct 09 2023;21:44:07 28865 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Oct 09 2023;21:44:15 36905 [main] INFO  helpers.LoggerHelper -- @Test: searchAKeyword has PASSED
+Oct 09 2023;21:44:15 36905 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Oct 09 2023;21:44:18 40593 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
+Oct 09 2023;21:44:27 49413 [main] INFO  helpers.LoggerHelper -- Finishing suite
+Oct 09 2023;21:44:27 49414 [main] INFO  helpers.LoggerHelper -- I am in onFinish method from Default Suite
+Oct 09 2023;21:44:27 49414 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #
