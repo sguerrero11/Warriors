@@ -151,6 +151,11 @@ public class BasePage extends LoggerHelper {
      */
     // region ACTIONS
 
+    /**
+     * Send ENTER KEY along with a specific text in a search field
+     * @param text
+     * @param locator
+     */
 
     public void sendEnterKey(String text, By locator) {
         BrowserDriverHelper.getDriver().findElement(locator).sendKeys(text,Keys.ENTER);
