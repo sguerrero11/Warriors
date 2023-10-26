@@ -411,7 +411,8 @@ public class BasePage extends LoggerHelper {
      * We'll check every 2 seconds if the field is completed, and after 10 seconds, we'll throw an exception
      */
     public void waitUntilFieldIsPopulated(final By locator) {
-        new FluentWait<WebDriver>(BrowserDriverHelper.getDriver()).withTimeout(Duration.ofSeconds(10))
+        new FluentWait<WebDriver>(BrowserDriverHelper.getDriver())
+                .withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2))
                 .until(driver -> (driver.findElement(locator).getAttribute("value") != ""));
 //                .until(driver -> (getValue(locator) != "")); // same as above
