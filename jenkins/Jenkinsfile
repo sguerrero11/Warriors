@@ -1,34 +1,33 @@
 pipeline {
     agent any
     stages {
-        stage ("Clean up") {
+        stage("Clean up") {
             steps {
                 deleteDir()
             }
         }
-        stage ("Clone Repo") {
+        stage("Clone Repo") {
             steps {
                 sh "git clone https://github.com/sguerrero11/Warriors.git"
             }
         }
-        stage ("Build") {
+        stage("Build") {
             steps {
                 dir("Warriors") {
                     sh "mvn clean install"
                 }
             }
         }
-        stage ("Test") {
+        stage("Test") {
             steps {
-                 dir("Warriors") {
+                dir("Warriors") {
                     sh "mvn test -Dtest=FrontEnd.SauceDemo.LoginWithDP#readFromArray"
                 }
             }
         }
-         stage ("Complete") {
+        stage("Complete") {
             steps {
-                 echo Complete
-                }
+                echo 'Complete'
             }
         }
     }
