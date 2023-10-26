@@ -9,13 +9,28 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Surefire suite</th></tr>
-<tr><td><a href="#t0">Surefire test</a></td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">48,328</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Surefire test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">3</td><td class="num">30,515</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Surefire suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Surefire test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="4">FrontEnd.SauceDemo.LoginWithDP</td><td><a href="#m0">readFromArray</a></td><td rowspan="4">1690496636299</td><td rowspan="4">8225</td></tr><tr class="passedeven"><td><a href="#m1">readFromArray</a></td></tr><tr class="passedeven"><td><a href="#m2">readFromArray</a></td></tr><tr class="passedeven"><td><a href="#m3">readFromArray</a></td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Surefire suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Surefire test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="3">FrontEnd.SauceDemo.LoginWithDP</td><td><a href="#m0">readFromArray</a></td><td rowspan="3">1698363793231</td><td rowspan="3">7199</td></tr><tr class="failedeven"><td><a href="#m1">readFromArray</a></td></tr><tr class="failedeven"><td><a href="#m2">readFromArray</a></td></tr><tr><th colspan="4">Surefire test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">FrontEnd.SauceDemo.LoginWithDP</td><td><a href="#m3">readFromArray</a></td><td rowspan="1">1698363801105</td><td rowspan="1">2219</td></tr></tbody>
 </table>
-<h2>Surefire test</h2><h3 id="m0">FrontEnd.SauceDemo.LoginWithDP#readFromArray</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>standard_user</td><td>secret_sauce</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">FrontEnd.SauceDemo.LoginWithDP#readFromArray</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>problem_user</td><td>secret_sauce</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">FrontEnd.SauceDemo.LoginWithDP#readFromArray</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>performance_glitch_user</td><td>secret_sauce</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Surefire test</h2><h3 id="m0">FrontEnd.SauceDemo.LoginWithDP#readFromArray</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>standard_user</td><td>secret_sauce</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	expected [fasdfads] but found [Swag Labs]
+	at helpers.AssertionsList.assertAll(AssertionsList.java:41)
+	at FrontEnd.SauceDemo.LoginWithDP.readFromArray(LoginWithDP.java:78)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+... Removed 34 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">FrontEnd.SauceDemo.LoginWithDP#readFromArray</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>problem_user</td><td>secret_sauce</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	expected [fasdfads] but found [Swag Labs]
+	at helpers.AssertionsList.assertAll(AssertionsList.java:41)
+	at FrontEnd.SauceDemo.LoginWithDP.readFromArray(LoginWithDP.java:78)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+... Removed 34 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">FrontEnd.SauceDemo.LoginWithDP#readFromArray</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>performance_glitch_user</td><td>secret_sauce</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	expected [fasdfads] but found [Swag Labs]
+	at helpers.AssertionsList.assertAll(AssertionsList.java:41)
+	at FrontEnd.SauceDemo.LoginWithDP.readFromArray(LoginWithDP.java:78)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+... Removed 34 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m3">FrontEnd.SauceDemo.LoginWithDP#readFromArray</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>locked_out_user</td><td>secret_sauce</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

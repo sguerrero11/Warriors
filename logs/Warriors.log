@@ -1,2 +1,41 @@
-Oct 17 2023;18:54:21 1069 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Using geckodriver 0.33.0 (resolved driver for Firefox 117)
-Oct 17 2023;18:54:21 1159 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.gecko.driver as C:\Users\740722\.cache\selenium\geckodriver\win64\0.33.0\geckodriver.exe
+Oct 27 2023;01:43:03 975  [main] INFO  helpers.LoggerHelper -- Starting suite
+Oct 27 2023;01:43:03 994  [main] INFO  helpers.LoggerHelper -- I am in onStart method from Surefire suite
+Oct 27 2023;01:43:03 995  [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+Oct 27 2023;01:43:05 3094 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Using chromedriver 117.0.5938.149 (resolved driver for Chrome 117)
+Oct 27 2023;01:43:05 3146 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.chrome.driver as C:\Users\740722\.cache\selenium\chromedriver\win64\117.0.5938.149\chromedriver.exe
+Oct 27 2023;01:43:05 3147 [main] INFO  helpers.LoggerHelper -- [BrowserDriver/loadChromeDriver] Connecting to: http://localhost:4444/wd/hub
+Oct 27 2023;01:43:13 10896 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray
+Oct 27 2023;01:43:13 10896 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an array object
+Oct 27 2023;01:43:13 10897 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Oct 27 2023;01:43:17 15365 [main] INFO  helpers.LoggerHelper -- Testing user: standard_user
+Oct 27 2023;01:43:19 16779 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
+Oct 27 2023;01:43:20 18075 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray has FAILED
+Oct 27 2023;01:43:20 18076 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Oct 27 2023;01:43:21 18722 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
+Oct 27 2023;01:43:21 18747 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray
+Oct 27 2023;01:43:21 18748 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an array object
+Oct 27 2023;01:43:21 18748 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Oct 27 2023;01:43:21 19596 [main] INFO  helpers.LoggerHelper -- Testing user: locked_out_user
+Oct 27 2023;01:43:22 20308 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
+Oct 27 2023;01:43:23 20966 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray has PASSED
+Oct 27 2023;01:43:23 20966 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Oct 27 2023;01:43:23 21343 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
+Oct 27 2023;01:43:23 21346 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray
+Oct 27 2023;01:43:23 21346 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an array object
+Oct 27 2023;01:43:23 21346 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Oct 27 2023;01:43:24 22010 [main] INFO  helpers.LoggerHelper -- Testing user: problem_user
+Oct 27 2023;01:43:24 22623 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
+Oct 27 2023;01:43:25 23214 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray has FAILED
+Oct 27 2023;01:43:25 23215 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Oct 27 2023;01:43:25 23541 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
+Oct 27 2023;01:43:25 23543 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray
+Oct 27 2023;01:43:25 23544 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an array object
+Oct 27 2023;01:43:25 23544 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Oct 27 2023;01:43:26 24167 [main] INFO  helpers.LoggerHelper -- Testing user: performance_glitch_user
+Oct 27 2023;01:43:27 24681 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
+Oct 27 2023;01:43:33 30859 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray has FAILED
+Oct 27 2023;01:43:33 30860 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Oct 27 2023;01:43:33 31545 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
+Oct 27 2023;01:43:34 32629 [main] INFO  helpers.LoggerHelper -- Finishing suite
+Oct 27 2023;01:43:34 32630 [main] INFO  helpers.LoggerHelper -- I am in onFinish method from Surefire suite
+Oct 27 2023;01:43:34 32630 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #
