@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="TestNG" >
+    <listeners>
+        <listener class-name="utils.ProjectListener"/>
+    </listeners>
+    <test name="TestNG" group-by-instances="true">
+        <groups>
+            <run>
+                <include name="Smoke"/>
+                <exclude name="Skipped" />
+            </run>
+        </groups>
+        <classes>
+            <class name= "FrontEnd.SauceDemo.LoginWithDP"/>
+        </classes>
+    </test>
+</suite>
