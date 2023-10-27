@@ -65,12 +65,15 @@
                 <version>3.2.1</version>
                 <configuration>
                     <includes>
-                        <include>*</include>
+                        <include>*.java</include>
                     </includes>
                 </configuration>
             </plugin>
 
         </plugins>
+
+
+        <testSourceDirectory>${project.basedir}/test-cases</testSourceDirectory>
 
     </build>
 
