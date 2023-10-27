@@ -24,9 +24,7 @@
     </properties>
 
     <build>
-
         <plugins>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -75,7 +73,6 @@
         <!-- <testSourceDirectory>${project.basedir}/test-cases/java</testSourceDirectory> -->
 
      </build>
-
 
      <dependencies>
          <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
