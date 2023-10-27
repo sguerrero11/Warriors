@@ -14,14 +14,14 @@ pipeline {
         stage("Build") {
             steps {
                 dir("Warriors") {
-                    sh 'mvn clean install -U'
+                    sh 'mvn clean install'
                 }
             }
         }
         stage("Test") {
             steps {
                 dir("Warriors") {
-                    sh 'mvn test -Dtest="FrontEnd.SauceDemo.LoginWithDP#readFromArray"'
+                    sh 'mvn test "-Dtest=FrontEnd.SauceDemo.LoginWithDP#readFromArray"'
                     // sh 'mvn test' // to run all tests in the project
                 }
             }
