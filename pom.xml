@@ -72,13 +72,13 @@
 
         </plugins>
 
-        <testSourceDirectory>${project.basedir}</testSourceDirectory>
+        <!-- <testSourceDirectory>${project.basedir}/test-cases/java</testSourceDirectory> -->
 
-    </build>
+     </build>
 
 
-    <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+     <dependencies>
+         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
