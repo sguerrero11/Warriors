@@ -21,7 +21,9 @@ pipeline {
         stage("Test") {
             steps {
                 dir("Warriors") {
-                    sh 'mvn test "-Dtest=FrontEnd.SauceDemo.LoginWithDP#readFromArray" "-Dsurefire.failIfNoSpecifiedTests=false"'
+                    //sh 'mvn test "-Dtest=FrontEnd.SauceDemo.LoginWithDP#readFromArray" "-Dsurefire.failIfNoSpecifiedTests=false"'
+                    sh "${mvnHome}/bin/mvn clean test -e -Dtest=FrontEnd.SauceDemo.LoginWithDP#readFromArray"
+
                     // sh 'mvn test' // to run all tests in the project
                 }
             }
