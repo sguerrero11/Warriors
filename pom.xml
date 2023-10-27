@@ -65,9 +65,6 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>${project.basedir}/test-suites/testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
-                    <includes>
-                        <include>*.java</include>
-                    </includes>
                 </configuration>
             </plugin>
 

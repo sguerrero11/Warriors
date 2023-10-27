@@ -13,6 +13,14 @@
         </encoder>
     </appender>
 
+
+    <appender name="STDERR" class="ch.qos.logback.core.ConsoleAppender" target="System.err">
+        <encoder>
+            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+
     <appender name="FILE" class="ch.qos.logback.core.FileAppender">
         <file>logs/Warriors.log</file>
         <append>false</append>
@@ -25,7 +33,7 @@
         </encoder>
     </appender>
 
-    <logger name="java" level ="debug" /> <!--  this is only for this folder, that is, the class i'm executing
+    <logger name="java" level ="INFO" /> <!--  this is only for this folder, that is, the class i'm executing
        note: you can add different logger name per line.
        - debug shows debug, info, warn and error.
        - warn shows error and warn.
@@ -34,8 +42,9 @@
        e.g.
        <logger name="anotherFolder" level ="error" />
        -->
-    <root level="info"> <!-- this means that generally i will log on info message, that is, project level (@FrontEnd). it overrides the folder levels -->
+    <root level="INFO"> <!-- this means that generally i will log on info message, that is, project level (@FrontEnd). it overrides the folder levels -->
         <appender-ref ref="STDOUT" />
+        <appender-ref ref="STDERR" />
         <appender-ref ref="FILE" />
     </root>
 </configuration>

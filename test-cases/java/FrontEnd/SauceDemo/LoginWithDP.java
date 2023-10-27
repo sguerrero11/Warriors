@@ -82,7 +82,7 @@ public class LoginWithDP extends BasePage {
 
     }
 
-    @Test(description = "Trying to read data from an Excel file", dataProviderClass = DataProviders.class, dataProvider = "excel", priority = 300, groups = {"Regression", "Smoke"})
+    @Test(description = "Trying to read data from an Excel file", dataProviderClass = DataProviders.class, dataProvider = "excel", priority = 300, groups = {"Regression"})
     public void readFromFileExcel(String username, String pwd) throws IOException {
 
         // region ARRANGE
@@ -106,7 +106,7 @@ public class LoginWithDP extends BasePage {
 
     }
 
-    @Test(description = "Trying to read data from a CSV-like file", dataProviderClass = DataProviders.class, dataProvider = "csv", priority = 400, groups = {"Regression", "Smoke"})
+    @Test(description = "Trying to read data from a CSV-like file", dataProviderClass = DataProviders.class, dataProvider = "csv", priority = 400, groups = {"Regression"})
     public void readFromFileCSVLike(String username, String pwd) throws IOException {
 
         // region ARRANGE
