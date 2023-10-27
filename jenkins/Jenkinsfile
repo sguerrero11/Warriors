@@ -20,9 +20,8 @@ pipeline {
         }
         stage("Test") {
             steps {
-                dir("Warriors") {
-                    //sh "mvn test -Dtest=FrontEnd.SauceDemo.LoginWithDP#readFromArray"
-                    sh "mvn test"
+                script {
+                    sh "mvn test -Dtest=FrontEnd.SauceDemo.LoginWithDP#readFromArray"
                 }
             }
         }
