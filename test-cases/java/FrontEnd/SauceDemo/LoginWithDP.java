@@ -75,8 +75,8 @@ public class LoginWithDP extends BasePage {
         // we call the below method if we want to fail the whole iteration when there's at least one failed soft assertion,
         // unless we use successPercentage attribute to bypass it (it's a wrong usage but it serves the purpose)
         // and thus the status will be "FAILED within success ratio" (we do this to see this message)
-        asserts.assertAll(); // if we comment this, iteration will always pass even though there's a soft fail (assertion will be marked as failed in the report)
-        // usually we wouldn't use it so we can pass the test
+//        asserts.assertAll(); // if we comment this, iteration will always pass even though there's a soft fail (assertion will be marked as failed in the report)
+        // usually we wouldn't use it, so we can pass the test
 
         // endregion
 

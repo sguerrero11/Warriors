@@ -73,7 +73,7 @@
 
         </plugins>
 
-        <!-- <testSourceDirectory>${project.basedir}/test-cases/java</testSourceDirectory> -->
+        <testSourceDirectory>${project.basedir}/test-cases/java</testSourceDirectory>
 
      </build>
 
