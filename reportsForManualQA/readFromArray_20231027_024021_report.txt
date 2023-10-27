@@ -1,0 +1,14 @@
+[October 27, 2023 02:40:21] Test case name: readFromArray
+[October 27, 2023 02:40:21] Test case description: Trying to read data from an array object
+
+[October 27, 2023 02:40:21] Steps:
+[October 27, 2023 02:40:21] Navigate to URL: http:/www.saucedemo.com
+[October 27, 2023 02:40:21] Fill in field identified as "user-name" (attribute: name) with value: locked_out_user
+[October 27, 2023 02:40:22] Fill in field identified as "password" (attribute: name) with value: secret_sauce
+[October 27, 2023 02:40:22] Click on button identified as "login-button" (attribute: name)
+
+[October 27, 2023 02:40:22] Assertions:
+[October 27, 2023 02:40:22] Assert if argument "Epic sadface: Sorry, this user has been locked out." is equal to argument "Epic sadface: Sorry, this user has been locked out." - PASSED
+
+[October 27, 2023 02:40:22] Outcome:
+[October 27, 2023 02:40:22] Test Passed

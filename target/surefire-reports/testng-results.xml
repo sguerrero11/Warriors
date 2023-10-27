@@ -2,7 +2,7 @@
 <testng-results ignored="2" total="6" passed="1" failed="3" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-27T01:43:03 CEST" name="Surefire suite" finished-at="2023-10-27T01:43:33 CEST" duration-ms="30515">
+  <suite started-at="2023-10-27T02:40:05 CEST" name="Surefire suite" finished-at="2023-10-27T02:40:32 CEST" duration-ms="27418">
     <groups>
       <group name="Regression">
         <method signature="LoginWithDP.readFromArray(java.lang.String,java.lang.String)[pri:100, instance:FrontEnd.SauceDemo.LoginWithDP@1e7aa82b]" name="readFromArray" class="FrontEnd.SauceDemo.LoginWithDP"/>
@@ -11,21 +11,21 @@
         <method signature="LoginWithDP.readFromArray(java.lang.String,java.lang.String)[pri:100, instance:FrontEnd.SauceDemo.LoginWithDP@1e7aa82b]" name="readFromArray" class="FrontEnd.SauceDemo.LoginWithDP"/>
       </group> <!-- Smoke -->
     </groups>
-    <test started-at="2023-10-27T01:43:03 CEST" name="Surefire test" finished-at="2023-10-27T01:43:33 CEST" duration-ms="30515">
+    <test started-at="2023-10-27T02:40:05 CEST" name="Surefire test" finished-at="2023-10-27T02:40:32 CEST" duration-ms="27418">
       <class name="FrontEnd.SauceDemo.LoginWithDP">
-        <test-method is-config="true" signature="setup()[pri:0, instance:FrontEnd.SauceDemo.LoginWithDP@1e7aa82b]" started-at="2023-10-27T01:43:03 CEST" name="setup" finished-at="2023-10-27T01:43:03 CEST" duration-ms="18" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:FrontEnd.SauceDemo.LoginWithDP@1e7aa82b]" started-at="2023-10-27T02:40:05 CEST" name="setup" finished-at="2023-10-27T02:40:05 CEST" duration-ms="26" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:FrontEnd.SauceDemo.LoginWithDP@1e7aa82b]" started-at="2023-10-27T01:43:13 CEST" name="beforeTest" finished-at="2023-10-27T01:43:13 CEST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:FrontEnd.SauceDemo.LoginWithDP@1e7aa82b]" started-at="2023-10-27T02:40:15 CEST" name="beforeTest" finished-at="2023-10-27T02:40:15 CEST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:FrontEnd.SauceDemo.LoginWithDP@1e7aa82b]" started-at="2023-10-27T01:43:13 CEST" name="beforeClass" finished-at="2023-10-27T01:43:13 CEST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:FrontEnd.SauceDemo.LoginWithDP@1e7aa82b]" started-at="2023-10-27T02:40:15 CEST" name="beforeClass" finished-at="2023-10-27T02:40:15 CEST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="readFromArray(java.lang.String,java.lang.String)[pri:100, instance:FrontEnd.SauceDemo.LoginWithDP@1e7aa82b]" started-at="2023-10-27T01:43:13 CEST" name="readFromArray" description="Trying to read data from an array object" data-provider="array" finished-at="2023-10-27T01:43:20 CEST" duration-ms="7199" status="FAIL">
+        <test-method signature="readFromArray(java.lang.String,java.lang.String)[pri:100, instance:FrontEnd.SauceDemo.LoginWithDP@1e7aa82b]" started-at="2023-10-27T02:40:15 CEST" name="readFromArray" description="Trying to read data from an array object" data-provider="array" finished-at="2023-10-27T02:40:20 CEST" duration-ms="4750" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -89,11 +89,11 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- readFromArray -->
-        <test-method is-config="true" signature="afterEachIteration()[pri:0, instance:FrontEnd.SauceDemo.LoginWithDP@1e7aa82b]" started-at="2023-10-27T01:43:21 CEST" name="afterEachIteration" finished-at="2023-10-27T01:43:21 CEST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterEachIteration()[pri:0, instance:FrontEnd.SauceDemo.LoginWithDP@1e7aa82b]" started-at="2023-10-27T02:40:21 CEST" name="afterEachIteration" finished-at="2023-10-27T02:40:21 CEST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachIteration -->
-        <test-method signature="readFromArray(java.lang.String,java.lang.String)[pri:100, instance:FrontEnd.SauceDemo.LoginWithDP@1e7aa82b]" started-at="2023-10-27T01:43:21 CEST" name="readFromArray" description="Trying to read data from an array object" data-provider="array" finished-at="2023-10-27T01:43:23 CEST" duration-ms="2219" status="PASS">
+        <test-method signature="readFromArray(java.lang.String,java.lang.String)[pri:100, instance:FrontEnd.SauceDemo.LoginWithDP@1e7aa82b]" started-at="2023-10-27T02:40:21 CEST" name="readFromArray" description="Trying to read data from an array object" data-provider="array" finished-at="2023-10-27T02:40:22 CEST" duration-ms="1857" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -109,11 +109,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- readFromArray -->
-        <test-method is-config="true" signature="afterEachIteration()[pri:0, instance:FrontEnd.SauceDemo.LoginWithDP@1e7aa82b]" started-at="2023-10-27T01:43:23 CEST" name="afterEachIteration" finished-at="2023-10-27T01:43:23 CEST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterEachIteration -->
-        <test-method signature="readFromArray(java.lang.String,java.lang.String)[pri:100, instance:FrontEnd.SauceDemo.LoginWithDP@1e7aa82b]" started-at="2023-10-27T01:43:23 CEST" name="readFromArray" description="Trying to read data from an array object" data-provider="array" finished-at="2023-10-27T01:43:25 CEST" duration-ms="1869" status="FAIL">
+        <test-method signature="readFromArray(java.lang.String,java.lang.String)[pri:100, instance:FrontEnd.SauceDemo.LoginWithDP@1e7aa82b]" started-at="2023-10-27T02:40:23 CEST" name="readFromArray" description="Trying to read data from an array object" data-provider="array" finished-at="2023-10-27T02:40:24 CEST" duration-ms="1767" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -177,11 +173,15 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- readFromArray -->
-        <test-method is-config="true" signature="afterEachIteration()[pri:0, instance:FrontEnd.SauceDemo.LoginWithDP@1e7aa82b]" started-at="2023-10-27T01:43:25 CEST" name="afterEachIteration" finished-at="2023-10-27T01:43:25 CEST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterEachIteration()[pri:0, instance:FrontEnd.SauceDemo.LoginWithDP@1e7aa82b]" started-at="2023-10-27T02:40:23 CEST" name="afterEachIteration" finished-at="2023-10-27T02:40:23 CEST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachIteration -->
-        <test-method signature="readFromArray(java.lang.String,java.lang.String)[pri:100, instance:FrontEnd.SauceDemo.LoginWithDP@1e7aa82b]" started-at="2023-10-27T01:43:25 CEST" name="readFromArray" description="Trying to read data from an array object" data-provider="array" finished-at="2023-10-27T01:43:33 CEST" duration-ms="7315" status="FAIL">
+        <test-method is-config="true" signature="afterEachIteration()[pri:0, instance:FrontEnd.SauceDemo.LoginWithDP@1e7aa82b]" started-at="2023-10-27T02:40:25 CEST" name="afterEachIteration" finished-at="2023-10-27T02:40:25 CEST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterEachIteration -->
+        <test-method signature="readFromArray(java.lang.String,java.lang.String)[pri:100, instance:FrontEnd.SauceDemo.LoginWithDP@1e7aa82b]" started-at="2023-10-27T02:40:25 CEST" name="readFromArray" description="Trying to read data from an array object" data-provider="array" finished-at="2023-10-27T02:40:32 CEST" duration-ms="6980" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -245,7 +245,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- readFromArray -->
-        <test-method is-config="true" signature="afterEachIteration()[pri:0, instance:FrontEnd.SauceDemo.LoginWithDP@1e7aa82b]" started-at="2023-10-27T01:43:33 CEST" name="afterEachIteration" finished-at="2023-10-27T01:43:33 CEST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterEachIteration()[pri:0, instance:FrontEnd.SauceDemo.LoginWithDP@1e7aa82b]" started-at="2023-10-27T02:40:32 CEST" name="afterEachIteration" finished-at="2023-10-27T02:40:32 CEST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachIteration -->
