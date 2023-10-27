@@ -15,6 +15,7 @@ After forking the framework, start by running the following commands:
 `git push --set-upstream origin master`
 
 Since the driver is configured to run via Docker, make sure to run this command to initialize the container: docker compose up --build --force-recreate -d
+
 That's it, let's rock and roll!
 
 ## _How this framework is structured:_
