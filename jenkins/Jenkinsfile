@@ -8,20 +8,21 @@ pipeline {
         }
         stage("Clone Repo") {
             steps {
-                sh "git clone https://github.com/sguerrero11/Warriors.git"
+                sh 'git clone https://github.com/sguerrero11/Warriors.git'
             }
         }
         stage("Build") {
             steps {
                 dir("Warriors") {
-                    sh "mvn clean install"
+                    sh 'mvn clean install'
                 }
             }
         }
         stage("Test") {
             steps {
-                script {
-                    sh "mvn test -Dtest=FrontEnd.SauceDemo.LoginWithDP#readFromArray"
+                dir("Warriors") {
+                    sh 'mvn test "-Dtest=FrontEnd.SauceDemo.LoginWithDP#readFromArray"'
+                    // sh 'mvn test' // to run all tests in the project
                 }
             }
         }
