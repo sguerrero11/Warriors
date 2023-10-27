@@ -50,7 +50,7 @@ public class JenkinsRandomTest extends BasePage {
         driver1.manage().window().maximize();
     }
 
-    @Test(description = "Log in successfully to SauceDemo") //
+    @Test(description = "Log in successfully to SauceDemo", groups = "Smoke") //
     public void loginToSD() {
 
         // We sign in
