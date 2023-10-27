@@ -15,4 +15,4 @@ browsers:
   default: chrome
   mobile: false
 
-# This file is meant to be used with the YML helper and without the Listener
+# This file is meant to be used with the YML helper
