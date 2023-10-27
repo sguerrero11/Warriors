@@ -26,6 +26,14 @@ public class AssertionsList extends BasePage {
         assertEquals(actual, expected);
         return this;
     }
+    public AssertionsList equals(Boolean actual, Boolean expected) {
+        boolean result = expected.equals(actual);
+        String description = String.format("Assert if argument \"%s\" is equal to argument \"%s\"", expected, actual);
+        addAssertion(description, result);
+
+        assertEquals(actual, expected);
+        return this;
+    }
 
     public AssertionsList equalsSoft(String actual, String expected) {
         boolean result = expected.equals(actual);

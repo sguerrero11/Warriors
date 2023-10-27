@@ -3,6 +3,7 @@ package designpattern.pom;
 import helpers.BrowserDriverHelper;
 import helpers.LoggerHelper;
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.Coordinates;
 import org.openqa.selenium.interactions.Locatable;
@@ -172,6 +173,19 @@ public class BasePage extends LoggerHelper {
         logStep("Fill in field identified as " + returnAttributeBasedOnExistence(locator) + " with value: " + inputText);
     }
 
+    /**
+     *
+     * @param inputText
+     * @param locator
+     * @param driver local Chromedriver
+     */
+    public void sendKeys(String inputText, By locator, ChromeDriver driver) {
+        driver.findElement(locator).sendKeys(inputText);
+        logStep("Fill in field identified as " + returnAttributeBasedOnExistence(locator) + " with value: " + inputText);
+    }
+
+
+
     /***
      * Clear the element and set Text.
      * @param inputText [String] -> Value to write.
@@ -207,6 +221,11 @@ public class BasePage extends LoggerHelper {
     public void click(By locator) {
         logStep("Click on button identified as " + returnAttributeBasedOnExistence(locator));
         BrowserDriverHelper.getDriver().findElement(locator).click();
+    }
+
+    public void click(By locator, ChromeDriver driver) {
+        logStep("Click on button identified as " + returnAttributeBasedOnExistence(locator));
+        driver.findElement(locator).click();
     }
 
     /***
