@@ -9,17 +9,22 @@ services:
       - "4443:4443"
       - "4444:4444"
 
-  chrome-node:
+  chrome-node: ## this is the name of the service
     image: selenium/node-chrome:beta
     shm_size: 2gb
     ports:
+      ## - "5555:5900" ## instead of static ports, we use dynamic ones as below to enable more than 1 chrome
       - "5555:5900"
+      - "5900" ## review this
+      - "7900" ## review this
+      ## don't forget to scale the service
     depends_on:
       - selenium-hub-warriors
     environment:
       - SE_EVENT_BUS_HOST=selenium-hub-warriors
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+       ## - SE_VNC_NO_PASSWORD=1
 
   firefox-node:
     image: selenium/node-firefox:beta
@@ -32,6 +37,7 @@ services:
       - SE_EVENT_BUS_HOST=selenium-hub-warriors
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      ## - SE_VNC_NO_PASSWORD=1
 
   edge-node:
     image: selenium/node-edge:beta
@@ -44,6 +50,4 @@ services:
       - SE_EVENT_BUS_HOST=selenium-hub-warriors
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-
-
-
+    ## - SE_VNC_NO_PASSWORD=1

@@ -5,3 +5,5 @@
         <suite-file path="smoke.xml" />
     </suite-files>
 </suite>
+
+    <!-- if there is more than one class on each suite file, you can use the classes value -->

@@ -1,107 +1,44 @@
-Oct 27 2023;17:57:42 16612 [main] INFO  helpers.LoggerHelper -- Starting suite
-Oct 27 2023;17:57:42 16639 [main] INFO  helpers.LoggerHelper -- I am in onStart method from TestNG
-Oct 27 2023;17:57:42 16639 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-Oct 27 2023;17:57:44 17952 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Using chromedriver 117.0.5938.149 (resolved driver for Chrome 117)
-Oct 27 2023;17:57:44 18031 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.chrome.driver as C:\Users\740722\.cache\selenium\chromedriver\win64\117.0.5938.149\chromedriver.exe
-Oct 27 2023;17:57:44 18033 [main] INFO  helpers.LoggerHelper -- [BrowserDriver/loadChromeDriver] Connecting to: http://localhost:4444/wd/hub
-Oct 27 2023;17:57:50 23756 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray
-Oct 27 2023;17:57:50 23757 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an array object
-Oct 27 2023;17:57:50 23757 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Oct 27 2023;17:57:52 25725 [main] INFO  helpers.LoggerHelper -- Testing user: standard_user
-Oct 27 2023;17:57:52 26258 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
-Oct 27 2023;17:57:53 26901 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray has FAILED
-Oct 27 2023;17:57:53 26901 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Oct 27 2023;17:57:53 27280 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
-Oct 27 2023;17:57:53 27311 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray
-Oct 27 2023;17:57:53 27312 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an array object
-Oct 27 2023;17:57:53 27312 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Oct 27 2023;17:57:54 28044 [main] INFO  helpers.LoggerHelper -- Testing user: locked_out_user
-Oct 27 2023;17:57:54 28658 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
-Oct 27 2023;17:57:55 29193 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray has FAILED
-Oct 27 2023;17:57:55 29194 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Oct 27 2023;17:57:55 29425 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
-Oct 27 2023;17:57:55 29433 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray
-Oct 27 2023;17:57:55 29434 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an array object
-Oct 27 2023;17:57:55 29434 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Oct 27 2023;17:57:56 30098 [main] INFO  helpers.LoggerHelper -- Testing user: problem_user
-Oct 27 2023;17:57:56 30636 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
-Oct 27 2023;17:57:57 31288 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray has FAILED
-Oct 27 2023;17:57:57 31288 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Oct 27 2023;17:57:57 31627 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
-Oct 27 2023;17:57:57 31642 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray
-Oct 27 2023;17:57:57 31643 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an array object
-Oct 27 2023;17:57:57 31643 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Oct 27 2023;17:57:58 32331 [main] INFO  helpers.LoggerHelper -- Testing user: performance_glitch_user
-Oct 27 2023;17:57:59 32952 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
-Oct 27 2023;17:58:04 38505 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray has FAILED
-Oct 27 2023;17:58:04 38506 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Oct 27 2023;17:58:05 38761 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
-Oct 27 2023;17:58:09 43082 [main] INFO  helpers.LoggerHelper -- Number of rows: 5
-Oct 27 2023;17:58:09 43089 [main] INFO  helpers.LoggerHelper -- Number of columns: 2
-Oct 27 2023;17:58:09 43142 [main] INFO  helpers.LoggerHelper -- @Test: readFromFileExcel
-Oct 27 2023;17:58:09 43150 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an Excel file
-Oct 27 2023;17:58:09 43151 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Oct 27 2023;17:58:11 44987 [main] INFO  helpers.LoggerHelper -- Testing user: standard_user
-Oct 27 2023;17:58:12 46494 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
-Oct 27 2023;17:58:13 47464 [main] INFO  helpers.LoggerHelper -- @Test: readFromFileExcel has PASSED
-Oct 27 2023;17:58:13 47465 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Oct 27 2023;17:58:14 48352 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
-Oct 27 2023;17:58:14 48359 [main] INFO  helpers.LoggerHelper -- @Test: readFromFileExcel
-Oct 27 2023;17:58:14 48360 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an Excel file
-Oct 27 2023;17:58:14 48361 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Oct 27 2023;17:58:16 50185 [main] INFO  helpers.LoggerHelper -- Testing user: locked_out_user
-Oct 27 2023;17:58:18 51794 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
-Oct 27 2023;17:58:19 52885 [main] INFO  helpers.LoggerHelper -- @Test: readFromFileExcel has PASSED
-Oct 27 2023;17:58:19 52886 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Oct 27 2023;17:58:19 53395 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
-Oct 27 2023;17:58:19 53399 [main] INFO  helpers.LoggerHelper -- @Test: readFromFileExcel
-Oct 27 2023;17:58:19 53399 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an Excel file
-Oct 27 2023;17:58:19 53400 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Oct 27 2023;17:58:21 54859 [main] INFO  helpers.LoggerHelper -- Testing user: 1234.0
-Oct 27 2023;17:58:21 55628 [main] INFO  helpers.LoggerHelper -- Testing password: 1324.0
-Oct 27 2023;17:58:22 56216 [main] INFO  helpers.LoggerHelper -- @Test: readFromFileExcel has PASSED
-Oct 27 2023;17:58:22 56216 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Oct 27 2023;17:58:22 56420 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
-Oct 27 2023;17:58:22 56422 [main] INFO  helpers.LoggerHelper -- @Test: readFromFileExcel
-Oct 27 2023;17:58:22 56422 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an Excel file
-Oct 27 2023;17:58:22 56423 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Oct 27 2023;17:58:23 57182 [main] INFO  helpers.LoggerHelper -- Testing user: 1234admin
-Oct 27 2023;17:58:24 57860 [main] INFO  helpers.LoggerHelper -- Testing password: admin123
-Oct 27 2023;17:58:24 58481 [main] INFO  helpers.LoggerHelper -- @Test: readFromFileExcel has PASSED
-Oct 27 2023;17:58:24 58481 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Oct 27 2023;17:58:25 58725 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
-Oct 27 2023;17:58:25 58730 [main] INFO  helpers.LoggerHelper -- @Test: readFromFileCSVLike
-Oct 27 2023;17:58:25 58730 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from a CSV-like file
-Oct 27 2023;17:58:25 58730 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Oct 27 2023;17:58:25 59546 [main] INFO  helpers.LoggerHelper -- Testing user: standard_user
-Oct 27 2023;17:58:26 60062 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
-Oct 27 2023;17:58:26 60488 [main] INFO  helpers.LoggerHelper -- @Test: readFromFileCSVLike has PASSED
-Oct 27 2023;17:58:26 60488 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Oct 27 2023;17:58:27 60864 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
-Oct 27 2023;17:58:27 60866 [main] INFO  helpers.LoggerHelper -- @Test: readFromFileCSVLike
-Oct 27 2023;17:58:27 60867 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from a CSV-like file
-Oct 27 2023;17:58:27 60867 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Oct 27 2023;17:58:28 61886 [main] INFO  helpers.LoggerHelper -- Testing user: locked_out_user
-Oct 27 2023;17:58:28 62648 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
-Oct 27 2023;17:58:29 63206 [main] INFO  helpers.LoggerHelper -- @Test: readFromFileCSVLike has PASSED
-Oct 27 2023;17:58:29 63207 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Oct 27 2023;17:58:29 63443 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
-Oct 27 2023;17:58:29 63445 [main] INFO  helpers.LoggerHelper -- @Test: readFromFileCSVLike
-Oct 27 2023;17:58:29 63445 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from a CSV-like file
-Oct 27 2023;17:58:29 63445 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Oct 27 2023;17:58:30 64395 [main] INFO  helpers.LoggerHelper -- Testing user: problem_user
-Oct 27 2023;17:58:31 64862 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
-Oct 27 2023;17:58:31 65343 [main] INFO  helpers.LoggerHelper -- @Test: readFromFileCSVLike has PASSED
-Oct 27 2023;17:58:31 65349 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Oct 27 2023;17:58:32 65844 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
-Oct 27 2023;17:58:32 65846 [main] INFO  helpers.LoggerHelper -- @Test: readFromFileCSVLike
-Oct 27 2023;17:58:32 65847 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from a CSV-like file
-Oct 27 2023;17:58:32 65847 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Oct 27 2023;17:58:33 67238 [main] INFO  helpers.LoggerHelper -- Testing user: performance_glitch_user
-Oct 27 2023;17:58:34 67982 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
-Oct 27 2023;17:58:39 73607 [main] INFO  helpers.LoggerHelper -- @Test: readFromFileCSVLike has PASSED
-Oct 27 2023;17:58:39 73608 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Oct 27 2023;17:58:40 73870 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
-Oct 27 2023;17:58:41 74988 [main] INFO  helpers.LoggerHelper -- Finishing suite
-Oct 27 2023;17:58:41 74989 [main] INFO  helpers.LoggerHelper -- I am in onFinish method from TestNG
-Oct 27 2023;17:58:41 74989 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+Nov 28 2023;11:54:50 1650 [main] INFO  org.testng.internal.Utils -- [TestNG] Running:
+  C:\Users\GuerreroSantiago\AppData\Local\JetBrains\IdeaIC2023.2\temp-testng-customsuite.xml
+
+Nov 28 2023;11:54:50 1660 [main] INFO  helpers.LoggerHelper -- Starting suite
+Nov 28 2023;11:54:50 1661 [main] INFO  helpers.LoggerHelper -- I am in onStart method from Default Suite
+Nov 28 2023;11:54:50 1661 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+Nov 28 2023;11:54:50 2198 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Using chromedriver 119.0.6045.105 (resolved driver for Chrome 119)
+Nov 28 2023;11:54:50 2252 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.chrome.driver as C:\Users\GuerreroSantiago\.cache\selenium\chromedriver\win64\119.0.6045.105\chromedriver.exe
+Nov 28 2023;11:54:50 2254 [main] INFO  helpers.LoggerHelper -- [BrowserDriver/loadChromeDriver] Connecting to: http://localhost:4444/wd/hub
+Nov 28 2023;11:54:53 4817 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray
+Nov 28 2023;11:54:53 4817 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an array object
+Nov 28 2023;11:54:53 4817 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Nov 28 2023;11:54:54 6512 [main] INFO  helpers.LoggerHelper -- Testing user: standard_user
+Nov 28 2023;11:54:55 7153 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
+Nov 28 2023;11:54:56 7741 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray has PASSED
+Nov 28 2023;11:54:56 7742 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Nov 28 2023;11:54:56 7935 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
+Nov 28 2023;11:54:56 7948 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray
+Nov 28 2023;11:54:56 7948 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an array object
+Nov 28 2023;11:54:56 7949 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Nov 28 2023;11:54:57 8693 [main] INFO  helpers.LoggerHelper -- Testing user: locked_out_user
+Nov 28 2023;11:54:57 9157 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
+Nov 28 2023;11:54:58 9657 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray has PASSED
+Nov 28 2023;11:54:58 9657 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Nov 28 2023;11:54:58 9811 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
+Nov 28 2023;11:54:58 9815 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray
+Nov 28 2023;11:54:58 9816 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an array object
+Nov 28 2023;11:54:58 9816 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Nov 28 2023;11:54:58 10404 [main] INFO  helpers.LoggerHelper -- Testing user: problem_user
+Nov 28 2023;11:54:59 10851 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
+Nov 28 2023;11:54:59 11382 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray has PASSED
+Nov 28 2023;11:54:59 11382 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Nov 28 2023;11:55:00 11804 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
+Nov 28 2023;11:55:00 11807 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray
+Nov 28 2023;11:55:00 11807 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an array object
+Nov 28 2023;11:55:00 11807 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Nov 28 2023;11:55:00 12395 [main] INFO  helpers.LoggerHelper -- Testing user: performance_glitch_user
+Nov 28 2023;11:55:01 12852 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
+Nov 28 2023;11:55:06 18432 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray has PASSED
+Nov 28 2023;11:55:06 18432 [main] INFO  helpers.LoggerHelper -- ######################################################################################
+Nov 28 2023;11:55:07 18723 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
+Nov 28 2023;11:55:07 19510 [main] INFO  helpers.LoggerHelper -- Finishing suite
+Nov 28 2023;11:55:07 19511 [main] INFO  helpers.LoggerHelper -- I am in onFinish method from Default Suite
+Nov 28 2023;11:55:07 19511 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #
