@@ -1,44 +1,4 @@
-Nov 28 2023;11:54:50 1650 [main] INFO  org.testng.internal.Utils -- [TestNG] Running:
+Dec 19 2023;17:10:55 1309 [main] INFO  org.testng.internal.Utils -- [TestNG] Running:
   C:\Users\GuerreroSantiago\AppData\Local\JetBrains\IdeaIC2023.2\temp-testng-customsuite.xml
 
-Nov 28 2023;11:54:50 1660 [main] INFO  helpers.LoggerHelper -- Starting suite
-Nov 28 2023;11:54:50 1661 [main] INFO  helpers.LoggerHelper -- I am in onStart method from Default Suite
-Nov 28 2023;11:54:50 1661 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-Nov 28 2023;11:54:50 2198 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Using chromedriver 119.0.6045.105 (resolved driver for Chrome 119)
-Nov 28 2023;11:54:50 2252 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.chrome.driver as C:\Users\GuerreroSantiago\.cache\selenium\chromedriver\win64\119.0.6045.105\chromedriver.exe
-Nov 28 2023;11:54:50 2254 [main] INFO  helpers.LoggerHelper -- [BrowserDriver/loadChromeDriver] Connecting to: http://localhost:4444/wd/hub
-Nov 28 2023;11:54:53 4817 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray
-Nov 28 2023;11:54:53 4817 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an array object
-Nov 28 2023;11:54:53 4817 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Nov 28 2023;11:54:54 6512 [main] INFO  helpers.LoggerHelper -- Testing user: standard_user
-Nov 28 2023;11:54:55 7153 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
-Nov 28 2023;11:54:56 7741 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray has PASSED
-Nov 28 2023;11:54:56 7742 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Nov 28 2023;11:54:56 7935 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
-Nov 28 2023;11:54:56 7948 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray
-Nov 28 2023;11:54:56 7948 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an array object
-Nov 28 2023;11:54:56 7949 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Nov 28 2023;11:54:57 8693 [main] INFO  helpers.LoggerHelper -- Testing user: locked_out_user
-Nov 28 2023;11:54:57 9157 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
-Nov 28 2023;11:54:58 9657 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray has PASSED
-Nov 28 2023;11:54:58 9657 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Nov 28 2023;11:54:58 9811 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
-Nov 28 2023;11:54:58 9815 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray
-Nov 28 2023;11:54:58 9816 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an array object
-Nov 28 2023;11:54:58 9816 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Nov 28 2023;11:54:58 10404 [main] INFO  helpers.LoggerHelper -- Testing user: problem_user
-Nov 28 2023;11:54:59 10851 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
-Nov 28 2023;11:54:59 11382 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray has PASSED
-Nov 28 2023;11:54:59 11382 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Nov 28 2023;11:55:00 11804 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
-Nov 28 2023;11:55:00 11807 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray
-Nov 28 2023;11:55:00 11807 [main] INFO  helpers.LoggerHelper -- Description: Trying to read data from an array object
-Nov 28 2023;11:55:00 11807 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Nov 28 2023;11:55:00 12395 [main] INFO  helpers.LoggerHelper -- Testing user: performance_glitch_user
-Nov 28 2023;11:55:01 12852 [main] INFO  helpers.LoggerHelper -- Testing password: secret_sauce
-Nov 28 2023;11:55:06 18432 [main] INFO  helpers.LoggerHelper -- @Test: readFromArray has PASSED
-Nov 28 2023;11:55:06 18432 [main] INFO  helpers.LoggerHelper -- ######################################################################################
-Nov 28 2023;11:55:07 18723 [main] INFO  helpers.LoggerHelper -- Screenshot saved successfully.
-Nov 28 2023;11:55:07 19510 [main] INFO  helpers.LoggerHelper -- Finishing suite
-Nov 28 2023;11:55:07 19511 [main] INFO  helpers.LoggerHelper -- I am in onFinish method from Default Suite
-Nov 28 2023;11:55:07 19511 [main] INFO  helpers.LoggerHelper -- # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+Dec 19 2023;17:10:55 1392 [main] INFO  helpers.LoggerHelper -- Writing the following file: test-data-files/newTXTfile.txt

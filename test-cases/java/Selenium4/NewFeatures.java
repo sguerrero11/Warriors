@@ -8,17 +8,18 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.HasDevTools;
 import org.openqa.selenium.devtools.NetworkInterceptor;
-
-import org.openqa.selenium.devtools.v117.emulation.Emulation;
-import org.openqa.selenium.devtools.v117.log.Log;
-import org.openqa.selenium.devtools.v117.performance.Performance;
-import org.openqa.selenium.devtools.v117.performance.model.Metric;
+import org.openqa.selenium.devtools.v119.emulation.Emulation;
+import org.openqa.selenium.devtools.v119.log.Log;
+import org.openqa.selenium.devtools.v119.performance.Performance;
+import org.openqa.selenium.devtools.v119.performance.model.Metric;
+import org.openqa.selenium.devtools.v85.network.Network;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.WheelInput;
 import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.http.HttpResponse;
 import org.openqa.selenium.remote.http.Route;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
@@ -221,6 +222,33 @@ public class NewFeatures {
         String source = driver.getPageSource();
 
         assertThat(source).contains("delicious cheese!");
+    }
+
+    @Test
+    public void getRequestAndResponseData() throws InterruptedException {
+        DevTools devTools = driver.getDevTools();
+        devTools.createSession();
+        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+
+
+        devTools.addListener(Network.requestWillBeSent(),
+                request -> {
+                    System.out.println("URL: " + request.getRequest().getUrl());
+                    System.out.println("Headers: " + request.getRequest().getHeaders());
+                });
+
+        devTools.addListener(Network.responseReceived(),
+                response -> {
+                    System.out.println("Headers: " + response.getResponse().getHeaders());
+                    System.out.println("Status: " + response.getResponse().getStatus());
+                });
+        driver.get("https://www.serenaandlily.com/products/riviera-rattan-dining-chair/977405"); // add to click and check payload and response // TODO
+// Check the terminal output for the browser console messages.
+    }
+
+    @AfterSuite
+    public void tearDown() {
+        driver.quit();
     }
 
 }

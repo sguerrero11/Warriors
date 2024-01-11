@@ -31,6 +31,14 @@
       "consumerKey": "",
       "consumerSecret": "",
       "accessToken": ""
+    },
+    "zephyr": {
+      "access_token": "",
+      "url": "https://api.zephyrscale.smartbear.com/v2",
+      "testCycleFolder": "2862447",
+      "name": "Developing new ticket",
+      "synchronize": false,
+      "testCycleToUpdate": "ECP-R999"
     }
   },
   "_comment": "This file is meant to be used by the ENV Helper"

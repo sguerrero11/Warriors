@@ -1,0 +1,9 @@
+[December 19, 2023 17:06:20] Test case name: txtWriteAString
+[December 19, 2023 17:06:20] Test case description: Write a string into a new file
+
+[December 19, 2023 17:06:20] Steps:
+
+[December 19, 2023 17:06:20] Assertions:
+
+[December 19, 2023 17:06:20] Outcome:
+[December 19, 2023 17:06:20] Test Passed

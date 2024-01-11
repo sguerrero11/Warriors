@@ -46,7 +46,7 @@
       -->
     <root level="INFO"> <!-- this means that generally i will log on info message, that is, project level (@FrontEnd). it overrides the folder levels -->
         <appender-ref ref="STDOUT" />
-      <!--  <appender-ref ref="STDERR" /> commenting this out-->
+      <!--  <appender-ref ref="STDERR" /> commenting this out, use stdout or stderr-->
         <appender-ref ref="FILE" />
     </root>
 </configuration>

@@ -110,8 +110,9 @@ public class BasePage extends LoggerHelper {
         for (WebElement label : labels) {
             String formattedLabel = label.getText().replaceAll("\\s+", " ");
             areEqual = areEqual && expectedLabels.contains(formattedLabel);
-            if (!areEqual)
+            if (!areEqual) {
                 LoggerHelper.logInfo("[BasePage/checkFormLabels]: Expected label doesn't exist in current form: " + formattedLabel);
+            }
         }
         return areEqual;
     }
@@ -138,7 +139,7 @@ public class BasePage extends LoggerHelper {
 
         return firstElement.getText();
     }
-    // endregion
+
 
     public String getCurrentUrl() {
         return BrowserDriverHelper.getDriver().getCurrentUrl();
